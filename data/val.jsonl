@@ -1,0 +1,500 @@
+{"os": "linux", "prompt": "list complete path name to process associated with pid \"$1\"", "cmd": "find /proc/$1/exe -printf '%l\\n'"}
+{"os": "powershell", "prompt": "delete all .txt files in D:\\Data", "cmd": "Remove-Item -Path 'D:\\Data\\*.txt' -Force"}
+{"os": "powershell", "prompt": "create folder output at C:\\Temp", "cmd": "New-Item -Path 'C:\\Temp\\output' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "Attaches to 'test1' tmux session.", "cmd": "tmux attach -t test1"}
+{"os": "powershell", "prompt": "create folder archive at C:\\inetpub\\wwwroot", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\archive' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "Find files under /usr that are newer than the first file `FirstFile'", "cmd": "find /usr -newer /usr/FirstFile -print"}
+{"os": "powershell", "prompt": "tail -f C:\\ProgramData\\App\\app.log in powershell", "cmd": "Get-Content -Path 'C:\\ProgramData\\App\\app.log' -Wait -Tail 20"}
+{"os": "powershell", "prompt": "verify connectivity to api.github.com:1433", "cmd": "Test-NetConnection -ComputerName 'api.github.com' -Port 1433"}
+{"os": "linux", "prompt": "Find all regular files newer than '/tmp/$$' (where $$ expands to current process id) under '/tmefndr/oravl01' directory tree", "cmd": "find /tmefndr/oravl01 -type f -newer /tmp/$$"}
+{"os": "linux", "prompt": "Show what content owned by root has been modified within the last day", "cmd": "find /etc/ -user root -mtime 1"}
+{"os": "linux", "prompt": "Make directory \"/etc/cron.15sec\"", "cmd": "mkdir /etc/cron.15sec"}
+{"os": "powershell", "prompt": "find process named dotnet", "cmd": "Get-Process -Name 'dotnet' -ErrorAction SilentlyContinue"}
+{"os": "powershell", "prompt": "create an empty file named output.log in C:\\Backup", "cmd": "New-Item -Path 'C:\\Backup\\output.log' -ItemType File -Force"}
+{"os": "linux", "prompt": "Find all files/directories that start with 'test' in their names under current directory tree", "cmd": "find . -name 'test*'"}
+{"os": "powershell", "prompt": "tail 50 lines from C:\\Logs\\app.xml", "cmd": "Get-Content -Path 'C:\\Logs\\app.xml' -Tail 50"}
+{"os": "linux", "prompt": "Unzip \"file.gz\" to stdout", "cmd": "zcat file.gz"}
+{"os": "powershell", "prompt": "recursively search for .config files in D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -Filter '*.config' -Recurse"}
+{"os": "linux", "prompt": "Check if a specific service is running and restart it if it's not.", "cmd": "!/bin/bash service_name=\"service_name\" if ! systemctl is-active --quiet $service_name; then systemctl restart $service_name fi"}
+{"os": "linux", "prompt": "To descend at most one levels of directories below the command line arguments pass the -maxdepth 1 option. This will avoid deleting nested directories:", "cmd": "find . -maxdepth 1 -type d -iname \".[^.]*\" -print0 | xargs -I {} -0 rm -rvf \"{}\""}
+{"os": "powershell", "prompt": "show top 25 lines of C:\\Temp\\app.xml", "cmd": "Get-Content -Path 'C:\\Temp\\app.xml' -TotalCount 25"}
+{"os": "powershell", "prompt": "query MX records for google.com", "cmd": "Resolve-DnsName -Name 'google.com' -Type MX"}
+{"os": "powershell", "prompt": "search for .txt files in C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -Filter '*.txt'"}
+{"os": "powershell", "prompt": "lookup MX mail records for domain 127.0.0.1", "cmd": "Resolve-DnsName -Name '127.0.0.1' -Type MX"}
+{"os": "linux", "prompt": "Find all file paths under current directory, perform a reverse sort and show first 10 file paths with their status change time", "cmd": "find . -type f -printf \"%C@ %p\\n\" | sort -r | head -n 10"}
+{"os": "linux", "prompt": "Remove all files except the ones listed in \"MANIFEST\"", "cmd": "find -type f -printf %P\\\\n | sort | comm -3 MANIFEST - | xargs rm"}
+{"os": "linux", "prompt": "Creates path as current folder path and folder that contains $0 file, and saves result in 'script_dir' variable.", "cmd": "set script_dir = `pwd`/`dirname $0`"}
+{"os": "linux", "prompt": "Delete all files/directories taken by the glob pattern * except the ones with the name 'b'", "cmd": "find * -maxdepth 0 -name 'b' -prune -o -exec rm -rf '{}' ';'"}
+{"os": "linux", "prompt": "Unsets environment variable represented as var=value by $a.", "cmd": "unset $"}
+{"os": "powershell", "prompt": "search for pattern 'ERROR' in all .bak files in C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup\\*.bak' | Select-String -Pattern 'ERROR'"}
+{"os": "powershell", "prompt": "get the 10 largest files in .\\logs", "cmd": "Get-ChildItem -Path '.\\logs' -File -Recurse | Sort-Object Length -Descending | Select-Object -First 10"}
+{"os": "powershell", "prompt": "traceroute to host smtp.office365.com", "cmd": "Test-NetConnection -ComputerName 'smtp.office365.com' -TraceRoute"}
+{"os": "linux", "prompt": "Make hidden directory \".hiddendir\"", "cmd": "mkdir .hiddendir"}
+{"os": "powershell", "prompt": "search for pattern 'Warning' in all .bak files in .\\logs", "cmd": "Get-ChildItem -Path '.\\logs\\*.bak' | Select-String -Pattern 'Warning'"}
+{"os": "linux", "prompt": "Find all *.txt and *.json files in current directory", "cmd": "find . -type f \\"}
+{"os": "linux", "prompt": "Installs package \"devtoolset-3\" answering 'yes' on all questions.", "cmd": "yum install -y devtoolset-3"}
+{"os": "linux", "prompt": "Report file systems disk usage, elide all entries insignificant to available space, and produce a grand total.", "cmd": "df --total"}
+{"os": "linux", "prompt": "Find the passwd file under root and one level down.", "cmd": "find -maxdepth 2 -name passwd"}
+{"os": "linux", "prompt": "change the permissions of all the directories in the current folder, print0 is used for handling files with newlines in their file name", "cmd": "find . -type d -print0 | xargs -0 chmod 2775"}
+{"os": "linux", "prompt": "Copy all files (not directories) in \"/path/to/local/storage\" to \"/path/to/copy\" on host \"remote.host\" authenticating as user \"user\"", "cmd": "rsync /path/to/local/storage user@remote.host:/path/to/copy"}
+{"os": "linux", "prompt": "Print a randomly sorted list of numbers from 1 to 10 to file \"/tmp/lst\" and outputs \"-------\" followed by the reverse list to the screen", "cmd": "seq 1 10 | sort -R | tee /tmp/lst |cat <(cat /tmp/lst) <(echo '-------') | tac"}
+{"os": "powershell", "prompt": "show open listening ports", "cmd": "Get-NetTCPConnection -State Listen | Select-Object LocalAddress, LocalPort, OwningProcess"}
+{"os": "linux", "prompt": "Find all regular files in the current directory tree that are not readable by all", "cmd": "find -type f ! -perm -444"}
+{"os": "linux", "prompt": "Create a script to calculate the average of a list of numbers.", "cmd": "!/bin/bash average() { sum=0 for num in \"$@\"; do sum=$((sum + num)) done avg=$((sum / $#)) echo \"Average: $avg\" } average 10 20 30 40 50"}
+{"os": "linux", "prompt": "search all undo files in the current folder and calculate the total size of them", "cmd": "find -name '*.undo' -exec wc -c {} + | tail -n 1 | cut -d' ' -f 1"}
+{"os": "powershell", "prompt": "search for .json files in .\\data", "cmd": "Get-ChildItem -Path '.\\data' -Filter '*.json'"}
+{"os": "powershell", "prompt": "tail -f D:\\Data\\app.csv in powershell", "cmd": "Get-Content -Path 'D:\\Data\\app.csv' -Wait -Tail 20"}
+{"os": "linux", "prompt": "print difference in days between two dates", "cmd": "echo $(( ( $ - $ )/60/60/24 )) days"}
+{"os": "powershell", "prompt": "copy file C:\\Temp\\source.ps1 to C:\\Temp\\dest.ps1", "cmd": "Copy-Item -Path 'C:\\Temp\\source.ps1' -Destination 'C:\\Temp\\dest.ps1' -Force"}
+{"os": "powershell", "prompt": "run firefox", "cmd": "Start-Process -FilePath 'firefox'"}
+{"os": "powershell", "prompt": "reboot service docker", "cmd": "Restart-Service -Name 'docker' -Force"}
+{"os": "powershell", "prompt": "restart service MSSQLSERVER", "cmd": "Restart-Service -Name 'MSSQLSERVER' -Force"}
+{"os": "linux", "prompt": "check the type of files in the folder /usr/bin", "cmd": "find /usr/bin | xargs file"}
+{"os": "powershell", "prompt": "test ping connectivity to google.com", "cmd": "Test-Connection -TargetName 'google.com' -Count 4"}
+{"os": "linux", "prompt": "Exits from login shell.", "cmd": "logout"}
+{"os": "powershell", "prompt": "kill pid 8192", "cmd": "Stop-Process -Id 8192 -Force"}
+{"os": "linux", "prompt": "display all the files in the folder \"/Users/Me/Desktop\" which belong to the user \"popo\" and which have the permission 777", "cmd": "find /Users/Me/Desktop -user popo -perm 777"}
+{"os": "linux", "prompt": "Search \"mygzfile.gz\" for \"string to be searched\"", "cmd": "gunzip -c mygzfile.gz | grep \"string to be searched\""}
+{"os": "linux", "prompt": "search for the file filename in the entire file system", "cmd": "find / -name filename"}
+{"os": "powershell", "prompt": "find text 'ConnectionReset' in .\\data *.csv", "cmd": "Get-ChildItem -Path '.\\data\\*.csv' | Select-String -Pattern 'ConnectionReset'"}
+{"os": "powershell", "prompt": "verify connectivity to 127.0.0.1:21", "cmd": "Test-NetConnection -ComputerName '127.0.0.1' -Port 21"}
+{"os": "powershell", "prompt": "grep for '404' inside file C:\\Logs\\app.log", "cmd": "Select-String -Path 'C:\\Logs\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "powershell", "prompt": "find all .txt files in .\\logs including subdirectories", "cmd": "Get-ChildItem -Path '.\\logs' -Filter '*.txt' -Recurse"}
+{"os": "powershell", "prompt": "find all .csv files in C:\\inetpub\\wwwroot including subdirectories", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot' -Filter '*.csv' -Recurse"}
+{"os": "linux", "prompt": "Print the mount point of the last mounted drive", "cmd": "mount | tail -1 | sed -e \"s/^[^/]*\\(.*\\) type .*$/\\1/g\""}
+{"os": "powershell", "prompt": "get details for process node", "cmd": "Get-Process -Name 'node' -ErrorAction SilentlyContinue"}
+{"os": "powershell", "prompt": "create new file D:\\Data\\data.config", "cmd": "New-Item -Path 'D:\\Data\\data.config' -ItemType File -Force"}
+{"os": "linux", "prompt": "Merge file1 and file2 by outputting all lines where the first comma-separated field of both files matches, followed by extra fields in file1 and those in file2", "cmd": "join -t, < <"}
+{"os": "powershell", "prompt": "search for pattern 'ConnectionReset' in all .config files in C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\*.config' | Select-String -Pattern 'ConnectionReset'"}
+{"os": "powershell", "prompt": "find all .bak files in C:\\inetpub\\wwwroot", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot' -Filter '*.bak'"}
+{"os": "powershell", "prompt": "get the 10 largest files in C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -File -Recurse | Sort-Object Length -Descending | Select-Object -First 10"}
+{"os": "linux", "prompt": "List all files in /home/bozo/projects directory tree that were modified within the last day.", "cmd": "find /home/bozo/projects -mtime -1"}
+{"os": "linux", "prompt": "Create a symbolc link in the current directory to \"target\"", "cmd": "ln -s target"}
+{"os": "linux", "prompt": "Monitor system network traffic every 5 seconds for 1 minute and display the results.", "cmd": "!/bin/bash for ((i=0; i<12; i++)); do sar -n DEV 5 6 sleep 5 done"}
+{"os": "powershell", "prompt": "create a new directory named workspace in .\\logs", "cmd": "New-Item -Path '.\\logs\\workspace' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "create an empty file named test.zip in C:\\Backup", "cmd": "New-Item -Path 'C:\\Backup\\test.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "Generate UUIDs for the files from the current directory tree", "cmd": "find -printf \"%P\\0\" -exec uuid -v 4 \\; | sort | awk -F'\\0' '{ print $2 \" \" $1}'"}
+{"os": "linux", "prompt": "Find files in and below the current directory whose names begin with \"not\" and remove one of them", "cmd": "find . -name not\\* | tail -1 | xargs rm"}
+{"os": "powershell", "prompt": "reboot service LanmanServer", "cmd": "Restart-Service -Name 'LanmanServer' -Force"}
+{"os": "linux", "prompt": "Find all directories containing 'linux' in their names under '/root' directory tree", "cmd": "find /root -type d -iname \"*linux*\""}
+{"os": "powershell", "prompt": "list .txt files inside C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -Filter '*.txt'"}
+{"os": "powershell", "prompt": "get folder list in C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup' -Directory"}
+{"os": "powershell", "prompt": "create new file D:\\Data\\output.json", "cmd": "New-Item -Path 'D:\\Data\\output.json' -ItemType File -Force"}
+{"os": "linux", "prompt": "Find files in the /var/log folder which were modified modified 2 weeks ago", "cmd": "find /var/log/ -mtime +7 -mtime -8"}
+{"os": "powershell", "prompt": "search for pattern 'Exception' in all .log files in D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data\\*.log' | Select-String -Pattern 'Exception'"}
+{"os": "linux", "prompt": "Replace all occurrence of \"subdomainA.example.com\" with \"subdomainB.example.com\" in all files under the current directory and below", "cmd": "find . -type f -print0 | xargs -0 perl -i.bak -pe 's/subdomainA\\.example\\.com/subdomainB.example.com/g'"}
+{"os": "powershell", "prompt": "create new file C:\\inetpub\\wwwroot\\test.bak", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\test.bak' -ItemType File -Force"}
+{"os": "linux", "prompt": "Return 0 if at least one \"abc\" file in the current directory tree contains text \"xyz\"", "cmd": "find . -name 'abc' -type f -exec grep -q xyz {} +"}
+{"os": "powershell", "prompt": "find text '404' in .\\logs *.zip", "cmd": "Get-ChildItem -Path '.\\logs\\*.zip' | Select-String -Pattern '404'"}
+{"os": "linux", "prompt": "Get the disk space used by all *.txt files/directories under current directory", "cmd": "find . -iname \"*.txt\" -exec du -b {} + | awk '{total += $1} END {print total}'"}
+{"os": "powershell", "prompt": "create an empty file named output.zip in .\\logs", "cmd": "New-Item -Path '.\\logs\\output.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "List the largest file in long list format of all the files under the current directory", "cmd": "find . -type f -ls | sort -nrk7 | head -1 #unformatted"}
+{"os": "linux", "prompt": "Find all files/directories that belong to the group 'accts' under '/apps' directory tree", "cmd": "find /apps -group accts -print"}
+{"os": "powershell", "prompt": "make directory C:\\Logs\\dist", "cmd": "New-Item -Path 'C:\\Logs\\dist' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "Measure the disk space taken up by all *.txt files in directory trees folder1 and folder2", "cmd": "find folder1 folder2 -iname '*.txt' -print0 | du --files0-from - -c -s | tail -1"}
+{"os": "powershell", "prompt": "start service MySQL", "cmd": "Start-Service -Name 'MySQL'"}
+{"os": "linux", "prompt": "Count files accessed more than a month ago", "cmd": "find . -atime +30 -exec ls \\; | wc -l"}
+{"os": "powershell", "prompt": "touch file report.txt at C:\\ProgramData\\App", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\report.txt' -ItemType File -Force"}
+{"os": "linux", "prompt": "delete all files that have the extension \"bam\" in current directory", "cmd": "find . -name \"*.bam\" | xargs rm"}
+{"os": "linux", "prompt": "Print A record for domain 'domain.' from 8.8.8.8 nameserver", "cmd": "dig @8.8.8.8 domain. a"}
+{"os": "linux", "prompt": "Runs 'mpv' command for each *.mpv and *.flv file in a current folder.", "cmd": "mpv --no-audio \\`ls ~/Down/other/*.{mp4,flv} --color=never\\`"}
+{"os": "linux", "prompt": "Set timestamp of all PHP files in current directory to date specified.", "cmd": "touch -d '30 August 2013' *.php"}
+{"os": "powershell", "prompt": "extract zip file to D:\\Data", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'D:\\Data' -Force"}
+{"os": "powershell", "prompt": "compress folder .\\data into a zip archive", "cmd": "Compress-Archive -Path '.\\data\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "List all regular files from the current directory tree that were modified less than 60 minutes ago", "cmd": "find . -mmin -60 -type f | xargs ls -l"}
+{"os": "powershell", "prompt": "terminate process with process id 1248", "cmd": "Stop-Process -Id 1248 -Force"}
+{"os": "powershell", "prompt": "check if port 80 is open on 192.168.1.1", "cmd": "Test-NetConnection -ComputerName '192.168.1.1' -Port 80"}
+{"os": "powershell", "prompt": "find text 'Unauthorized' in .\\data *.xml", "cmd": "Get-ChildItem -Path '.\\data\\*.xml' | Select-String -Pattern 'Unauthorized'"}
+{"os": "linux", "prompt": "display all the files in current folder which have been changed in the last 24 hours", "cmd": "find . -ctime -1 -print"}
+{"os": "linux", "prompt": "Read a line from standard input with prompt \"Enter your age:\\n\"", "cmd": "read -p $'Enter your age:\\n'"}
+{"os": "linux", "prompt": "Delete all lines matching \"pattern to match\" in \"./infile\" and make a backup with suffix \".bak\"", "cmd": "sed -i.bak '/pattern to match/d' ./infile"}
+{"os": "linux", "prompt": "set alias \"py\" for command \"python2.5 -O\"", "cmd": "alias py='python2.5 -O'"}
+{"os": "linux", "prompt": "Get the total size in bytes of all files in the current directory tree", "cmd": "find . -type f | xargs stat --format=%s | awk '{s+=$1} END {print s}'"}
+{"os": "linux", "prompt": "Read first column of each row, find all other first columns which have a difference less than 10, and append that comma separated list to the row", "cmd": "awk 'FNR==NR { array[$1]++; next } { n = asorti; for if line = sort[i]; print $0, line; line = \"\" }' file.txt{,} | column -t"}
+{"os": "powershell", "prompt": "monitor C:\\Backup\\app.config in real time", "cmd": "Get-Content -Path 'C:\\Backup\\app.config' -Wait -Tail 20"}
+{"os": "linux", "prompt": "find all the regular/normal files in the current folder which belong to the group \"flossblog\"", "cmd": "find . -group flossblog -type f"}
+{"os": "powershell", "prompt": "tail 50 lines from C:\\Logs\\app.log", "cmd": "Get-Content -Path 'C:\\Logs\\app.log' -Tail 50"}
+{"os": "powershell", "prompt": "view the first 25 lines of C:\\Projects\\app.zip", "cmd": "Get-Content -Path 'C:\\Projects\\app.zip' -TotalCount 25"}
+{"os": "powershell", "prompt": "bounce service spooler", "cmd": "Restart-Service -Name 'spooler' -Force"}
+{"os": "powershell", "prompt": "delete all .xml files in D:\\Data", "cmd": "Remove-Item -Path 'D:\\Data\\*.xml' -Force"}
+{"os": "powershell", "prompt": "make directory D:\\Data\\build", "cmd": "New-Item -Path 'D:\\Data\\build' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "send HTTP GET request to https://smtp.office365.com/api/v1/health", "cmd": "Invoke-RestMethod -Uri 'https://smtp.office365.com/api/v1/health' -Method Get"}
+{"os": "linux", "prompt": "Display all regular files under current directory tree ignoring files in './dir1' and './dir2' directories", "cmd": "find . -type f |sed '/.\\/dir[12]\\/[^/]*$/d'"}
+{"os": "powershell", "prompt": "search for 'ConnectionReset' in C:\\Backup\\app.log", "cmd": "Select-String -Path 'C:\\Backup\\app.log' -Pattern 'ConnectionReset' -CaseSensitive"}
+{"os": "linux", "prompt": "Search for the regex \"+\\S\\+\" in file 'in.txt' and print the matches by replacing newlines with comma", "cmd": "grep -o \"+\\S\\+\" in.txt | tr '\\n' ','"}
+{"os": "linux", "prompt": "Find all directories under /fss/fin", "cmd": "find /fss/fin -type d"}
+{"os": "linux", "prompt": "Find all files in entire file system which are larger than 20000KB and show file name/path followed by its size", "cmd": "find / -type f -size +20000k -exec ls -lh {} \\; | awk '{ print $8 \": \" $5 }'"}
+{"os": "linux", "prompt": "Print the list of top 10 largest files in a directory.", "cmd": "!/bin/bash find /path/to/your/directory -type f -exec du -h {} + | sort -rh | head -n 10"}
+{"os": "linux", "prompt": "display all the ip addresses in all the files that are present in /etc folder", "cmd": "find /etc -exec grep '[0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*' {} \\;"}
+{"os": "powershell", "prompt": "ping host dns.google", "cmd": "Test-Connection -TargetName 'dns.google' -Count 4"}
+{"os": "linux", "prompt": "display the contents of all the regular files in the current folder and save the output to out.txt", "cmd": "find . -type f -exec cat {} \\; > out.txt"}
+{"os": "linux", "prompt": "Remove junk files modified more than 31 days ago recursively", "cmd": "find /path/to/junk/files -type f -mtime +31 -exec rm -f {} \\;"}
+{"os": "powershell", "prompt": "find text 'ERROR' in D:\\Data *.json", "cmd": "Get-ChildItem -Path 'D:\\Data\\*.json' | Select-String -Pattern 'ERROR'"}
+{"os": "powershell", "prompt": "block until firefox terminates", "cmd": "Wait-Process -Name 'firefox'"}
+{"os": "powershell", "prompt": "verify connectivity to api.github.com:8080", "cmd": "Test-NetConnection -ComputerName 'api.github.com' -Port 8080"}
+{"os": "linux", "prompt": "List the combined path of the current working directory and \"file.txt\"", "cmd": "ls \"`pwd`/file.txt\""}
+{"os": "powershell", "prompt": "touch file config.zip at .\\data", "cmd": "New-Item -Path '.\\data\\config.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "Search the current directory tree for all files matching regular expression \".*\\.rb$\"", "cmd": "find . -regex \".*\\\\.rb$\""}
+{"os": "linux", "prompt": "Find all files under images directory", "cmd": "find images -type f"}
+{"os": "powershell", "prompt": "touch file report.config at .\\logs", "cmd": "New-Item -Path '.\\logs\\report.config' -ItemType File -Force"}
+{"os": "linux", "prompt": "Search for \"facebook\\|xing\\|linkedin\\|googleplus\" in \"access-log.txt\" and print a count of the unique entries", "cmd": "grep -ioh \"facebook\\|xing\\|linkedin\\|googleplus\" access-log.txt | sort | uniq -c | sort -n"}
+{"os": "linux", "prompt": "Merge data in file1 and file2 where second field is common in both files", "cmd": "join -j2 <(sort -k2 file1) <(sort -k2 file2)"}
+{"os": "linux", "prompt": "Find a single file called FindCommandExamples.txt under current directory and remove it", "cmd": "find . -type f -name \"FindCommandExamples.txt\" -exec rm -f {} \\;"}
+{"os": "powershell", "prompt": "verify connectivity to 192.168.1.1:80", "cmd": "Test-NetConnection -ComputerName '192.168.1.1' -Port 80"}
+{"os": "powershell", "prompt": "permanently add C:\\tools to machine system PATH", "cmd": "[Environment]::SetEnvironmentVariable('Path', $env:PATH + ';C:\\tools', 'Machine')"}
+{"os": "linux", "prompt": "Print \"I am USER and the program named ls is in LS_PATH\" where \"USER\" is the current user's user name and \"LS_PATH\" is the full path of the command \"ls\"", "cmd": "echo I am $ and the program named ls is in $."}
+{"os": "linux", "prompt": "display all the files in the current folder which have are bigger than 1KB", "cmd": "find . -size +1024 -print"}
+{"os": "linux", "prompt": "Find all files/directories greater than 100MB and print their list along with their size in /root/big.txt file", "cmd": "find \\"}
+{"os": "powershell", "prompt": "remove package Microsoft.VisualStudioCode via winget", "cmd": "winget uninstall --id 'Microsoft.VisualStudioCode'"}
+{"os": "powershell", "prompt": "get folder list in .\\data", "cmd": "Get-ChildItem -Path '.\\data' -Directory"}
+{"os": "linux", "prompt": "Print unique lines of sorted \"File 1\" compared with sorted \"File 2\"", "cmd": "comm -23 \"File 1\" \"File 2\""}
+{"os": "linux", "prompt": "Adjust the timestamp of 'filename' by subtracting 2 hours from it.", "cmd": "touch -d \"$(date -r filename) - 2 hours\" filename"}
+{"os": "powershell", "prompt": "touch file output.txt at .\\data", "cmd": "New-Item -Path '.\\data\\output.txt' -ItemType File -Force"}
+{"os": "linux", "prompt": "Split \"list.txt\" into files with at most 600 lines each", "cmd": "split -l 600 list.txt"}
+{"os": "powershell", "prompt": "traceroute to host 127.0.0.1", "cmd": "Test-NetConnection -ComputerName '127.0.0.1' -TraceRoute"}
+{"os": "powershell", "prompt": "restart service spooler", "cmd": "Restart-Service -Name 'spooler' -Force"}
+{"os": "powershell", "prompt": "purge .bak files under D:\\Data", "cmd": "Remove-Item -Path 'D:\\Data\\*.bak' -Force"}
+{"os": "linux", "prompt": "search for the file centos in /usr folder", "cmd": "find /usr -iname centos"}
+{"os": "powershell", "prompt": "search for .zip files in C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.zip'"}
+{"os": "powershell", "prompt": "list .bak files inside C:\\inetpub\\wwwroot", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot' -Filter '*.bak'"}
+{"os": "linux", "prompt": "list all zero-length files under the current directory", "cmd": "find . -empty -exec ls {} \\;"}
+{"os": "linux", "prompt": "delete all the regular files in the temp folder which have not been modified in the last 24 hours", "cmd": "find /tmp/ -type f -mtime +1 -exec rm {} \\;"}
+{"os": "powershell", "prompt": "tail -f .\\logs\\app.json in powershell", "cmd": "Get-Content -Path '.\\logs\\app.json' -Wait -Tail 20"}
+{"os": "powershell", "prompt": "create an empty file named test.ps1 in C:\\inetpub\\wwwroot", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\test.ps1' -ItemType File -Force"}
+{"os": "powershell", "prompt": "verify connectivity to api.github.com:443", "cmd": "Test-NetConnection -ComputerName 'api.github.com' -Port 443"}
+{"os": "linux", "prompt": "date --date=\"222 days ago\" +\"%m\"", "cmd": "Prints what month it was 222 days ago"}
+{"os": "linux", "prompt": "Search the current directory recursively for files containing \"needle text\"", "cmd": "find . -type f -print0 | xargs -0 grep -IZl . | xargs -0 grep \"needle text\""}
+{"os": "powershell", "prompt": "grep for 'Exception' inside file C:\\ProgramData\\App\\app.log", "cmd": "Select-String -Path 'C:\\ProgramData\\App\\app.log' -Pattern 'Exception' -CaseSensitive"}
+{"os": "powershell", "prompt": "create an empty file named sample.csv in C:\\Backup", "cmd": "New-Item -Path 'C:\\Backup\\sample.csv' -ItemType File -Force"}
+{"os": "linux", "prompt": "find all the mp3 files in the file system", "cmd": "find / -iname \"*.mp3\" -print"}
+{"os": "linux", "prompt": "Remove all files in and below the current directory whose names begin with \"not\"", "cmd": "find . -name not\\* -print0 | xargs -0 rm"}
+{"os": "linux", "prompt": "Find all files under /home/myfolder that match the regex 'abc.*def.*ghi' in their contents", "cmd": "find /home/myfolder -type f -print0 | xargs -0 grep -l -E 'abc.*def.*ghi'"}
+{"os": "powershell", "prompt": "call REST api endpoint https://smtp.office365.com/api/v1/health", "cmd": "Invoke-RestMethod -Uri 'https://smtp.office365.com/api/v1/health' -Method Get"}
+{"os": "powershell", "prompt": "unzip archive C:\\Backup\\archive.zip to C:\\Projects", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Projects' -Force"}
+{"os": "linux", "prompt": "Find writable regular files omitting those that contain sites/default/files in their names", "cmd": "find . -type f -writable | grep -v sites/default/files"}
+{"os": "powershell", "prompt": "create new file D:\\Data\\test.csv", "cmd": "New-Item -Path 'D:\\Data\\test.csv' -ItemType File -Force"}
+{"os": "powershell", "prompt": "unzip archive C:\\Backup\\archive.zip to D:\\Data", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'D:\\Data' -Force"}
+{"os": "linux", "prompt": "Find files/directories not changed in two weeks under /dev/shm", "cmd": "find /dev/shm /tmp -type f -ctime +14"}
+{"os": "linux", "prompt": "Find files/directories with exactly read,write and execute permission for all (owner, group and others) under /path", "cmd": "find /path -perm 777"}
+{"os": "linux", "prompt": "Find file `hosts'", "cmd": "find /etc -name hosts"}
+{"os": "linux", "prompt": "search for all the text files and display the long listing of these files from that directory", "cmd": "find . -name \"*.txt\" -execdir ls -la {} \";\""}
+{"os": "linux", "prompt": "list regular files ending in .mbox", "cmd": "find . -type f -wholename \\*.mbox"}
+{"os": "linux", "prompt": "Write \"ee\" to standard output and as input to command \"foo\"", "cmd": "echo 'ee' | tee /dev/tty | foo"}
+{"os": "linux", "prompt": "Mount \"/tmp/loop.img\" on \"/mnt/image\" as a loop back device", "cmd": "mount /tmp/loop.img /mnt/image -o loop"}
+{"os": "linux", "prompt": "Find all directories under /directory-path and change their permission to 2755", "cmd": "find /directory-path -type d -exec sudo chmod 2775 {} +"}
+{"os": "linux", "prompt": "Search the current directory tree for regular .mkv files", "cmd": "find . -type f -name \"*.mkv\""}
+{"os": "linux", "prompt": "Find files/directories that have not been modified in the last one day in directories or files taken from the glob pattern '/tmp/test/*'", "cmd": "find /tmp/test/* -daystart -mtime +1"}
+{"os": "powershell", "prompt": "forcefully remove directory C:\\Backup recursively", "cmd": "Remove-Item -Path 'C:\\Backup' -Recurse -Force"}
+{"os": "linux", "prompt": "Prints list of user 'myuser' groups in a format: 'groups: [comma-separated groups list]'.", "cmd": "echo \"groups: [ $(groups myuser | sed -e 's/.\\+\\s\\+:\\s\\+\\/\\1/g' -e 's/\\/, /g') ]\""}
+{"os": "powershell", "prompt": "find process listening on port 5432", "cmd": "Get-NetTCPConnection -LocalPort 5432 -ErrorAction SilentlyContinue"}
+{"os": "powershell", "prompt": "extract zip file to C:\\Projects", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Projects' -Force"}
+{"os": "linux", "prompt": "Prints current directory name", "cmd": "pwd | grep -o \"\\w*-*$\""}
+{"os": "powershell", "prompt": "list .ps1 files inside C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.ps1'"}
+{"os": "powershell", "prompt": "reboot service spooler", "cmd": "Restart-Service -Name 'spooler' -Force"}
+{"os": "powershell", "prompt": "remove all .log files from C:\\inetpub\\wwwroot", "cmd": "Remove-Item -Path 'C:\\inetpub\\wwwroot\\*.log' -Force"}
+{"os": "powershell", "prompt": "tail 50 lines from C:\\ProgramData\\App\\app.bak", "cmd": "Get-Content -Path 'C:\\ProgramData\\App\\app.bak' -Tail 50"}
+{"os": "powershell", "prompt": "list all files in C:\\Temp recursively", "cmd": "Get-ChildItem -Path 'C:\\Temp' -Recurse"}
+{"os": "powershell", "prompt": "read the last 50 lines of .\\data\\app.json", "cmd": "Get-Content -Path '.\\data\\app.json' -Tail 50"}
+{"os": "linux", "prompt": "find all regular/normal files in the current folder", "cmd": "find -type f"}
+{"os": "linux", "prompt": "For each line whose first field is the same in file1 and file2, output the common first field followed by all other fields in file1 and file2.", "cmd": "join -j1 file2 file1"}
+{"os": "linux", "prompt": "Split \"<file_name>\" into files of at most 1024 MiB in size", "cmd": "split -b 1024m <file_name>"}
+{"os": "linux", "prompt": "Give all directories in the /path/to/base/dir tree read and execute privileges", "cmd": "find /path/to/base/dir -type d -exec chmod 755 {} +"}
+{"os": "linux", "prompt": "find not case sensitive all directories that names are 'apt'", "cmd": "find / -type d -iname \"apt\""}
+{"os": "linux", "prompt": "Archive all filepattern-*2009* files/directories under data/ into 2009.tar", "cmd": "find data/ -name filepattern-*2009* -exec tar uf 2009.tar {} ;"}
+{"os": "powershell", "prompt": "find process listening on port 3306", "cmd": "Get-NetTCPConnection -LocalPort 3306 -ErrorAction SilentlyContinue"}
+{"os": "linux", "prompt": "display all the files in the folder a", "cmd": "find a"}
+{"os": "powershell", "prompt": "lookup dns for domain microsoft.com", "cmd": "Resolve-DnsName -Name 'microsoft.com'"}
+{"os": "linux", "prompt": "Find all files that were last modified less than7 days ago under /home", "cmd": "find /home -mtime -7"}
+{"os": "linux", "prompt": "Rename uppercase file or folder name $1 to lower case name", "cmd": "mv $1 `echo $1 | tr '[:upper:]' '[:lower:]'`"}
+{"os": "linux", "prompt": "Recursively finds all files with any cased text \"Text\" in a current folder, and precedes found string with its number in file.", "cmd": "grep -inr \"Text\" folder/to/be/searched/"}
+{"os": "linux", "prompt": "Find all files/directories named 'photo.jpg' under current directory tree", "cmd": "find . -iname \"photo.jpg\""}
+{"os": "powershell", "prompt": "make directory C:\\Backup\\output", "cmd": "New-Item -Path 'C:\\Backup\\output' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "Execute \"ls -l\" every 0.5 seconds", "cmd": "watch -n 0.5 ls -l"}
+{"os": "powershell", "prompt": "test existence of C:\\ProgramData\\App\\config.json", "cmd": "Test-Path -Path 'C:\\ProgramData\\App\\config.json'"}
+{"os": "linux", "prompt": "Change the permissions of all regular files whose names end with .mp3 in the directory tree /var/ftp/mp3", "cmd": "find /var/ftp/mp3 -name '*.mp3' -type f -exec chmod 644 {} \\;"}
+{"os": "linux", "prompt": "Delete all files under current directory tree with '.$1' extension where $1 expands as the first positional parameter", "cmd": "find . -name \"*.$1\" -exec rm {} \\;"}
+{"os": "powershell", "prompt": "purge .zip files under .\\logs", "cmd": "Remove-Item -Path '.\\logs\\*.zip' -Force"}
+{"os": "linux", "prompt": "Installs locally located 'packagename.arch.rpm' package, ignoring GPG checking.", "cmd": "yum --nogpgcheck localinstall packagename.arch.rpm"}
+{"os": "linux", "prompt": "take all files in the directory \" /path/to/files\" and provide them as input to the script file truncate.sh", "cmd": "find /path/to/files -exec truncate.sh {} \\;"}
+{"os": "linux", "prompt": "Merge colon-separated information from file1 and file2 where first field of both files matches", "cmd": "join -t: <(sort file1) <(sort file2)"}
+{"os": "powershell", "prompt": "query service wuauserv", "cmd": "Get-Service -Name 'wuauserv'"}
+{"os": "linux", "prompt": "For each line which has a common first field in test.1 and test.2, output the first 2 fields of test.2 and the field 2 and 3 of test.1", "cmd": "join -j1 -o 2.1,2.2,1.2,1.3 <(sort test.1) <(sort test.2)"}
+{"os": "powershell", "prompt": "search for .config files in C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -Filter '*.config'"}
+{"os": "powershell", "prompt": "copy file C:\\Logs\\source.config to C:\\Logs\\dest.config", "cmd": "Copy-Item -Path 'C:\\Logs\\source.config' -Destination 'C:\\Logs\\dest.config' -Force"}
+{"os": "linux", "prompt": "List the files/directories under /PATH_to_SEARCH, do a numeric sort and print the ones with different inode numbers", "cmd": "find /PATH_to_SEARCH -ls | sort -n | awk '!seen[$1]++'"}
+{"os": "powershell", "prompt": "create an empty file named sample.xml in .\\data", "cmd": "New-Item -Path '.\\data\\sample.xml' -ItemType File -Force"}
+{"os": "powershell", "prompt": "check if port 80 is open on smtp.office365.com", "cmd": "Test-NetConnection -ComputerName 'smtp.office365.com' -Port 80"}
+{"os": "powershell", "prompt": "view the first 25 lines of C:\\Logs\\app.bak", "cmd": "Get-Content -Path 'C:\\Logs\\app.bak' -TotalCount 25"}
+{"os": "powershell", "prompt": "create an empty file named report.zip in .\\data", "cmd": "New-Item -Path '.\\data\\report.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "Print a line of 100 '=' characters", "cmd": "head -c 100 < /dev/zero | tr '\\0' '='"}
+{"os": "powershell", "prompt": "read the last 50 lines of C:\\Backup\\app.xml", "cmd": "Get-Content -Path 'C:\\Backup\\app.xml' -Tail 50"}
+{"os": "linux", "prompt": "Print out the full path name of \"mypathname\" with dots resolved", "cmd": "readlink -ev mypathname"}
+{"os": "linux", "prompt": "Save standard input to variable \"myVar\"", "cmd": "myVar=$"}
+{"os": "powershell", "prompt": "search for pattern 'Exception' in all .bak files in .\\data", "cmd": "Get-ChildItem -Path '.\\data\\*.bak' | Select-String -Pattern 'Exception'"}
+{"os": "powershell", "prompt": "wait for process teams to exit", "cmd": "Wait-Process -Name 'teams'"}
+{"os": "linux", "prompt": "find all the normal/regular files in the current directory and search for the word mail and display the file names", "cmd": "find . -type f -exec grep -il mail"}
+{"os": "powershell", "prompt": "get details for process notepad", "cmd": "Get-Process -Name 'notepad' -ErrorAction SilentlyContinue"}
+{"os": "powershell", "prompt": "find text 'Unauthorized' in C:\\ProgramData\\App *.txt", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\*.txt' | Select-String -Pattern 'Unauthorized'"}
+{"os": "powershell", "prompt": "view the first 25 lines of C:\\Logs\\app.txt", "cmd": "Get-Content -Path 'C:\\Logs\\app.txt' -TotalCount 25"}
+{"os": "powershell", "prompt": "search for 'FATAL' in C:\\Logs\\app.log", "cmd": "Select-String -Path 'C:\\Logs\\app.log' -Pattern 'FATAL' -CaseSensitive"}
+{"os": "powershell", "prompt": "recursively search for .config files in C:\\Projects", "cmd": "Get-ChildItem -Path 'C:\\Projects' -Filter '*.config' -Recurse"}
+{"os": "powershell", "prompt": "uninstall Git.Git using winget", "cmd": "winget uninstall --id 'Git.Git'"}
+{"os": "powershell", "prompt": "query dns for api.github.com", "cmd": "Resolve-DnsName -Name 'api.github.com'"}
+{"os": "linux", "prompt": "List all leaf directories of the current directory tree", "cmd": "find -depth -type d |sed 'h; :b; $b; N; /^\\\\/.*\\n\\1$/ { g; bb }; $ {x; b}; P; D'"}
+{"os": "powershell", "prompt": "create an empty file named sample.bak in D:\\Data", "cmd": "New-Item -Path 'D:\\Data\\sample.bak' -ItemType File -Force"}
+{"os": "linux", "prompt": "display all the directories in the folder /path/to/dest except tmp and cache directories", "cmd": "find /path/to/dest -type d \\ -o \\ -print"}
+{"os": "powershell", "prompt": "tail -f C:\\Temp\\app.json in powershell", "cmd": "Get-Content -Path 'C:\\Temp\\app.json' -Wait -Tail 20"}
+{"os": "powershell", "prompt": "list .config files inside D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -Filter '*.config'"}
+{"os": "linux", "prompt": "Find broken symlinks in current directory", "cmd": "find -L -type l"}
+{"os": "linux", "prompt": "Subtract each column in File2 from matching column in File1, output the result in a similarly formatted table", "cmd": "awk 'FNR==NR { for(i=2;i<=NF;i++) a[$1][i]=$i; next } { for(j=2;j<=NF;j++) $j-=a[$1][j] }1' File2 File1 | rev | column -t | rev"}
+{"os": "linux", "prompt": "Search the current directory tree for the files with extension \"trc\" and remove them if they are more than three days old", "cmd": "find . -name \"*.trc\" -ctime +3 -exec rm -f {} \\;"}
+{"os": "powershell", "prompt": "test connection to github.com on port 21", "cmd": "Test-NetConnection -ComputerName 'github.com' -Port 21"}
+{"os": "powershell", "prompt": "create a new directory named build in C:\\Logs", "cmd": "New-Item -Path 'C:\\Logs\\build' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "Print all filenames in /usr/src except for those that are of the form '*,v' or '.*,v'", "cmd": "find /usr/src -not \\( -name \"*,v\" -o -name \".*,v\" \\) '{}' \\; -print"}
+{"os": "linux", "prompt": "Move all directories in the current directory tree that have been modified in the last day to \"/path/to/target-dir\"", "cmd": "find . -type d -mtime -0 -print0 | xargs -0 mv -t /path/to/target-dir"}
+{"os": "linux", "prompt": "find files under the current directory ending in \"txt\" and list them, or ending in \"html\" but do nothing.", "cmd": "find . -name '*.txt' -print -o -name '*.html'"}
+{"os": "powershell", "prompt": "lookup dns for domain github.com", "cmd": "Resolve-DnsName -Name 'github.com'"}
+{"os": "linux", "prompt": "Split \"${fspec}\" into 6 files with about equal number of lines each and use prefix \"xyzzy.\"", "cmd": "split --number=l/6 ${fspec} xyzzy."}
+{"os": "powershell", "prompt": "bounce service MSSQLSERVER", "cmd": "Restart-Service -Name 'MSSQLSERVER' -Force"}
+{"os": "powershell", "prompt": "test connection to dns.google on port 1433", "cmd": "Test-NetConnection -ComputerName 'dns.google' -Port 1433"}
+{"os": "linux", "prompt": "find all the files in the current folder that end with the word bar", "cmd": "find -name *bar"}
+{"os": "powershell", "prompt": "find text '404' in .\\data *.xml", "cmd": "Get-ChildItem -Path '.\\data\\*.xml' | Select-String -Pattern '404'"}
+{"os": "linux", "prompt": "Recursively set all permissions under \"/whatever/your/directory/is\" to 755", "cmd": "sudo chmod 755 -R /whatever/your/directory/is"}
+{"os": "linux", "prompt": "Print the list of directories residing in the current directory tree", "cmd": "find . -type d -exec ls -ld {} \\;"}
+{"os": "powershell", "prompt": "stop chrome process", "cmd": "Stop-Process -Name 'chrome' -Force"}
+{"os": "powershell", "prompt": "find all .txt files in .\\logs", "cmd": "Get-ChildItem -Path '.\\logs' -Filter '*.txt'"}
+{"os": "linux", "prompt": "Finds users with X session in system and puts the result into USERS variable", "cmd": "USERS=$(awk '/\\/X/ {print $1}' <)"}
+{"os": "linux", "prompt": "Prints process tree of the current command process.", "cmd": "pstree -p $$"}
+{"os": "powershell", "prompt": "is Themes service running", "cmd": "Get-Service -Name 'Themes'"}
+{"os": "powershell", "prompt": "create an empty file named config.zip in C:\\inetpub\\wwwroot", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\config.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "Find all files under the current directory and copy their permissions to the same file in \"../version1\"", "cmd": "find . -type f | xargs -I {} chmod --reference {} ../version1/{}"}
+{"os": "linux", "prompt": "grep from bottom of file", "cmd": "tac your.log | grep stuff"}
+{"os": "linux", "prompt": "Print count of unique lines in all files like 'list_part*'", "cmd": "cat list_part* | sort --unique | wc -l"}
+{"os": "powershell", "prompt": "list all installed chocolatey packages", "cmd": "choco list --local-only"}
+{"os": "powershell", "prompt": "check if port 5432 is open on smtp.office365.com", "cmd": "Test-NetConnection -ComputerName 'smtp.office365.com' -Port 5432"}
+{"os": "powershell", "prompt": "search for 'Unauthorized' in C:\\Backup\\app.log", "cmd": "Select-String -Path 'C:\\Backup\\app.log' -Pattern 'Unauthorized' -CaseSensitive"}
+{"os": "linux", "prompt": "View the man page of find", "cmd": "man find"}
+{"os": "linux", "prompt": "Print each unique line that is duplicated in files \"file1\" and \"file2\" combined", "cmd": "sort file1 file2 | uniq -d"}
+{"os": "linux", "prompt": "Grab the output of \"basename\" (in this case \"stuff\") and echo it to stdout, which basename would do by default anyway.", "cmd": "echo $(basename /foo/bar/stuff)"}
+{"os": "linux", "prompt": "Get the disk space used by all *.txt (case insensitive) files/directories under current directory", "cmd": "find . -iname \"*.txt\" -exec du -b {} + | awk '{total += $1} END {print total}'"}
+{"os": "linux", "prompt": "Find all .gif files in the /var/www directory tree that are between 5 kB and 10 kB in size", "cmd": "find /var/www -name *.gif -size +5k -size -10k"}
+{"os": "linux", "prompt": "Finds strings with dot-separated sequence of numbers, and prints part of that sequence before the second and third dot.", "cmd": "echo \"$f\" | grep -Eo '[0-9]+[.]+[0-9]+[.]?[0-9]?' | cut -d. -f3"}
+{"os": "powershell", "prompt": "find all .zip files in C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -Filter '*.zip'"}
+{"os": "powershell", "prompt": "check if port 3306 is open on 192.168.1.1", "cmd": "Test-NetConnection -ComputerName '192.168.1.1' -Port 3306"}
+{"os": "linux", "prompt": "Create script filesPermissions.sh that restores the original permissions of the regular files in the current directory tree", "cmd": "find . -type f |xargs ls -la| awk '{print \"chmod \"$1\" \"$NF}'>./filesPermissions.sh"}
+{"os": "powershell", "prompt": "test connection to 192.168.1.1 on port 53", "cmd": "Test-NetConnection -ComputerName '192.168.1.1' -Port 53"}
+{"os": "powershell", "prompt": "create an empty file named report.config in C:\\Projects", "cmd": "New-Item -Path 'C:\\Projects\\report.config' -ItemType File -Force"}
+{"os": "powershell", "prompt": "check if port 3389 is open on google.com", "cmd": "Test-NetConnection -ComputerName 'google.com' -Port 3389"}
+{"os": "linux", "prompt": "display all the directories in the folder master-", "cmd": "find master -type d | sort"}
+{"os": "linux", "prompt": "Make directory \"alpha_real\"", "cmd": "mkdir alpha_real"}
+{"os": "linux", "prompt": "Find all test2.h files under current directory", "cmd": "sudo find . -name test2.h"}
+{"os": "powershell", "prompt": "stop code process", "cmd": "Stop-Process -Name 'code' -Force"}
+{"os": "linux", "prompt": "print all files in the current directory and all subdirectories", "cmd": "find ."}
+{"os": "linux", "prompt": "Create a backup of a directory by compressing it with tar.", "cmd": "!/bin/bash backup_dir=\"/path/to/backup\" source_dir=\"/path/to/source\" tar czf $backup_dir/backup_$(date +\"%Y%m%d\").tar.gz $source_dir"}
+{"os": "linux", "prompt": "Read a single character from standard input and save to variable \"y\"", "cmd": "y=$"}
+{"os": "powershell", "prompt": "create a new directory named build in .\\data", "cmd": "New-Item -Path '.\\data\\build' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "find process listening on port 3389", "cmd": "Get-NetTCPConnection -LocalPort 3389 -ErrorAction SilentlyContinue"}
+{"os": "powershell", "prompt": "find all .csv files in .\\data", "cmd": "Get-ChildItem -Path '.\\data' -Filter '*.csv'"}
+{"os": "linux", "prompt": "Monitor system network interface errors every 10 seconds for 1 minute and display the results.", "cmd": "!/bin/bash for ((i=0; i<6; i++)); do sar -n EDEV 10 6 sleep 10 done"}
+{"os": "linux", "prompt": "Find all directories under current directory and set read-write-execute permission for owner, read-execute permission for group and other for those directories", "cmd": "find . -type d -exec chmod u=rwx,g=rx,o=rx {} \\;"}
+{"os": "powershell", "prompt": "lookup dns for domain 192.168.1.1", "cmd": "Resolve-DnsName -Name '192.168.1.1'"}
+{"os": "powershell", "prompt": "lookup MX mail records for domain microsoft.com", "cmd": "Resolve-DnsName -Name 'microsoft.com' -Type MX"}
+{"os": "linux", "prompt": "display the number of lines in all the header files in the current folder", "cmd": "find . -name \"*.h\" -print | xargs wc -l"}
+{"os": "linux", "prompt": "Counts number of occurences of all ip addresses in 'ip_addresses' file, and prints all addresses with number of occurences in a descending order.", "cmd": "cat ip_addresses | sort | uniq -c | sort -nr | awk '{print $2 \" \" $1}'"}
+{"os": "powershell", "prompt": "create new file C:\\Logs\\data.ps1", "cmd": "New-Item -Path 'C:\\Logs\\data.ps1' -ItemType File -Force"}
+{"os": "powershell", "prompt": "ping host api.github.com", "cmd": "Test-Connection -TargetName 'api.github.com' -Count 4"}
+{"os": "powershell", "prompt": "wait for process chrome to exit", "cmd": "Wait-Process -Name 'chrome'"}
+{"os": "linux", "prompt": "Find all files that have wrong permission", "cmd": "find / \\ \\ -ls"}
+{"os": "powershell", "prompt": "remove package Node.js via winget", "cmd": "winget uninstall --id 'Node.js'"}
+{"os": "linux", "prompt": "View lines 116 through 120 of history", "cmd": "history | head -n 120 | tail -n 5"}
+{"os": "powershell", "prompt": "view the first 25 lines of C:\\inetpub\\wwwroot\\app.xml", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\app.xml' -TotalCount 25"}
+{"os": "linux", "prompt": "Make $WEEKS_TO_SAVE+1 directories named \"weekly.N\" where N ranges from 0 to \"$WEEKS_TO_SAVE\"", "cmd": "mkdir -p $"}
+{"os": "linux", "prompt": "Print 7 spaces in a row", "cmd": "yes ' ' | head -7 | tr -d '\\n'"}
+{"os": "linux", "prompt": "Find all regular non-hidden files in the current directory and its subdirectories", "cmd": "find . -not -path '*/\\.*' -type f \\( ! -iname \".*\" \\)"}
+{"os": "linux", "prompt": "Print all lines in file that do not match \"pattern\"", "cmd": "sed -n '/pattern/!p' file"}
+{"os": "powershell", "prompt": "halt service MSSQLSERVER", "cmd": "Stop-Service -Name 'MSSQLSERVER' -Force"}
+{"os": "powershell", "prompt": "search for pattern 'FATAL' in all .xml files in C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp\\*.xml' | Select-String -Pattern 'FATAL'"}
+{"os": "powershell", "prompt": "find all .log files in C:\\Projects", "cmd": "Get-ChildItem -Path 'C:\\Projects' -Filter '*.log'"}
+{"os": "powershell", "prompt": "create new file .\\logs\\test.json", "cmd": "New-Item -Path '.\\logs\\test.json' -ItemType File -Force"}
+{"os": "linux", "prompt": "Find all files/directories in current directory and execute myscript with minimal invocation for those files/directories", "cmd": "find . -exec myscript {} +"}
+{"os": "linux", "prompt": "Find all loadable modules for current kernel, whose name includes \"perf\"", "cmd": "find /lib/modules/`uname -r` -regex .*perf.*"}
+{"os": "powershell", "prompt": "check if port 3306 is open on dns.google", "cmd": "Test-NetConnection -ComputerName 'dns.google' -Port 3306"}
+{"os": "powershell", "prompt": "verify connectivity to dns.google:8080", "cmd": "Test-NetConnection -ComputerName 'dns.google' -Port 8080"}
+{"os": "linux", "prompt": "Find all directories in the /data1/realtime directory tree that were modified within the last 60 minutes", "cmd": "find /data1/realtime -mmin -60 -type d"}
+{"os": "linux", "prompt": "Search for all directories named foo, FOO, or any other combination of uppercase and lowercase characters beneath the current directory.", "cmd": "find . -iname foo -type d"}
+{"os": "powershell", "prompt": "uninstall Node.js using winget", "cmd": "winget uninstall --id 'Node.js'"}
+{"os": "powershell", "prompt": "read the last 50 lines of C:\\Backup\\app.json", "cmd": "Get-Content -Path 'C:\\Backup\\app.json' -Tail 50"}
+{"os": "powershell", "prompt": "find all .txt files in C:\\ProgramData\\App including subdirectories", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.txt' -Recurse"}
+{"os": "powershell", "prompt": "search for pattern 'Timeout' in all .xml files in C:\\inetpub\\wwwroot", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\*.xml' | Select-String -Pattern 'Timeout'"}
+{"os": "powershell", "prompt": "display system process list", "cmd": "Get-Process"}
+{"os": "powershell", "prompt": "purge .csv files under C:\\inetpub\\wwwroot", "cmd": "Remove-Item -Path 'C:\\inetpub\\wwwroot\\*.csv' -Force"}
+{"os": "linux", "prompt": "Find files under '/travelphotos' directory tree which are bigger than 200KB and do not have 2015 in their names", "cmd": "find /travelphotos -type f -size +200k -not -iname \"*2015*\""}
+{"os": "linux", "prompt": "Print \"deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main\" and append to file \"/etc/apt/sources.list\"", "cmd": "echo \"deb http://ppa.launchpad.net/webupd8team/java/ubuntu precise main\" | tee -a /etc/apt/sources.list"}
+{"os": "powershell", "prompt": "get value of PATH environment variable", "cmd": "env:PATH"}
+{"os": "linux", "prompt": "Print the date, then prompt \"Hit ENTER or wait ten seconds\" with a 10 second timeout, then the date again", "cmd": "date ; read -t 10 -p \"Hit ENTER or wait ten seconds\" ; echo ; date"}
+{"os": "powershell", "prompt": "create folder temp at C:\\Logs", "cmd": "New-Item -Path 'C:\\Logs\\temp' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "Find all *.so files/directories under current directory and run myCommand with the file/directory paths as its argument then search for ExpectedResult in the output of myCommand", "cmd": "find . -name *.so -print0 | xargs -0 -I % sh -c 'echo % ; myCommand \"%\" | grep ExpectedResult'"}
+{"os": "linux", "prompt": "Display the content of file \"f\" in home directory if it exists and is executable", "cmd": "cat `which ~/f`"}
+{"os": "linux", "prompt": "Find all files under current directory with 755 permission and change their permission to 644", "cmd": "find . -type f -perm 755 -exec chmod 644 {} \\;"}
+{"os": "linux", "prompt": "display all the files in current folder", "cmd": "find ."}
+{"os": "powershell", "prompt": "find all .log files in C:\\ProgramData\\App including subdirectories", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.log' -Recurse"}
+{"os": "powershell", "prompt": "get current IP addresses of this machine", "cmd": "Get-NetIPAddress -AddressFamily IPv4 | Select-Object IPAddress, InterfaceAlias"}
+{"os": "linux", "prompt": "find all the php files in the current folder", "cmd": "find . -name \\*.php"}
+{"os": "linux", "prompt": "Create a script that monitors system fan speeds and logs any irregularities.", "cmd": "!/bin/bash while true; do sensors | grep 'fan' | awk '{print $2}' > /tmp/fan_speed.txt sleep 300 analyze_fan_speed sleep 300 done"}
+{"os": "linux", "prompt": "delete all files that have the extension \"bam\" in current directory", "cmd": "find . -name \"*.bam\" | xargs rm"}
+{"os": "linux", "prompt": "Find *2011* files and grep for the string 'From: Ralph' in those files", "cmd": "find . -name '*2011*' -print | xargs -n2 grep 'From: Ralph'"}
+{"os": "linux", "prompt": "display the count of all normal/regular files in current directory", "cmd": "find . -type f | wc -l"}
+{"os": "powershell", "prompt": "terminate process with process id 2834", "cmd": "Stop-Process -Id 2834 -Force"}
+{"os": "powershell", "prompt": "view the first 25 lines of C:\\inetpub\\wwwroot\\app.log", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\app.log' -TotalCount 25"}
+{"os": "powershell", "prompt": "tail -f C:\\Temp\\app.bak in powershell", "cmd": "Get-Content -Path 'C:\\Temp\\app.bak' -Wait -Tail 20"}
+{"os": "linux", "prompt": "Print numbers from 1 to the number in variable \"$1\"", "cmd": "seq $1"}
+{"os": "linux", "prompt": "Print unique lines of sorted file \"A.txt\" compared to sorted file \"B.txt\"", "cmd": "comm -2 -3 < <"}
+{"os": "linux", "prompt": "Change the owner of all files in the directory tree \"dir_to_start\" excluding directory \"dir_to_exclude\" to \"owner\"", "cmd": "find dir_to_start -name dir_to_exclude -prune -o -print0 | xargs -0 chown owner"}
+{"os": "powershell", "prompt": "view the first 25 lines of .\\logs\\app.xml", "cmd": "Get-Content -Path '.\\logs\\app.xml' -TotalCount 25"}
+{"os": "powershell", "prompt": "recursively search for .log files in C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup' -Filter '*.log' -Recurse"}
+{"os": "powershell", "prompt": "stop service WinDefend", "cmd": "Stop-Service -Name 'WinDefend' -Force"}
+{"os": "linux", "prompt": "Creates temporary file in a current folder and saves path to it in 'f' variable.", "cmd": "f=`mktemp -p .`"}
+{"os": "powershell", "prompt": "list .txt files inside C:\\inetpub\\wwwroot", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot' -Filter '*.txt'"}
+{"os": "powershell", "prompt": "view the first 25 lines of C:\\Backup\\app.log", "cmd": "Get-Content -Path 'C:\\Backup\\app.log' -TotalCount 25"}
+{"os": "powershell", "prompt": "monitor C:\\Logs\\app.xml in real time", "cmd": "Get-Content -Path 'C:\\Logs\\app.xml' -Wait -Tail 20"}
+{"os": "powershell", "prompt": "verify connectivity to dns.google:22", "cmd": "Test-NetConnection -ComputerName 'dns.google' -Port 22"}
+{"os": "powershell", "prompt": "test connection to 10.0.0.1 on port 3306", "cmd": "Test-NetConnection -ComputerName '10.0.0.1' -Port 3306"}
+{"os": "powershell", "prompt": "purge .xml files under .\\data", "cmd": "Remove-Item -Path '.\\data\\*.xml' -Force"}
+{"os": "linux", "prompt": "find all files starting with capital letter in the current folder", "cmd": "find . — name \"[A‑Z]*\" — print"}
+{"os": "powershell", "prompt": "make directory C:\\inetpub\\wwwroot\\dist", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\dist' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "ping host google.com", "cmd": "Test-Connection -TargetName 'google.com' -Count 4"}
+{"os": "powershell", "prompt": "search for .log files in .\\data", "cmd": "Get-ChildItem -Path '.\\data' -Filter '*.log'"}
+{"os": "powershell", "prompt": "search for pattern 'ConnectionReset' in all .bak files in C:\\Logs", "cmd": "Get-ChildItem -Path 'C:\\Logs\\*.bak' | Select-String -Pattern 'ConnectionReset'"}
+{"os": "linux", "prompt": "Find all files/directories named '.todo' under $STORAGEFOLDER directory tree and print their parent paths", "cmd": "find \"$STORAGEFOLDER\" -name .todo -printf '%h\\n'"}
+{"os": "linux", "prompt": "Look for \"testfile.txt\" in the \"/\" directory and 1 level below", "cmd": "find / -maxdepth 2 -name testfile.txt"}
+{"os": "linux", "prompt": "List each file or directory in the current directory prefixed by its filesize in bytes and sorted from smallest to largest", "cmd": "du -a --max-depth=1 | sort -n"}
+{"os": "powershell", "prompt": "fetch file from https://10.0.0.1/setup.exe and save to C:\\Temp\\setup.exe", "cmd": "Invoke-WebRequest -Uri 'https://10.0.0.1/setup.exe' -OutFile 'C:\\Temp\\setup.exe'"}
+{"os": "linux", "prompt": "Find all files/directories under current directory and put the output into full_backup_dir variable", "cmd": "full_backup_dir=\"`find . -depth -print0`\""}
+{"os": "powershell", "prompt": "make directory .\\data\\temp", "cmd": "New-Item -Path '.\\data\\temp' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "Copy local file \"file\" via ssh to remote \"host\" path \"/directory/\"", "cmd": "rsync -e ssh file host:/directory/."}
+{"os": "powershell", "prompt": "test connection to 10.0.0.1 on port 21", "cmd": "Test-NetConnection -ComputerName '10.0.0.1' -Port 21"}
+{"os": "powershell", "prompt": "create new file C:\\ProgramData\\App\\config.bak", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\config.bak' -ItemType File -Force"}
+{"os": "linux", "prompt": "Remount \"rfs\" filesystem \"/dev/stl12\" on \"/system\" with read and write permission", "cmd": "mount -o rw,remount -t rfs /dev/stl12 /system"}
+{"os": "linux", "prompt": "Changes group ownership of 'public' to 'pub'.", "cmd": "chgrp pub public"}
+{"os": "linux", "prompt": "Back up all *.txt files/directories in new files/directories with a .bak extension in their names under /etc directory", "cmd": "find /etc -name \"*.txt\" | xargs -I {} mv {} {}.bak"}
+{"os": "linux", "prompt": "Mount the directory \"/etc\" on \"/tmp/sarnold/mount_point/\"", "cmd": "mount -obind /etc /tmp/sarnold/mount_point/"}
+{"os": "linux", "prompt": "Get a detailed listing of all symbolic links in /usr/bin starting with \"z\"", "cmd": "find /usr/bin -type l -name \"z*\" -exec ls -l {} \\;"}
+{"os": "linux", "prompt": "Search directory tree `MyApp.app' for directories whose name is 'Headers' and delete them", "cmd": "find MyApp.app -name Headers -type d -delete"}
+{"os": "powershell", "prompt": "read the last 50 lines of C:\\Temp\\app.csv", "cmd": "Get-Content -Path 'C:\\Temp\\app.csv' -Tail 50"}
+{"os": "powershell", "prompt": "block until nginx terminates", "cmd": "Wait-Process -Name 'nginx'"}
+{"os": "powershell", "prompt": "create an empty file named sample.ps1 in C:\\Backup", "cmd": "New-Item -Path 'C:\\Backup\\sample.ps1' -ItemType File -Force"}
+{"os": "linux", "prompt": "Find and uncompress all files in the current directory tree ending in \".csv.gz\"", "cmd": "find . -name '*.csv.gz' -print0 | xargs -0 -n1 gzip -d"}
+{"os": "powershell", "prompt": "read the last 50 lines of C:\\Logs\\app.zip", "cmd": "Get-Content -Path 'C:\\Logs\\app.zip' -Tail 50"}
+{"os": "linux", "prompt": "Delete all files with inode number 804180", "cmd": "find -inum 804180 -exec rm {} \\"}
+{"os": "linux", "prompt": "find the oldest normal file in the current directory", "cmd": "find -type f -printf '%T+ %p\\n' | sort | head -n 1"}
+{"os": "linux", "prompt": "Recursively removes all files and folders named '.svn' in a current folder.", "cmd": "find . -name .svn -exec rm -rf {} \\;"}
+{"os": "powershell", "prompt": "find all .xml files in .\\logs", "cmd": "Get-ChildItem -Path '.\\logs' -Filter '*.xml'"}
+{"os": "linux", "prompt": "find all the directories in current folder and do not search in sub directories and create the same directory structure in another folder", "cmd": "find . -maxdepth 1 -type d -print0 |"}
+{"os": "linux", "prompt": "List all files and directories residing in the current directory and below", "cmd": "find -print0 | xargs -0 ls"}
+{"os": "linux", "prompt": "split all files in directory \"/dev/shm/split/\" into pieces per 1000 lines", "cmd": "find /dev/shm/split/ -type f -exec split -l 1000 {} {} \\;"}
+{"os": "powershell", "prompt": "create an empty file named sample.txt in .\\logs", "cmd": "New-Item -Path '.\\logs\\sample.txt' -ItemType File -Force"}
+{"os": "powershell", "prompt": "list only directories in D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -Directory"}
+{"os": "linux", "prompt": "Search the .java files from the /Applications/ directory tree for TODO lines", "cmd": "find /Applications/ -name \"*.java\" -exec grep -i TODO {} +"}
+{"os": "powershell", "prompt": "list .json files inside C:\\inetpub\\wwwroot", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot' -Filter '*.json'"}
+{"os": "powershell", "prompt": "show top 25 lines of C:\\Temp\\app.zip", "cmd": "Get-Content -Path 'C:\\Temp\\app.zip' -TotalCount 25"}
+{"os": "powershell", "prompt": "view the first 25 lines of .\\data\\app.zip", "cmd": "Get-Content -Path '.\\data\\app.zip' -TotalCount 25"}
+{"os": "linux", "prompt": "find all files in the a direcotry which have been modified in exactly 1 day back", "cmd": "find /home/bozo/projects -mtime 1"}
+{"os": "linux", "prompt": "List all non-empty files under under current directory", "cmd": "find . -type f ! -size 0"}
+{"os": "linux", "prompt": "Print lines in the sorted contents of \"file1\" that are not in the sorted contents of \"file2\"", "cmd": "comm -23 < <"}
+{"os": "linux", "prompt": "Search the file system for regular files whose names are shorter than 25 characters", "cmd": "find / -type f|egrep \"/[^/]{0,24}$\""}
+{"os": "linux", "prompt": "Create a tar archive with all *.java files under the current directory", "cmd": "find . -type f -name \"*.java\" | xargs tar cvf myfile.tar"}
+{"os": "linux", "prompt": "Print the first line of every file matching pattern 'file?B' in the xargstest/ directory tree", "cmd": "find xargstest/ -name 'file?B' | sort | xargs head -n1"}
+{"os": "linux", "prompt": "Print the list of running services on the system.", "cmd": "!/bin/bash service --status-all | grep +"}
+{"os": "powershell", "prompt": "tail -f .\\logs\\app.xml in powershell", "cmd": "Get-Content -Path '.\\logs\\app.xml' -Wait -Tail 20"}
+{"os": "powershell", "prompt": "create folder output at C:\\Projects", "cmd": "New-Item -Path 'C:\\Projects\\output' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "find text '404' in C:\\Logs *.log", "cmd": "Get-ChildItem -Path 'C:\\Logs\\*.log' | Select-String -Pattern '404'"}
+{"os": "powershell", "prompt": "start service LanmanServer", "cmd": "Start-Service -Name 'LanmanServer'"}
+{"os": "powershell", "prompt": "make directory C:\\Temp\\workspace", "cmd": "New-Item -Path 'C:\\Temp\\workspace' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "grep for '404' inside file .\\data\\app.log", "cmd": "Select-String -Path '.\\data\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "linux", "prompt": "Execute \"killall -USR1 dd\" every minute", "cmd": "watch -n 60 killall -USR1 dd"}
+{"os": "powershell", "prompt": "find all .zip files in C:\\Projects including subdirectories", "cmd": "Get-ChildItem -Path 'C:\\Projects' -Filter '*.zip' -Recurse"}
+{"os": "linux", "prompt": "find all the *.conf files under / (root)", "cmd": "find / -name \"*.conf\""}
+{"os": "powershell", "prompt": "touch file data.txt at C:\\Projects", "cmd": "New-Item -Path 'C:\\Projects\\data.txt' -ItemType File -Force"}
+{"os": "linux", "prompt": "Isolate first comma-delimited field of each line in \"file\", discard consecutive duplicates, and search \"file\" for first matching occurrence of that field.", "cmd": "cut -d, -f1 file | uniq | xargs -I{} grep -m 1 \"{}\" file"}
+{"os": "linux", "prompt": "create a symbolic link named \"link\" in directory named as value of the variable $2 to a file that named as result of the command `cd \\`dirname $2\\`; pwd`/`basename $2`", "cmd": "ln -s `cd \\`dirname $2\\`; pwd`/`basename $2` $1/link"}
+{"os": "linux", "prompt": "search in root ( / ) directory downwards all files which have exactly 2 links.", "cmd": "find / -links 2 -print"}
+{"os": "powershell", "prompt": "run python", "cmd": "Start-Process -FilePath 'python'"}
+{"os": "powershell", "prompt": "touch file data.ps1 at C:\\inetpub\\wwwroot", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\data.ps1' -ItemType File -Force"}
+{"os": "powershell", "prompt": "make a copy of .\\logs\\source.config at .\\logs\\dest.config", "cmd": "Copy-Item -Path '.\\logs\\source.config' -Destination '.\\logs\\dest.config' -Force"}
+{"os": "powershell", "prompt": "backup folder C:\\Backup to C:\\Backup\\app", "cmd": "Copy-Item -Path 'C:\\Backup' -Destination 'C:\\Backup\\app' -Recurse -Force"}
+{"os": "powershell", "prompt": "show subfolders in C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup' -Directory"}
+{"os": "powershell", "prompt": "monitor .\\logs\\app.config in real time", "cmd": "Get-Content -Path '.\\logs\\app.config' -Wait -Tail 20"}
+{"os": "powershell", "prompt": "search for 'Unauthorized' in C:\\Temp\\app.log", "cmd": "Select-String -Path 'C:\\Temp\\app.log' -Pattern 'Unauthorized' -CaseSensitive"}
+{"os": "powershell", "prompt": "reboot service WinDefend", "cmd": "Restart-Service -Name 'WinDefend' -Force"}
+{"os": "powershell", "prompt": "remove all .txt files from C:\\Logs", "cmd": "Remove-Item -Path 'C:\\Logs\\*.txt' -Force"}
+{"os": "powershell", "prompt": "check if port 8080 is open on microsoft.com", "cmd": "Test-NetConnection -ComputerName 'microsoft.com' -Port 8080"}
+{"os": "linux", "prompt": "display all the files in the current folder", "cmd": "find . | xargs echo"}
+{"os": "powershell", "prompt": "find text 'FATAL' in D:\\Data *.log", "cmd": "Get-ChildItem -Path 'D:\\Data\\*.log' | Select-String -Pattern 'FATAL'"}
+{"os": "linux", "prompt": "Send SIGWINCH process to current shell, causing it to update the LINES and COLUMNS variables which describe the size of the screen/window in characters.", "cmd": "kill -s WINCH $$"}
+{"os": "powershell", "prompt": "resolve dns records for microsoft.com", "cmd": "Resolve-DnsName -Name 'microsoft.com'"}
+{"os": "powershell", "prompt": "choco install vscode quietly", "cmd": "choco install 'vscode' -y"}
+{"os": "linux", "prompt": "Print the current working directory and the base name of \"$1\"", "cmd": "echo \"$/$\""}
+{"os": "powershell", "prompt": "get details for process powershell", "cmd": "Get-Process -Name 'powershell' -ErrorAction SilentlyContinue"}
+{"os": "powershell", "prompt": "search for .log files in D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -Filter '*.log'"}
+{"os": "powershell", "prompt": "terminate java", "cmd": "Stop-Process -Name 'java' -Force"}
+{"os": "powershell", "prompt": "query service LanmanServer", "cmd": "Get-Service -Name 'LanmanServer'"}
+{"os": "powershell", "prompt": "create an empty file named data.txt in C:\\Temp", "cmd": "New-Item -Path 'C:\\Temp\\data.txt' -ItemType File -Force"}
+{"os": "powershell", "prompt": "check if port 53 is open on api.github.com", "cmd": "Test-NetConnection -ComputerName 'api.github.com' -Port 53"}
+{"os": "linux", "prompt": "print all PIDs of stopped processes", "cmd": "jobs -sl | awk '{print $2}'"}
+{"os": "powershell", "prompt": "grep for 'Timeout' inside file .\\data\\app.log", "cmd": "Select-String -Path '.\\data\\app.log' -Pattern 'Timeout' -CaseSensitive"}
+{"os": "powershell", "prompt": "make directory .\\data\\archive", "cmd": "New-Item -Path '.\\data\\archive' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "List all files in /var/www and below that have changed in the last 10 minutes", "cmd": "find /var/www -cmin -10 -printf \"%c %pn\""}
+{"os": "powershell", "prompt": "read the last 50 lines of C:\\inetpub\\wwwroot\\app.bak", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\app.bak' -Tail 50"}
+{"os": "linux", "prompt": "Upgrades 'php-mbstring' package, enabling 'remi' repository.", "cmd": "yum --enablerepo=remi upgrade php-mbstring"}
+{"os": "linux", "prompt": "Recursively list contents of the current directory in a tree-like format", "cmd": "tree"}
+{"os": "powershell", "prompt": "remove all .config files from C:\\inetpub\\wwwroot", "cmd": "Remove-Item -Path 'C:\\inetpub\\wwwroot\\*.config' -Force"}
+{"os": "powershell", "prompt": "create an empty file named sample.bak in C:\\Backup", "cmd": "New-Item -Path 'C:\\Backup\\sample.bak' -ItemType File -Force"}
+{"os": "powershell", "prompt": "check if port 3306 is open on microsoft.com", "cmd": "Test-NetConnection -ComputerName 'microsoft.com' -Port 3306"}
+{"os": "linux", "prompt": "Recursively change the owner and group of \"/var/antoniod-data/\" to \"antoniod\"", "cmd": "chown -R antoniod:antoniod /var/antoniod-data/"}
+{"os": "linux", "prompt": "Find all directories under minimum 1 level down the $GIVEN_DIR directory", "cmd": "find \"$GIVEN_DIR\" -type d -mindepth 1"}
+{"os": "linux", "prompt": "Find all TXT files in the current directory and copy them to directory \"$HOME/newdir\"", "cmd": "find \"$HOME\" -name '*.txt' -type f -print0 | xargs -0 cp -ut \"$HOME/newdir\""}
+{"os": "powershell", "prompt": "resolve dns records for api.github.com", "cmd": "Resolve-DnsName -Name 'api.github.com'"}
+{"os": "linux", "prompt": "set alias \"ps\" for command 'screen -d -m okular'", "cmd": "alias -s ps='screen -d -m okular'"}
+{"os": "powershell", "prompt": "recursively search for .ps1 files in C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.ps1' -Recurse"}
+{"os": "linux", "prompt": "find all the files ending with undo in the current folder and calculate the total size of these files", "cmd": "find . -name \"*.undo\" -ls | perl -lane '$t += $F[6]; END{print $t}'"}
+{"os": "linux", "prompt": "Unsets all environment variables.", "cmd": "unset $"}
+{"os": "powershell", "prompt": "verify connectivity to microsoft.com:22", "cmd": "Test-NetConnection -ComputerName 'microsoft.com' -Port 22"}
+{"os": "linux", "prompt": "Delete all files/directories named test under maximum 2 level down the current directory", "cmd": "find . -maxdepth 2 -name \"test\" -exec rm -rf {} \\;"}
+{"os": "powershell", "prompt": "halt service Themes", "cmd": "Stop-Service -Name 'Themes' -Force"}
+{"os": "powershell", "prompt": "launch application code", "cmd": "Start-Process -FilePath 'code'"}
+{"os": "linux", "prompt": "Search the system for files and directories owned by user `admin'", "cmd": "find / -user admin -print"}
+{"os": "powershell", "prompt": "stop java process", "cmd": "Stop-Process -Name 'java' -Force"}
+{"os": "powershell", "prompt": "compress folder D:\\Data into a zip archive", "cmd": "Compress-Archive -Path 'D:\\Data\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "Search for files/directories which have read and write permission for their owner, and group and only read permission for others", "cmd": "find . -perm -664"}
+{"os": "powershell", "prompt": "create an empty file named output.config in C:\\ProgramData\\App", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\output.config' -ItemType File -Force"}
+{"os": "powershell", "prompt": "monitor C:\\Backup\\app.log in real time", "cmd": "Get-Content -Path 'C:\\Backup\\app.log' -Wait -Tail 20"}
+{"os": "linux", "prompt": "find all gif files in the file system", "cmd": "find / -name \"*gif\" -print"}
+{"os": "powershell", "prompt": "show top 25 lines of C:\\Temp\\app.txt", "cmd": "Get-Content -Path 'C:\\Temp\\app.txt' -TotalCount 25"}
+{"os": "powershell", "prompt": "check if port 5432 is open on 127.0.0.1", "cmd": "Test-NetConnection -ComputerName '127.0.0.1' -Port 5432"}
+{"os": "linux", "prompt": "change the group of all the files in the file system which belong to the group with the gid 999", "cmd": "find / -group 999 -exec chgrp NEWGROUP {} \\;"}
+{"os": "linux", "prompt": "Search for the regex 'pattern_to_search' in all files under '/directory/containing/files' and show the matched lines as well as the file names", "cmd": "find /directory/containing/files -type f -exec grep -H 'pattern_to_search' {} +"}
+{"os": "powershell", "prompt": "list .json files inside C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.json'"}
+{"os": "powershell", "prompt": "temporarily add C:\\tools to current session PATH", "cmd": "env:PATH += ';C:\\tools'"}
+{"os": "powershell", "prompt": "shut down WinDefend service", "cmd": "Stop-Service -Name 'WinDefend' -Force"}
+{"os": "powershell", "prompt": "reboot service MSSQLSERVER", "cmd": "Restart-Service -Name 'MSSQLSERVER' -Force"}
+{"os": "powershell", "prompt": "verify connectivity to microsoft.com:1433", "cmd": "Test-NetConnection -ComputerName 'microsoft.com' -Port 1433"}
+{"os": "linux", "prompt": "Find all *.sql files in maximum 1 level down the current directory, process it with sed and then send the output to a mysql command", "cmd": "find -maxdepth 1 -name '*.sql' -exec cat '{}' \\; | sed -e 's/ , );/1,1);/g' | mysql -D ootp"}
+{"os": "powershell", "prompt": "find winget package Git.Git", "cmd": "winget search 'Git.Git'"}
+{"os": "linux", "prompt": "Search /usr/bin for regular files that have been modified within the last 10 days", "cmd": "find /usr/bin -type f -mtime -10"}
+{"os": "linux", "prompt": "display all files which have been modified between two dates in current folder", "cmd": "find . -type f -newermt \"2014-01-01\" ! -newermt \"2014-06-01\""}
+{"os": "powershell", "prompt": "find all .json files in C:\\ProgramData\\App including subdirectories", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.json' -Recurse"}
+{"os": "linux", "prompt": "Delete all files that have not been accessed in the last 30 days", "cmd": "find . -type f -atime +30 -exec rm {} \\;"}
+{"os": "linux", "prompt": "Search the current directory and all of its sub-directory for any PDF files being careful to prevent the shell from expanding anything in '*.pdf' before it'ss passed to find.", "cmd": "find . -name '*.pdf' -print"}
+{"os": "linux", "prompt": "Join lines in file \"aa\" with lines in file \"bb\" if the lines share a common first word and sort the result numerically", "cmd": "join < < | sort -k1,1n"}
+{"os": "powershell", "prompt": "list all files in C:\\Logs recursively", "cmd": "Get-ChildItem -Path 'C:\\Logs' -Recurse"}
+{"os": "powershell", "prompt": "search for .txt files in C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.txt'"}
+{"os": "powershell", "prompt": "view the first 25 lines of .\\data\\app.json", "cmd": "Get-Content -Path '.\\data\\app.json' -TotalCount 25"}
+{"os": "linux", "prompt": "Change directory to the current user's home directory", "cmd": "cd /home/`whoami`"}
+{"os": "powershell", "prompt": "get file listing for D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -File"}
+{"os": "powershell", "prompt": "create an empty file named report.zip in C:\\ProgramData\\App", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\report.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "Copy the entire directory tree under t1 to t2, do not create a containing t1 directory in t2.", "cmd": "cp -R t1/ t2"}
+{"os": "linux", "prompt": "find all the cpp files in the current folder", "cmd": "find . -iname '*.cpp' -print"}
+{"os": "powershell", "prompt": "create new file C:\\ProgramData\\App\\report.zip", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\report.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "Find all files/directories under current directory and print their paths", "cmd": "find . -exec echo {} \\;"}
+{"os": "linux", "prompt": "Find all broken symlinks under current directory", "cmd": "find -type l -xtype l"}
+{"os": "powershell", "prompt": "search for 'FATAL' in C:\\ProgramData\\App\\app.log", "cmd": "Select-String -Path 'C:\\ProgramData\\App\\app.log' -Pattern 'FATAL' -CaseSensitive"}

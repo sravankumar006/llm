@@ -1,0 +1,19 @@
+# GPU / Colab Training Requirements
+# Note: Google Colab pre-installs compatible CUDA PyTorch builds.
+# This file pins runtime libraries for model training, distributed/mixed-precision training, and tokenization.
+
+# Deep Learning & Distributed Training
+torch>=2.1.0
+accelerate>=0.25.0
+
+# Numerical Computing & Tokenization
+numpy>=1.24.0,<2.0.0
+tiktoken>=0.5.0
+transformers>=4.35.0
+
+# Dataset Management & Metrics
+datasets>=2.14.0
+tqdm>=4.66.0
+
+# Experiment Tracking (Optional / Recommended for training loss tracking)
+wandb>=0.16.0
