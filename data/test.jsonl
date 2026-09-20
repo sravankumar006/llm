@@ -1,0 +1,1098 @@
+{"os": "linux", "prompt": "monitor docker logs for node", "cmd": "docker logs -f --tail 20 node"}
+{"os": "linux", "prompt": "get response headers for google.com", "cmd": "curl -I https://google.com"}
+{"os": "linux", "prompt": "monitor the end of /usr/local/bin/app.yml with 10 lines", "cmd": "tail -n 10 -f /usr/local/bin/app.yml"}
+{"os": "linux", "prompt": "free port 54708 and stop its process", "cmd": "kill -9 $(lsof -t -i:54708)"}
+{"os": "powershell", "prompt": "kill process by pid 61612", "cmd": "Stop-Process -Id 61612 -Force"}
+{"os": "powershell", "prompt": "check windows service state for w32time", "cmd": "Get-Service -Name 'w32time'"}
+{"os": "linux", "prompt": "verify connection to smtp.office365.com with 10 pings", "cmd": "ping -c 10 smtp.office365.com"}
+{"os": "powershell", "prompt": "check reachability of port 3306 on 127.0.0.1", "cmd": "Test-NetConnection -ComputerName '127.0.0.1' -Port 3306"}
+{"os": "linux", "prompt": "how many times does 'ConnectionReset' occur in ./app.log", "cmd": "grep -c 'ConnectionReset' ./app.log"}
+{"os": "powershell", "prompt": "follow docker logs of firefox-daemon", "cmd": "docker logs -f --tail 75 firefox-daemon"}
+{"os": "powershell", "prompt": "find large files greater than 4096MB in C:\\Projects\\Tests", "cmd": "Get-ChildItem -Path 'C:\\Projects\\Tests' -File -Recurse | Where-Object { $_.Length -gt 4096MB }"}
+{"os": "linux", "prompt": "invert match for 'ConnectionReset' in /etc/data/app.log", "cmd": "grep -v 'ConnectionReset' /etc/data/app.log"}
+{"os": "linux", "prompt": "verify connection to cloudflare.com with 50 pings", "cmd": "ping -c 50 cloudflare.com"}
+{"os": "linux", "prompt": "inspect bits daemon status", "cmd": "systemctl status bits"}
+{"os": "powershell", "prompt": "clean up .py files in C:\\Logs\\Cache", "cmd": "Remove-Item -Path 'C:\\Logs\\Cache\\*.py' -Force"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Temp\\App\\app.json", "cmd": "Get-Content -Path 'C:\\Temp\\App\\app.json' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "set executable bit on /var/log/src/run.sh", "cmd": "chmod +x /var/log/src/run.sh"}
+{"os": "linux", "prompt": "invert match for 'Timeout' in /opt/app.log", "cmd": "grep -v 'Timeout' /opt/app.log"}
+{"os": "powershell", "prompt": "find large files greater than 20MB in .\\data\\Temp", "cmd": "Get-ChildItem -Path '.\\data\\Temp' -File -Recurse | Where-Object { $_.Length -gt 20MB }"}
+{"os": "linux", "prompt": "find large files over 100MB in /home/user/backup", "cmd": "find /home/user/backup -type f -size +100M"}
+{"os": "linux", "prompt": "archive /var/log/cache with gzip compression", "cmd": "tar -czvf archive.tar.gz /var/log/cache"}
+{"os": "powershell", "prompt": "check reachability of port 22 on api.github.com", "cmd": "Test-NetConnection -ComputerName 'api.github.com' -Port 22"}
+{"os": "powershell", "prompt": "stop and start service nginx", "cmd": "Get-Service -Name 'nginx' | Restart-Service -Force"}
+{"os": "linux", "prompt": "restart service ssh using systemctl", "cmd": "sudo systemctl restart ssh"}
+{"os": "linux", "prompt": "set executable bit on /data/bin/run.sh", "cmd": "chmod +x /data/bin/run.sh"}
+{"os": "linux", "prompt": "archive /opt/backup with gzip compression", "cmd": "tar -czvf archive.tar.gz /opt/backup"}
+{"os": "linux", "prompt": "find network path and latency hops to 192.168.1.1", "cmd": "traceroute 192.168.1.1"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 50", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 50"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Temp\\app.tar.gz", "cmd": "Get-Content -Path 'C:\\Temp\\app.tar.gz' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "rank processes by memory and take top 30", "cmd": "ps aux --sort=-%mem | head -n 30"}
+{"os": "powershell", "prompt": "compute sha256 hash on D:\\Data\\Data\\data_14.exe", "cmd": "Get-FileHash -Path 'D:\\Data\\Data\\data_14.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "find large files over 25MB in /opt/bin", "cmd": "find /opt/bin -type f -size +25M"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .py files in .", "cmd": "find . -type f -name '*.py' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "filter files modified in last 14 days in C:\\Backup\\Bin", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Bin' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-14) }"}
+{"os": "linux", "prompt": "systemctl enable --now for service MSSQLSERVER", "cmd": "sudo systemctl enable --now MSSQLSERVER"}
+{"os": "linux", "prompt": "systemctl enable --now for service postgresql", "cmd": "sudo systemctl enable --now postgresql"}
+{"os": "powershell", "prompt": "clean up .zip files in C:\\Backup\\Backup", "cmd": "Remove-Item -Path 'C:\\Backup\\Backup\\*.zip' -Force"}
+{"os": "linux", "prompt": "find large files over 50MB in /data/tests", "cmd": "find /data/tests -type f -size +50M"}
+{"os": "linux", "prompt": "force kill pid 37377", "cmd": "kill -9 37377"}
+{"os": "powershell", "prompt": "look for string 'Unauthorized' in C:\\Backup\\*.md", "cmd": "Get-ChildItem -Path 'C:\\Backup\\*.md' | Select-String -Pattern 'Unauthorized'"}
+{"os": "linux", "prompt": "cleanup all files with extension .csv in /tmp/data", "cmd": "find /tmp/data -type f -name '*.csv' -delete"}
+{"os": "powershell", "prompt": "display beginning 5 lines of .\\logs\\app.sh", "cmd": "Get-Content -Path '.\\logs\\app.sh' -TotalCount 5"}
+{"os": "powershell", "prompt": "check reachability of port 9000 on dns.google", "cmd": "Test-NetConnection -ComputerName 'dns.google' -Port 9000"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /data/var", "cmd": "tar -xzvf archive.tar.gz -C /data/var"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 25", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 25"}
+{"os": "powershell", "prompt": "copy item C:\\Temp\\source.md to C:\\Temp\\dest.md force", "cmd": "Copy-Item -Path 'C:\\Temp\\source.md' -Destination 'C:\\Temp\\dest.md' -Force"}
+{"os": "powershell", "prompt": "kill process by pid 38706", "cmd": "Stop-Process -Id 38706 -Force"}
+{"os": "linux", "prompt": "free port 9155 and stop its process", "cmd": "kill -9 $(lsof -t -i:9155)"}
+{"os": "linux", "prompt": "cleanup all files with extension .md in .", "cmd": "find . -type f -name '*.md' -delete"}
+{"os": "linux", "prompt": "verify connection to dns.google with 5 pings", "cmd": "ping -c 5 dns.google"}
+{"os": "powershell", "prompt": "view last 500 git commits on one line", "cmd": "git log --oneline -n 500"}
+{"os": "powershell", "prompt": "check reachability of port 60387 on microsoft.com", "cmd": "Test-NetConnection -ComputerName 'microsoft.com' -Port 60387"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /tmp/tests", "cmd": "find /tmp/tests -type f -perm 0777"}
+{"os": "linux", "prompt": "du disk summary for /data/app", "cmd": "du -sh /data/app"}
+{"os": "linux", "prompt": "rank processes by memory and take top 3", "cmd": "ps aux --sort=-%mem | head -n 3"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 5", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 5"}
+{"os": "linux", "prompt": "run interactive sh inside node container", "cmd": "docker exec -it node sh"}
+{"os": "powershell", "prompt": "test-path for C:\\Temp\\App\\config.json", "cmd": "Test-Path -Path 'C:\\Temp\\App\\config.json'"}
+{"os": "powershell", "prompt": "display beginning 30 lines of C:\\inetpub\\wwwroot\\app.log", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\app.log' -TotalCount 30"}
+{"os": "powershell", "prompt": "select lines containing 'NullPointer' in C:\\Backup\\Backup\\app.log", "cmd": "Select-String -Path 'C:\\Backup\\Backup\\app.log' -Pattern 'NullPointer' -CaseSensitive"}
+{"os": "linux", "prompt": "set executable bit on /etc/run.sh", "cmd": "chmod +x /etc/run.sh"}
+{"os": "powershell", "prompt": "new directory C:\\ProgramData\\App\\Bin\\build in powershell", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\Bin\\build' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "find large files greater than 750MB in D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -File -Recurse | Where-Object { $_.Length -gt 750MB }"}
+{"os": "powershell", "prompt": "clean up .log files in C:\\Temp\\Temp", "cmd": "Remove-Item -Path 'C:\\Temp\\Temp\\*.log' -Force"}
+{"os": "linux", "prompt": "find large files over 25MB in /usr/local/bin/data", "cmd": "find /usr/local/bin/data -type f -size +25M"}
+{"os": "powershell", "prompt": "select lines containing '404' in C:\\Projects\\Src\\app.log", "cmd": "Select-String -Path 'C:\\Projects\\Src\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "linux", "prompt": "du disk summary for /tmp/cache", "cmd": "du -sh /tmp/cache"}
+{"os": "powershell", "prompt": "find large files greater than 10MB in C:\\Backup\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Backup' -File -Recurse | Where-Object { $_.Length -gt 10MB }"}
+{"os": "linux", "prompt": "invert match for 'ConnectionReset' in ./app.log", "cmd": "grep -v 'ConnectionReset' ./app.log"}
+{"os": "linux", "prompt": "find recently modified files in last 30 days in /tmp", "cmd": "find /tmp -type f -mtime -30"}
+{"os": "linux", "prompt": "monitor the end of /usr/local/bin/var/app.csv with 200 lines", "cmd": "tail -n 200 -f /usr/local/bin/var/app.csv"}
+{"os": "linux", "prompt": "stop every process with name java2", "cmd": "pkill -9 -f java2"}
+{"os": "powershell", "prompt": "docker run detached redis on port 8080", "cmd": "docker run -d -p 8080:8080 --name redis redis:latest"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Temp\\Config\\app.tar.gz", "cmd": "Get-Content -Path 'C:\\Temp\\Config\\app.tar.gz' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "remove-item recursive on .\\logs\\build", "cmd": "Remove-Item -Path '.\\logs\\build' -Recurse -Force"}
+{"os": "powershell", "prompt": "kill process by pid 17675", "cmd": "Stop-Process -Id 17675 -Force"}
+{"os": "powershell", "prompt": "kill process by pid 46158", "cmd": "Stop-Process -Id 46158 -Force"}
+{"os": "linux", "prompt": "archive /usr/local/bin/backup with gzip compression", "cmd": "tar -czvf archive.tar.gz /usr/local/bin/backup"}
+{"os": "linux", "prompt": "rank processes by memory and take top 200", "cmd": "ps aux --sort=-%mem | head -n 200"}
+{"os": "powershell", "prompt": "test-path for C:\\Logs\\config.json", "cmd": "Test-Path -Path 'C:\\Logs\\config.json'"}
+{"os": "linux", "prompt": "monitor docker logs for nginx-worker", "cmd": "docker logs -f --tail 10 nginx-worker"}
+{"os": "linux", "prompt": "find recently modified files in last 90 days in ..", "cmd": "find .. -type f -mtime -90"}
+{"os": "powershell", "prompt": "docker run detached apache2 on port 27017", "cmd": "docker run -d -p 27017:27017 --name apache2 apache2:latest"}
+{"os": "powershell", "prompt": "check reachability of port 4460 on 127.0.0.1", "cmd": "Test-NetConnection -ComputerName '127.0.0.1' -Port 4460"}
+{"os": "powershell", "prompt": "docker run detached apache2 on port 46314", "cmd": "docker run -d -p 46314:46314 --name apache2 apache2:latest"}
+{"os": "linux", "prompt": "inspect nginx daemon status", "cmd": "systemctl status nginx"}
+{"os": "linux", "prompt": "find large files over 20MB in /home/user/config", "cmd": "find /home/user/config -type f -size +20M"}
+{"os": "powershell", "prompt": "kill the process listening on port 56440 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 56440).OwningProcess -Force"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\ProgramData\\App\\Src", "cmd": "Compress-Archive -Path 'C:\\ProgramData\\App\\Src\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "find large files over 2048MB in .", "cmd": "find . -type f -size +2048M"}
+{"os": "linux", "prompt": "make admin and group docker owners of directory .", "cmd": "chown -R admin:docker ."}
+{"os": "linux", "prompt": "docker container prune force without confirmation", "cmd": "docker container prune -f"}
+{"os": "powershell", "prompt": "create new file output.tar.gz inside C:\\ProgramData\\App", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\output.tar.gz' -ItemType File -Force"}
+{"os": "powershell", "prompt": "stop process with name redis-worker forcefully", "cmd": "Stop-Process -Name 'redis-worker' -Force"}
+{"os": "linux", "prompt": "docker run detached python-worker binding port 33450", "cmd": "docker run -d -p 33450:33450 --name python-worker python-worker:latest"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 20", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 20"}
+{"os": "powershell", "prompt": "stop process with name code-daemon forcefully", "cmd": "Stop-Process -Name 'code-daemon' -Force"}
+{"os": "linux", "prompt": "force kill pid 45001", "cmd": "kill -9 45001"}
+{"os": "powershell", "prompt": "follow docker logs of java2", "cmd": "docker logs -f --tail 25 java2"}
+{"os": "linux", "prompt": "docker run detached node-worker binding port 443", "cmd": "docker run -d -p 443:443 --name node-worker node-worker:latest"}
+{"os": "linux", "prompt": "cleanup all files with extension .sh in .", "cmd": "find . -type f -name '*.sh' -delete"}
+{"os": "powershell", "prompt": "filter processes by cpu over 100 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 100 } | Sort-Object CPU -Descending"}
+{"os": "linux", "prompt": "show last 30 commits in oneline format", "cmd": "git log --oneline -n 30"}
+{"os": "linux", "prompt": "show sorted frequency of 'ERROR' in /tmp/app.log", "cmd": "grep -o 'ERROR' /tmp/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "find large files greater than 2048MB in C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -File -Recurse | Where-Object { $_.Length -gt 2048MB }"}
+{"os": "linux", "prompt": "how many times does '404' occur in /data/cache/app.log", "cmd": "grep -c '404' /data/cache/app.log"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\inetpub\\wwwroot\\Data\\app.tar.gz", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\Data\\app.tar.gz' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "new directory D:\\Data\\logs in powershell", "cmd": "New-Item -Path 'D:\\Data\\logs' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "look for string 'ERROR' in C:\\Temp\\Bin\\*.zip", "cmd": "Get-ChildItem -Path 'C:\\Temp\\Bin\\*.zip' | Select-String -Pattern 'ERROR'"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .sh files in /tmp/backup", "cmd": "find /tmp/backup -type f -name '*.sh' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 30", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 30"}
+{"os": "linux", "prompt": "force kill pid 47078", "cmd": "kill -9 47078"}
+{"os": "linux", "prompt": "how many times does 'ERROR' occur in ../app.log", "cmd": "grep -c 'ERROR' ../app.log"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\ProgramData\\App", "cmd": "Compress-Archive -Path 'C:\\ProgramData\\App\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "verify connection to google.com with 50 pings", "cmd": "ping -c 50 google.com"}
+{"os": "powershell", "prompt": "stop and start service ssh", "cmd": "Get-Service -Name 'ssh' | Restart-Service -Force"}
+{"os": "powershell", "prompt": "look for string '404' in D:\\Data\\*.txt", "cmd": "Get-ChildItem -Path 'D:\\Data\\*.txt' | Select-String -Pattern '404'"}
+{"os": "linux", "prompt": "make admin and group www-data owners of directory /data/bin", "cmd": "chown -R admin:www-data /data/bin"}
+{"os": "linux", "prompt": "how many times does 'ConnectionReset' occur in /data/app.log", "cmd": "grep -c 'ConnectionReset' /data/app.log"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /var/log/data", "cmd": "tar -xzvf archive.tar.gz -C /var/log/data"}
+{"os": "linux", "prompt": "du disk summary for /usr/local/bin/logs", "cmd": "du -sh /usr/local/bin/logs"}
+{"os": "powershell", "prompt": "filter processes by cpu over 150 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 150 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "find files matching pattern *.sh under C:\\ProgramData\\App\\Tests", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\Tests' -Filter '*.sh' -Recurse"}
+{"os": "linux", "prompt": "invert match for '404' in /data/config/app.log", "cmd": "grep -v '404' /data/config/app.log"}
+{"os": "linux", "prompt": "find recently modified files in last 5 days in /opt", "cmd": "find /opt -type f -mtime -5"}
+{"os": "powershell", "prompt": "query system event log for latest 500 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 500"}
+{"os": "linux", "prompt": "archive /opt/var with gzip compression", "cmd": "tar -czvf archive.tar.gz /opt/var"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /var/log/cache", "cmd": "find /var/log/cache -type f -perm 0777"}
+{"os": "linux", "prompt": "free port 60234 and stop its process", "cmd": "kill -9 $(lsof -t -i:60234)"}
+{"os": "powershell", "prompt": "sort-object unique lines of .\\logs\\Data\\app.conf", "cmd": "Get-Content -Path '.\\logs\\Data\\app.conf' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "rank processes by memory and take top 20", "cmd": "ps aux --sort=-%mem | head -n 20"}
+{"os": "linux", "prompt": "find occurrences of 'OutOfMemory' in /home/user", "cmd": "grep -rn 'OutOfMemory' /home/user"}
+{"os": "linux", "prompt": "set executable bit on /usr/local/bin/backup/run.sh", "cmd": "chmod +x /usr/local/bin/backup/run.sh"}
+{"os": "linux", "prompt": "force kill pid 36217", "cmd": "kill -9 36217"}
+{"os": "linux", "prompt": "find occurrences of 'FATAL' in /var/www/html", "cmd": "grep -rn 'FATAL' /var/www/html"}
+{"os": "powershell", "prompt": "resolve-dnsname for dns.google", "cmd": "Resolve-DnsName -Name 'dns.google'"}
+{"os": "powershell", "prompt": "copy item C:\\Logs\\Cache\\source.md to C:\\Logs\\Cache\\dest.md force", "cmd": "Copy-Item -Path 'C:\\Logs\\Cache\\source.md' -Destination 'C:\\Logs\\Cache\\dest.md' -Force"}
+{"os": "linux", "prompt": "restart service docker using systemctl", "cmd": "sudo systemctl restart docker"}
+{"os": "powershell", "prompt": "check reachability of port 35756 on github.com", "cmd": "Test-NetConnection -ComputerName 'github.com' -Port 35756"}
+{"os": "powershell", "prompt": "display beginning 50 lines of .\\logs\\app.txt", "cmd": "Get-Content -Path '.\\logs\\app.txt' -TotalCount 50"}
+{"os": "powershell", "prompt": "display bottom 10 lines from .\\logs\\App\\app.txt", "cmd": "Get-Content -Path '.\\logs\\App\\app.txt' -Tail 10"}
+{"os": "powershell", "prompt": "stop process with name firefox-worker forcefully", "cmd": "Stop-Process -Name 'firefox-worker' -Force"}
+{"os": "linux", "prompt": "force kill pid 49673", "cmd": "kill -9 49673"}
+{"os": "powershell", "prompt": "kill the process listening on port 48912 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 48912).OwningProcess -Force"}
+{"os": "linux", "prompt": "monitor docker logs for postgres", "cmd": "docker logs -f --tail 3 postgres"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Backup\\App", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Backup\\App' -Force"}
+{"os": "powershell", "prompt": "create new file app.json inside C:\\Logs", "cmd": "New-Item -Path 'C:\\Logs\\app.json' -ItemType File -Force"}
+{"os": "powershell", "prompt": "filter files modified in last 2 days in C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-2) }"}
+{"os": "linux", "prompt": "invert match for 'Warning' in /home/user/backup/app.log", "cmd": "grep -v 'Warning' /home/user/backup/app.log"}
+{"os": "powershell", "prompt": "create new file data.py inside D:\\Data", "cmd": "New-Item -Path 'D:\\Data\\data.py' -ItemType File -Force"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target .", "cmd": "tar -xzvf archive.tar.gz -C ."}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /tmp", "cmd": "tar -xzvf archive.tar.gz -C /tmp"}
+{"os": "powershell", "prompt": "new directory .\\logs\\App\\logs in powershell", "cmd": "New-Item -Path '.\\logs\\App\\logs' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /opt", "cmd": "tar -xzvf archive.tar.gz -C /opt"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .csv files in ..", "cmd": "find .. -type f -name '*.csv' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "docker run detached postgres on port 4541", "cmd": "docker run -d -p 4541:4541 --name postgres postgres:latest"}
+{"os": "linux", "prompt": "rank processes by memory and take top 100", "cmd": "ps aux --sort=-%mem | head -n 100"}
+{"os": "powershell", "prompt": "check windows service state for apache2", "cmd": "Get-Service -Name 'apache2'"}
+{"os": "powershell", "prompt": "query system event log for latest 200 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 200"}
+{"os": "powershell", "prompt": "look for string 'Timeout' in C:\\Projects\\Data\\*.conf", "cmd": "Get-ChildItem -Path 'C:\\Projects\\Data\\*.conf' | Select-String -Pattern 'Timeout'"}
+{"os": "linux", "prompt": "stop every process with name teams", "cmd": "pkill -9 -f teams"}
+{"os": "linux", "prompt": "archive /var/log/backup with gzip compression", "cmd": "tar -czvf archive.tar.gz /var/log/backup"}
+{"os": "linux", "prompt": "systemctl enable --now for service docker", "cmd": "sudo systemctl enable --now docker"}
+{"os": "powershell", "prompt": "follow docker logs of apache2-server", "cmd": "docker logs -f --tail 20 apache2-server"}
+{"os": "linux", "prompt": "docker run detached apache22 binding port 46021", "cmd": "docker run -d -p 46021:46021 --name apache22 apache22:latest"}
+{"os": "linux", "prompt": "how many times does 'Unauthorized' occur in ../app.log", "cmd": "grep -c 'Unauthorized' ../app.log"}
+{"os": "powershell", "prompt": "create new file data.conf inside C:\\ProgramData\\App\\Bin", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\Bin\\data.conf' -ItemType File -Force"}
+{"os": "powershell", "prompt": "copy item C:\\Temp\\source.zip to C:\\Temp\\dest.zip force", "cmd": "Copy-Item -Path 'C:\\Temp\\source.zip' -Destination 'C:\\Temp\\dest.zip' -Force"}
+{"os": "linux", "prompt": "find recently modified files in last 5 days in /etc", "cmd": "find /etc -type f -mtime -5"}
+{"os": "powershell", "prompt": "filter processes by cpu over 750 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 750 } | Sort-Object CPU -Descending"}
+{"os": "linux", "prompt": "show last 50 commits in oneline format", "cmd": "git log --oneline -n 50"}
+{"os": "powershell", "prompt": "kill the process listening on port 3306 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 3306).OwningProcess -Force"}
+{"os": "linux", "prompt": "find network path and latency hops to google.com", "cmd": "traceroute google.com"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .conf files in ../config", "cmd": "find ../config -type f -name '*.conf' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "kill the process listening on port 9000 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 9000).OwningProcess -Force"}
+{"os": "powershell", "prompt": "view last 30 git commits on one line", "cmd": "git log --oneline -n 30"}
+{"os": "linux", "prompt": "find large files over 10MB in ./logs", "cmd": "find ./logs -type f -size +10M"}
+{"os": "powershell", "prompt": "stop process with name java3 forcefully", "cmd": "Stop-Process -Name 'java3' -Force"}
+{"os": "powershell", "prompt": "check windows service state for nginx", "cmd": "Get-Service -Name 'nginx'"}
+{"os": "powershell", "prompt": "filter processes by cpu over 1024 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 1024 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "filter files modified in last 21 days in C:\\Backup\\Logs", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Logs' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-21) }"}
+{"os": "powershell", "prompt": "look for string 'ERROR' in C:\\Backup\\Data\\*.bak", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Data\\*.bak' | Select-String -Pattern 'ERROR'"}
+{"os": "linux", "prompt": "run interactive sh inside docker-worker container", "cmd": "docker exec -it docker-worker sh"}
+{"os": "powershell", "prompt": "create new file output_83.md inside C:\\Backup\\Temp", "cmd": "New-Item -Path 'C:\\Backup\\Temp\\output_83.md' -ItemType File -Force"}
+{"os": "powershell", "prompt": "query url https://192.168.1.1 using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://192.168.1.1' -UseBasicParsing"}
+{"os": "powershell", "prompt": "create new file output.tar.gz inside C:\\Temp", "cmd": "New-Item -Path 'C:\\Temp\\output.tar.gz' -ItemType File -Force"}
+{"os": "linux", "prompt": "how many times does 'CRITICAL' occur in /tmp/app.log", "cmd": "grep -c 'CRITICAL' /tmp/app.log"}
+{"os": "linux", "prompt": "monitor the end of /opt/app/app.yml with 75 lines", "cmd": "tail -n 75 -f /opt/app/app.yml"}
+{"os": "powershell", "prompt": "docker run detached apache22 on port 19796", "cmd": "docker run -d -p 19796:19796 --name apache22 apache22:latest"}
+{"os": "linux", "prompt": "view system memory in megabytes", "cmd": "free -m"}
+{"os": "powershell", "prompt": "kill the process listening on port 17511 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 17511).OwningProcess -Force"}
+{"os": "powershell", "prompt": "query url https://127.0.0.1 using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://127.0.0.1' -UseBasicParsing"}
+{"os": "powershell", "prompt": "clean up .yml files in C:\\Projects\\Logs", "cmd": "Remove-Item -Path 'C:\\Projects\\Logs\\*.yml' -Force"}
+{"os": "linux", "prompt": "monitor the end of /tmp/app.sh with 50 lines", "cmd": "tail -n 50 -f /tmp/app.sh"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /home/user/bin", "cmd": "tar -xzvf archive.tar.gz -C /home/user/bin"}
+{"os": "powershell", "prompt": "check windows service state for wuauserv", "cmd": "Get-Service -Name 'wuauserv'"}
+{"os": "linux", "prompt": "du disk summary for ./src", "cmd": "du -sh ./src"}
+{"os": "linux", "prompt": "find large files over 250MB in /var/www/html/logs", "cmd": "find /var/www/html/logs -type f -size +250M"}
+{"os": "linux", "prompt": "find large files over 150MB in /data/logs", "cmd": "find /data/logs -type f -size +150M"}
+{"os": "powershell", "prompt": "view last 3 git commits on one line", "cmd": "git log --oneline -n 3"}
+{"os": "powershell", "prompt": "stop and start service cron", "cmd": "Get-Service -Name 'cron' | Restart-Service -Force"}
+{"os": "linux", "prompt": "make nginx and group developers owners of directory /etc/data", "cmd": "chown -R nginx:developers /etc/data"}
+{"os": "powershell", "prompt": "look for string 'Exception' in C:\\ProgramData\\App\\App\\*.md", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\App\\*.md' | Select-String -Pattern 'Exception'"}
+{"os": "powershell", "prompt": "select lines containing 'Unauthorized' in .\\data\\Backup\\app.log", "cmd": "Select-String -Path '.\\data\\Backup\\app.log' -Pattern 'Unauthorized' -CaseSensitive"}
+{"os": "powershell", "prompt": "kill the process listening on port 26186 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 26186).OwningProcess -Force"}
+{"os": "linux", "prompt": "invert match for 'FATAL' in /var/www/html/bin/app.log", "cmd": "grep -v 'FATAL' /var/www/html/bin/app.log"}
+{"os": "powershell", "prompt": "look for string 'Warning' in C:\\Projects\\Tests\\*.csv", "cmd": "Get-ChildItem -Path 'C:\\Projects\\Tests\\*.csv' | Select-String -Pattern 'Warning'"}
+{"os": "powershell", "prompt": "check reachability of port 55141 on microsoft.com", "cmd": "Test-NetConnection -ComputerName 'microsoft.com' -Port 55141"}
+{"os": "linux", "prompt": "find occurrences of 'ERROR' in /data/app", "cmd": "grep -rn 'ERROR' /data/app"}
+{"os": "powershell", "prompt": "new directory D:\\Data\\backup in powershell", "cmd": "New-Item -Path 'D:\\Data\\backup' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "select lines containing 'Timeout' in .\\data\\app.log", "cmd": "Select-String -Path '.\\data\\app.log' -Pattern 'Timeout' -CaseSensitive"}
+{"os": "linux", "prompt": "restart service w32time using systemctl", "cmd": "sudo systemctl restart w32time"}
+{"os": "powershell", "prompt": "view last 50 git commits on one line", "cmd": "git log --oneline -n 50"}
+{"os": "linux", "prompt": "make nginx and group docker owners of directory ./data", "cmd": "chown -R nginx:docker ./data"}
+{"os": "linux", "prompt": "restart service bits using systemctl", "cmd": "sudo systemctl restart bits"}
+{"os": "linux", "prompt": "docker run detached dotnet-daemon binding port 57233", "cmd": "docker run -d -p 57233:57233 --name dotnet-daemon dotnet-daemon:latest"}
+{"os": "powershell", "prompt": "new directory C:\\inetpub\\wwwroot\\Logs\\app in powershell", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\Logs\\app' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "filter files modified in last 90 days in .\\logs\\Temp", "cmd": "Get-ChildItem -Path '.\\logs\\Temp' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-90) }"}
+{"os": "powershell", "prompt": "remove-item recursive on D:\\Data\\Logs\\dist", "cmd": "Remove-Item -Path 'D:\\Data\\Logs\\dist' -Recurse -Force"}
+{"os": "linux", "prompt": "verify connection to microsoft.com with 75 pings", "cmd": "ping -c 75 microsoft.com"}
+{"os": "linux", "prompt": "run interactive sh inside firefox2 container", "cmd": "docker exec -it firefox2 sh"}
+{"os": "powershell", "prompt": "stop process with name firefox forcefully", "cmd": "Stop-Process -Name 'firefox' -Force"}
+{"os": "linux", "prompt": "monitor docker logs for java-worker", "cmd": "docker logs -f --tail 30 java-worker"}
+{"os": "powershell", "prompt": "view last 100 git commits on one line", "cmd": "git log --oneline -n 100"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\inetpub\\wwwroot\\Temp\\release", "cmd": "Remove-Item -Path 'C:\\inetpub\\wwwroot\\Temp\\release' -Recurse -Force"}
+{"os": "linux", "prompt": "find large files over 100MB in ../var", "cmd": "find ../var -type f -size +100M"}
+{"os": "linux", "prompt": "make ubuntu and group developers owners of directory ./data", "cmd": "chown -R ubuntu:developers ./data"}
+{"os": "powershell", "prompt": "select lines containing 'NullPointer' in C:\\ProgramData\\App\\app.log", "cmd": "Select-String -Path 'C:\\ProgramData\\App\\app.log' -Pattern 'NullPointer' -CaseSensitive"}
+{"os": "linux", "prompt": "find occurrences of 'Unauthorized' in /home/user/cache", "cmd": "grep -rn 'Unauthorized' /home/user/cache"}
+{"os": "linux", "prompt": "make ubuntu and group users owners of directory /usr/local/bin/backup", "cmd": "chown -R ubuntu:users /usr/local/bin/backup"}
+{"os": "linux", "prompt": "archive ../bin with gzip compression", "cmd": "tar -czvf archive.tar.gz ../bin"}
+{"os": "linux", "prompt": "show sorted frequency of '404' in /usr/local/bin/app/app.log", "cmd": "grep -o '404' /usr/local/bin/app/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\Logs\\service_81.exe", "cmd": "Get-FileHash -Path 'C:\\Logs\\service_81.exe' -Algorithm SHA256"}
+{"os": "powershell", "prompt": "clean up .xml files in C:\\ProgramData\\App\\Bin", "cmd": "Remove-Item -Path 'C:\\ProgramData\\App\\Bin\\*.xml' -Force"}
+{"os": "powershell", "prompt": "copy item D:\\Data\\Config\\source.csv to D:\\Data\\Config\\dest.csv force", "cmd": "Copy-Item -Path 'D:\\Data\\Config\\source.csv' -Destination 'D:\\Data\\Config\\dest.csv' -Force"}
+{"os": "linux", "prompt": "inspect docker daemon status", "cmd": "systemctl status docker"}
+{"os": "linux", "prompt": "cleanup all files with extension .yml in /etc/logs", "cmd": "find /etc/logs -type f -name '*.yml' -delete"}
+{"os": "linux", "prompt": "force kill pid 3845", "cmd": "kill -9 3845"}
+{"os": "linux", "prompt": "set executable bit on /var/www/html/bin/run.sh", "cmd": "chmod +x /var/www/html/bin/run.sh"}
+{"os": "linux", "prompt": "run interactive sh inside python container", "cmd": "docker exec -it python sh"}
+{"os": "linux", "prompt": "stop every process with name node", "cmd": "pkill -9 -f node"}
+{"os": "linux", "prompt": "find occurrences of '404' in /opt/tests", "cmd": "grep -rn '404' /opt/tests"}
+{"os": "linux", "prompt": "how many times does '404' occur in /opt/app.log", "cmd": "grep -c '404' /opt/app.log"}
+{"os": "powershell", "prompt": "query system event log for latest 50 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 50"}
+{"os": "powershell", "prompt": "new directory C:\\Logs\\backup in powershell", "cmd": "New-Item -Path 'C:\\Logs\\backup' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "docker run detached redis on port 60909", "cmd": "docker run -d -p 60909:60909 --name redis redis:latest"}
+{"os": "linux", "prompt": "show sorted frequency of 'Warning' in /var/log/app.log", "cmd": "grep -o 'Warning' /var/log/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "check windows service state for postgresql", "cmd": "Get-Service -Name 'postgresql'"}
+{"os": "linux", "prompt": "docker run detached teams binding port 49172", "cmd": "docker run -d -p 49172:49172 --name teams teams:latest"}
+{"os": "powershell", "prompt": "find files matching pattern *.zip under D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -Filter '*.zip' -Recurse"}
+{"os": "powershell", "prompt": "docker ps all containers", "cmd": "docker ps -a"}
+{"os": "powershell", "prompt": "test-path for C:\\Backup\\config.json", "cmd": "Test-Path -Path 'C:\\Backup\\config.json'"}
+{"os": "powershell", "prompt": "stop process with name nginx forcefully", "cmd": "Stop-Process -Name 'nginx' -Force"}
+{"os": "linux", "prompt": "free port 12567 and stop its process", "cmd": "kill -9 $(lsof -t -i:12567)"}
+{"os": "linux", "prompt": "invert match for 'ERROR' in /var/log/app.log", "cmd": "grep -v 'ERROR' /var/log/app.log"}
+{"os": "powershell", "prompt": "display beginning 500 lines of .\\logs\\Logs\\app.conf", "cmd": "Get-Content -Path '.\\logs\\Logs\\app.conf' -TotalCount 500"}
+{"os": "linux", "prompt": "restart service wuauserv using systemctl", "cmd": "sudo systemctl restart wuauserv"}
+{"os": "linux", "prompt": "get response headers for 10.0.0.1", "cmd": "curl -I https://10.0.0.1"}
+{"os": "powershell", "prompt": "look for string 'ConnectionReset' in C:\\inetpub\\wwwroot\\*.txt", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\*.txt' | Select-String -Pattern 'ConnectionReset'"}
+{"os": "powershell", "prompt": "find large files greater than 5MB in C:\\Logs\\Cache", "cmd": "Get-ChildItem -Path 'C:\\Logs\\Cache' -File -Recurse | Where-Object { $_.Length -gt 5MB }"}
+{"os": "linux", "prompt": "monitor the end of ./cache/app.yml with 3 lines", "cmd": "tail -n 3 -f ./cache/app.yml"}
+{"os": "linux", "prompt": "show last 500 commits in oneline format", "cmd": "git log --oneline -n 500"}
+{"os": "powershell", "prompt": "stop and start service postgresql", "cmd": "Get-Service -Name 'postgresql' | Restart-Service -Force"}
+{"os": "powershell", "prompt": "stop process with name dotnet forcefully", "cmd": "Stop-Process -Name 'dotnet' -Force"}
+{"os": "linux", "prompt": "verify connection to google.com with 75 pings", "cmd": "ping -c 75 google.com"}
+{"os": "linux", "prompt": "find recently modified files in last 180 days in /opt", "cmd": "find /opt -type f -mtime -180"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\inetpub\\wwwroot\\Backup\\app.txt", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\Backup\\app.txt' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\ProgramData\\App\\Data\\test_29.exe", "cmd": "Get-FileHash -Path 'C:\\ProgramData\\App\\Data\\test_29.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "monitor the end of /var/www/html/app.bak with 15 lines", "cmd": "tail -n 15 -f /var/www/html/app.bak"}
+{"os": "linux", "prompt": "force kill pid 1927", "cmd": "kill -9 1927"}
+{"os": "linux", "prompt": "find recently modified files in last 14 days in /data", "cmd": "find /data -type f -mtime -14"}
+{"os": "powershell", "prompt": "find files matching pattern *.xml under C:\\Projects\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Projects\\Temp' -Filter '*.xml' -Recurse"}
+{"os": "powershell", "prompt": "docker run detached java on port 46342", "cmd": "docker run -d -p 46342:46342 --name java java:latest"}
+{"os": "linux", "prompt": "stop every process with name nginx", "cmd": "pkill -9 -f nginx"}
+{"os": "linux", "prompt": "run interactive sh inside java container", "cmd": "docker exec -it java sh"}
+{"os": "linux", "prompt": "find large files over 20MB in /etc/build", "cmd": "find /etc/build -type f -size +20M"}
+{"os": "powershell", "prompt": "docker run detached docker-worker on port 6379", "cmd": "docker run -d -p 6379:6379 --name docker-worker docker-worker:latest"}
+{"os": "powershell", "prompt": "follow docker logs of node-server", "cmd": "docker logs -f --tail 25 node-server"}
+{"os": "powershell", "prompt": "filter processes by cpu over 10 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 10 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "query url https://microsoft.com using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://microsoft.com' -UseBasicParsing"}
+{"os": "powershell", "prompt": "clean up .zip files in C:\\ProgramData\\App\\Temp", "cmd": "Remove-Item -Path 'C:\\ProgramData\\App\\Temp\\*.zip' -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 8443 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 8443).OwningProcess -Force"}
+{"os": "powershell", "prompt": "check reachability of port 443 on 192.168.1.1", "cmd": "Test-NetConnection -ComputerName '192.168.1.1' -Port 443"}
+{"os": "linux", "prompt": "monitor docker logs for firefox-worker", "cmd": "docker logs -f --tail 500 firefox-worker"}
+{"os": "linux", "prompt": "free port 41021 and stop its process", "cmd": "kill -9 $(lsof -t -i:41021)"}
+{"os": "powershell", "prompt": "check reachability of port 3389 on smtp.office365.com", "cmd": "Test-NetConnection -ComputerName 'smtp.office365.com' -Port 3389"}
+{"os": "linux", "prompt": "find large files over 10MB in /var/www/html/config", "cmd": "find /var/www/html/config -type f -size +10M"}
+{"os": "linux", "prompt": "show sorted frequency of 'Unauthorized' in /data/app.log", "cmd": "grep -o 'Unauthorized' /data/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "set executable bit on ./run.sh", "cmd": "chmod +x ./run.sh"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /var/log/build", "cmd": "find /var/log/build -type f -perm 0777"}
+{"os": "linux", "prompt": "force kill pid 31663", "cmd": "kill -9 31663"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 200", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 200"}
+{"os": "linux", "prompt": "show last 100 commits in oneline format", "cmd": "git log --oneline -n 100"}
+{"os": "linux", "prompt": "free port 51637 and stop its process", "cmd": "kill -9 $(lsof -t -i:51637)"}
+{"os": "linux", "prompt": "show sorted frequency of 'Unauthorized' in /tmp/logs/app.log", "cmd": "grep -o 'Unauthorized' /tmp/logs/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "cleanup all files with extension .yml in /tmp", "cmd": "find /tmp -type f -name '*.yml' -delete"}
+{"os": "linux", "prompt": "find network path and latency hops to microsoft.com", "cmd": "traceroute microsoft.com"}
+{"os": "linux", "prompt": "show last 5 commits in oneline format", "cmd": "git log --oneline -n 5"}
+{"os": "powershell", "prompt": "create new file server.json inside C:\\Temp\\App", "cmd": "New-Item -Path 'C:\\Temp\\App\\server.json' -ItemType File -Force"}
+{"os": "linux", "prompt": "force kill pid 63637", "cmd": "kill -9 63637"}
+{"os": "linux", "prompt": "set executable bit on /data/data/run.sh", "cmd": "chmod +x /data/data/run.sh"}
+{"os": "powershell", "prompt": "stop and start service redis-server", "cmd": "Get-Service -Name 'redis-server' | Restart-Service -Force"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /home/user/tests", "cmd": "find /home/user/tests -type f -perm 0777"}
+{"os": "powershell", "prompt": "kill process by pid 33392", "cmd": "Stop-Process -Id 33392 -Force"}
+{"os": "linux", "prompt": "monitor docker logs for code3", "cmd": "docker logs -f --tail 100 code3"}
+{"os": "linux", "prompt": "how many times does 'Timeout' occur in /var/log/backup/app.log", "cmd": "grep -c 'Timeout' /var/log/backup/app.log"}
+{"os": "powershell", "prompt": "copy item C:\\inetpub\\wwwroot\\source.txt to C:\\inetpub\\wwwroot\\dest.txt force", "cmd": "Copy-Item -Path 'C:\\inetpub\\wwwroot\\source.txt' -Destination 'C:\\inetpub\\wwwroot\\dest.txt' -Force"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .zip files in /var/www/html/bin", "cmd": "find /var/www/html/bin -type f -name '*.zip' -exec chmod 644 {} +"}
+{"os": "linux", "prompt": "set executable bit on ../run.sh", "cmd": "chmod +x ../run.sh"}
+{"os": "linux", "prompt": "print the first 75 lines of /etc/app.csv", "cmd": "head -n 75 /etc/app.csv"}
+{"os": "powershell", "prompt": "select lines containing 'CRITICAL' in C:\\ProgramData\\App\\Backup\\app.log", "cmd": "Select-String -Path 'C:\\ProgramData\\App\\Backup\\app.log' -Pattern 'CRITICAL' -CaseSensitive"}
+{"os": "linux", "prompt": "make admin and group www-data owners of directory /var/log/tests", "cmd": "chown -R admin:www-data /var/log/tests"}
+{"os": "powershell", "prompt": "resolve-dnsname for 192.168.1.1", "cmd": "Resolve-DnsName -Name '192.168.1.1'"}
+{"os": "linux", "prompt": "monitor the end of ./build/app.txt with 75 lines", "cmd": "tail -n 75 -f ./build/app.txt"}
+{"os": "linux", "prompt": "restart service spooler using systemctl", "cmd": "sudo systemctl restart spooler"}
+{"os": "powershell", "prompt": "select lines containing 'NullPointer' in C:\\Logs\\Temp\\app.log", "cmd": "Select-String -Path 'C:\\Logs\\Temp\\app.log' -Pattern 'NullPointer' -CaseSensitive"}
+{"os": "linux", "prompt": "show last 10 commits in oneline format", "cmd": "git log --oneline -n 10"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /usr/local/bin/data", "cmd": "find /usr/local/bin/data -type f -perm 0777"}
+{"os": "powershell", "prompt": "copy item C:\\Projects\\Logs\\source.log to C:\\Projects\\Logs\\dest.log force", "cmd": "Copy-Item -Path 'C:\\Projects\\Logs\\source.log' -Destination 'C:\\Projects\\Logs\\dest.log' -Force"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\inetpub\\wwwroot\\Config", "cmd": "Compress-Archive -Path 'C:\\inetpub\\wwwroot\\Config\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /home/user", "cmd": "find /home/user -type f -perm 0777"}
+{"os": "powershell", "prompt": "kill the process listening on port 5000 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 5000).OwningProcess -Force"}
+{"os": "powershell", "prompt": "check windows service state for spooler", "cmd": "Get-Service -Name 'spooler'"}
+{"os": "linux", "prompt": "print the first 50 lines of /opt/data/app.csv", "cmd": "head -n 50 /opt/data/app.csv"}
+{"os": "linux", "prompt": "make deploy and group docker owners of directory /usr/local/bin/logs", "cmd": "chown -R deploy:docker /usr/local/bin/logs"}
+{"os": "linux", "prompt": "archive /opt with gzip compression", "cmd": "tar -czvf archive.tar.gz /opt"}
+{"os": "powershell", "prompt": "resolve-dnsname for microsoft.com", "cmd": "Resolve-DnsName -Name 'microsoft.com'"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .zip files in /opt/bin", "cmd": "find /opt/bin -type f -name '*.zip' -exec chmod 644 {} +"}
+{"os": "linux", "prompt": "archive /var/www/html/cache with gzip compression", "cmd": "tar -czvf archive.tar.gz /var/www/html/cache"}
+{"os": "powershell", "prompt": "stop process with name apache2-server forcefully", "cmd": "Stop-Process -Name 'apache2-server' -Force"}
+{"os": "powershell", "prompt": "filter processes by cpu over 20 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 20 } | Sort-Object CPU -Descending"}
+{"os": "linux", "prompt": "find occurrences of 'ERROR' in /var/log", "cmd": "grep -rn 'ERROR' /var/log"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Backup\\dist", "cmd": "Remove-Item -Path 'C:\\Backup\\dist' -Recurse -Force"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /data/cache", "cmd": "find /data/cache -type f -perm 0777"}
+{"os": "linux", "prompt": "cleanup all files with extension .txt in .", "cmd": "find . -type f -name '*.txt' -delete"}
+{"os": "powershell", "prompt": "create new file output.log inside .\\data\\Config", "cmd": "New-Item -Path '.\\data\\Config\\output.log' -ItemType File -Force"}
+{"os": "linux", "prompt": "make new branch bugfix/timeout and switch to it", "cmd": "git checkout -b bugfix/timeout"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /data/config", "cmd": "find /data/config -type f -perm 0777"}
+{"os": "linux", "prompt": "monitor the end of /usr/local/bin/app.conf with 200 lines", "cmd": "tail -n 200 -f /usr/local/bin/app.conf"}
+{"os": "powershell", "prompt": "look for string 'Timeout' in .\\logs\\Tests\\*.bak", "cmd": "Get-ChildItem -Path '.\\logs\\Tests\\*.bak' | Select-String -Pattern 'Timeout'"}
+{"os": "linux", "prompt": "force kill pid 47177", "cmd": "kill -9 47177"}
+{"os": "powershell", "prompt": "find files matching pattern *.md under .\\data", "cmd": "Get-ChildItem -Path '.\\data' -Filter '*.md' -Recurse"}
+{"os": "powershell", "prompt": "docker run detached nginx on port 45014", "cmd": "docker run -d -p 45014:45014 --name nginx nginx:latest"}
+{"os": "linux", "prompt": "invert match for 'Exception' in /usr/local/bin/bin/app.log", "cmd": "grep -v 'Exception' /usr/local/bin/bin/app.log"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Backup\\Logs", "cmd": "Compress-Archive -Path 'C:\\Backup\\Logs\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "monitor the end of /etc/app.sh with 100 lines", "cmd": "tail -n 100 -f /etc/app.sh"}
+{"os": "linux", "prompt": "find occurrences of 'OutOfMemory' in /usr/local/bin", "cmd": "grep -rn 'OutOfMemory' /usr/local/bin"}
+{"os": "powershell", "prompt": "follow docker logs of chrome-daemon", "cmd": "docker logs -f --tail 30 chrome-daemon"}
+{"os": "powershell", "prompt": "display current git status", "cmd": "git status"}
+{"os": "powershell", "prompt": "filter files modified in last 60 days in D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-60) }"}
+{"os": "powershell", "prompt": "check reachability of port 5000 on smtp.office365.com", "cmd": "Test-NetConnection -ComputerName 'smtp.office365.com' -Port 5000"}
+{"os": "powershell", "prompt": "look for string 'ERROR' in C:\\Backup\\Src\\*.sh", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Src\\*.sh' | Select-String -Pattern 'ERROR'"}
+{"os": "powershell", "prompt": "compute sha256 hash on .\\data\\Data\\server_90.exe", "cmd": "Get-FileHash -Path '.\\data\\Data\\server_90.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "make admin and group developers owners of directory /usr/local/bin", "cmd": "chown -R admin:developers /usr/local/bin"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .tar.gz files in /etc/cache", "cmd": "find /etc/cache -type f -name '*.tar.gz' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 3", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 3"}
+{"os": "powershell", "prompt": "display bottom 25 lines from .\\data\\Config\\app.conf", "cmd": "Get-Content -Path '.\\data\\Config\\app.conf' -Tail 25"}
+{"os": "linux", "prompt": "invert match for 'CRITICAL' in /etc/var/app.log", "cmd": "grep -v 'CRITICAL' /etc/var/app.log"}
+{"os": "linux", "prompt": "cleanup all files with extension .txt in /data/var", "cmd": "find /data/var -type f -name '*.txt' -delete"}
+{"os": "powershell", "prompt": "select lines containing '404' in D:\\Data\\app.log", "cmd": "Select-String -Path 'D:\\Data\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "powershell", "prompt": "find large files greater than 1024MB in .\\logs\\Temp", "cmd": "Get-ChildItem -Path '.\\logs\\Temp' -File -Recurse | Where-Object { $_.Length -gt 1024MB }"}
+{"os": "linux", "prompt": "find large files over 200MB in /opt/bin", "cmd": "find /opt/bin -type f -size +200M"}
+{"os": "powershell", "prompt": "compute sha256 hash on .\\data\\test.exe", "cmd": "Get-FileHash -Path '.\\data\\test.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "find recently modified files in last 5 days in /usr/local/bin", "cmd": "find /usr/local/bin -type f -mtime -5"}
+{"os": "powershell", "prompt": "clean up .xml files in C:\\ProgramData\\App\\App", "cmd": "Remove-Item -Path 'C:\\ProgramData\\App\\App\\*.xml' -Force"}
+{"os": "linux", "prompt": "show last 20 commits in oneline format", "cmd": "git log --oneline -n 20"}
+{"os": "linux", "prompt": "find occurrences of 'ConnectionReset' in ./bin", "cmd": "grep -rn 'ConnectionReset' ./bin"}
+{"os": "powershell", "prompt": "filter files modified in last 180 days in .\\data\\Backup", "cmd": "Get-ChildItem -Path '.\\data\\Backup' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-180) }"}
+{"os": "powershell", "prompt": "docker run detached code-worker on port 16435", "cmd": "docker run -d -p 16435:16435 --name code-worker code-worker:latest"}
+{"os": "powershell", "prompt": "find files matching pattern *.csv under C:\\Logs", "cmd": "Get-ChildItem -Path 'C:\\Logs' -Filter '*.csv' -Recurse"}
+{"os": "powershell", "prompt": "look for string 'Exception' in .\\logs\\Tests\\*.bak", "cmd": "Get-ChildItem -Path '.\\logs\\Tests\\*.bak' | Select-String -Pattern 'Exception'"}
+{"os": "linux", "prompt": "find network path and latency hops to api.github.com", "cmd": "traceroute api.github.com"}
+{"os": "linux", "prompt": "docker run detached sshd binding port 9000", "cmd": "docker run -d -p 9000:9000 --name sshd sshd:latest"}
+{"os": "linux", "prompt": "make new branch develop and switch to it", "cmd": "git checkout -b develop"}
+{"os": "powershell", "prompt": "filter processes by cpu over 2048 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 2048 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "look for string '404' in C:\\Backup\\Tests\\*.zip", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Tests\\*.zip' | Select-String -Pattern '404'"}
+{"os": "linux", "prompt": "stop every process with name redis-worker", "cmd": "pkill -9 -f redis-worker"}
+{"os": "linux", "prompt": "archive .. with gzip compression", "cmd": "tar -czvf archive.tar.gz .."}
+{"os": "linux", "prompt": "cleanup all files with extension .bak in /var/www/html", "cmd": "find /var/www/html -type f -name '*.bak' -delete"}
+{"os": "powershell", "prompt": "display bottom 3 lines from .\\data\\Src\\app.json", "cmd": "Get-Content -Path '.\\data\\Src\\app.json' -Tail 3"}
+{"os": "powershell", "prompt": "stop process with name code forcefully", "cmd": "Stop-Process -Name 'code' -Force"}
+{"os": "powershell", "prompt": "find files matching pattern *.zip under C:\\Logs", "cmd": "Get-ChildItem -Path 'C:\\Logs' -Filter '*.zip' -Recurse"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .csv files in /var/log/logs", "cmd": "find /var/log/logs -type f -name '*.csv' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Logs", "cmd": "Compress-Archive -Path 'C:\\Logs\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "invert match for '404' in /tmp/bin/app.log", "cmd": "grep -v '404' /tmp/bin/app.log"}
+{"os": "linux", "prompt": "run interactive sh inside java2 container", "cmd": "docker exec -it java2 sh"}
+{"os": "linux", "prompt": "find network path and latency hops to 10.0.0.1", "cmd": "traceroute 10.0.0.1"}
+{"os": "powershell", "prompt": "filter files modified in last 5 days in C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-5) }"}
+{"os": "powershell", "prompt": "resolve-dnsname for 127.0.0.1", "cmd": "Resolve-DnsName -Name '127.0.0.1'"}
+{"os": "linux", "prompt": "archive /usr/local/bin with gzip compression", "cmd": "tar -czvf archive.tar.gz /usr/local/bin"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Backup", "cmd": "Compress-Archive -Path 'C:\\Backup\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "test-path for .\\logs\\Logs\\config.json", "cmd": "Test-Path -Path '.\\logs\\Logs\\config.json'"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target ./config", "cmd": "tar -xzvf archive.tar.gz -C ./config"}
+{"os": "linux", "prompt": "find large files over 2048MB in ..", "cmd": "find .. -type f -size +2048M"}
+{"os": "powershell", "prompt": "find large files greater than 50MB in C:\\Backup\\Config", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Config' -File -Recurse | Where-Object { $_.Length -gt 50MB }"}
+{"os": "powershell", "prompt": "filter files modified in last 5 days in C:\\Logs\\Tests", "cmd": "Get-ChildItem -Path 'C:\\Logs\\Tests' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-5) }"}
+{"os": "linux", "prompt": "make new branch master and switch to it", "cmd": "git checkout -b master"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Logs\\Logs\\cache", "cmd": "Remove-Item -Path 'C:\\Logs\\Logs\\cache' -Recurse -Force"}
+{"os": "powershell", "prompt": "follow docker logs of redis2", "cmd": "docker logs -f --tail 200 redis2"}
+{"os": "linux", "prompt": "print the first 30 lines of ../cache/app.txt", "cmd": "head -n 30 ../cache/app.txt"}
+{"os": "linux", "prompt": "monitor the end of /opt/config/app.json with 25 lines", "cmd": "tail -n 25 -f /opt/config/app.json"}
+{"os": "linux", "prompt": "cleanup all files with extension .txt in /usr/local/bin", "cmd": "find /usr/local/bin -type f -name '*.txt' -delete"}
+{"os": "linux", "prompt": "du disk summary for /home/user/build", "cmd": "du -sh /home/user/build"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Temp\\Bin", "cmd": "Compress-Archive -Path 'C:\\Temp\\Bin\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "view last 25 git commits on one line", "cmd": "git log --oneline -n 25"}
+{"os": "linux", "prompt": "show sorted frequency of 'ConnectionReset' in /usr/local/bin/backup/app.log", "cmd": "grep -o 'ConnectionReset' /usr/local/bin/backup/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "find files matching pattern *.yml under C:\\Logs\\Cache", "cmd": "Get-ChildItem -Path 'C:\\Logs\\Cache' -Filter '*.yml' -Recurse"}
+{"os": "linux", "prompt": "show sorted frequency of 'OutOfMemory' in /var/www/html/app.log", "cmd": "grep -o 'OutOfMemory' /var/www/html/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "archive /tmp/var with gzip compression", "cmd": "tar -czvf archive.tar.gz /tmp/var"}
+{"os": "linux", "prompt": "monitor the end of /usr/local/bin/bin/app.yml with 3 lines", "cmd": "tail -n 3 -f /usr/local/bin/bin/app.yml"}
+{"os": "linux", "prompt": "stop every process with name firefox", "cmd": "pkill -9 -f firefox"}
+{"os": "linux", "prompt": "free port 42699 and stop its process", "cmd": "kill -9 $(lsof -t -i:42699)"}
+{"os": "linux", "prompt": "make deploy and group users owners of directory /usr/local/bin", "cmd": "chown -R deploy:users /usr/local/bin"}
+{"os": "linux", "prompt": "invert match for '404' in /tmp/app.log", "cmd": "grep -v '404' /tmp/app.log"}
+{"os": "powershell", "prompt": "find large files greater than 75MB in C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup' -File -Recurse | Where-Object { $_.Length -gt 75MB }"}
+{"os": "linux", "prompt": "print the first 5 lines of ./app.yml", "cmd": "head -n 5 ./app.yml"}
+{"os": "powershell", "prompt": "copy item C:\\Projects\\Src\\source.tar.gz to C:\\Projects\\Src\\dest.tar.gz force", "cmd": "Copy-Item -Path 'C:\\Projects\\Src\\source.tar.gz' -Destination 'C:\\Projects\\Src\\dest.tar.gz' -Force"}
+{"os": "powershell", "prompt": "create new file output_5.txt inside C:\\inetpub\\wwwroot", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\output_5.txt' -ItemType File -Force"}
+{"os": "powershell", "prompt": "create new file test_66.conf inside C:\\Backup\\App", "cmd": "New-Item -Path 'C:\\Backup\\App\\test_66.conf' -ItemType File -Force"}
+{"os": "powershell", "prompt": "display beginning 25 lines of C:\\Logs\\Cache\\app.py", "cmd": "Get-Content -Path 'C:\\Logs\\Cache\\app.py' -TotalCount 25"}
+{"os": "linux", "prompt": "cleanup all files with extension .csv in /var/www/html/src", "cmd": "find /var/www/html/src -type f -name '*.csv' -delete"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .yml files in /var/log/data", "cmd": "find /var/log/data -type f -name '*.yml' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "test-path for C:\\ProgramData\\App\\config.json", "cmd": "Test-Path -Path 'C:\\ProgramData\\App\\config.json'"}
+{"os": "powershell", "prompt": "new directory .\\logs\\backup in powershell", "cmd": "New-Item -Path '.\\logs\\backup' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "print the first 30 lines of /var/www/html/var/app.py", "cmd": "head -n 30 /var/www/html/var/app.py"}
+{"os": "powershell", "prompt": "new directory C:\\Temp\\Data\\build in powershell", "cmd": "New-Item -Path 'C:\\Temp\\Data\\build' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 100", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 100"}
+{"os": "powershell", "prompt": "display bottom 20 lines from C:\\Projects\\app.yml", "cmd": "Get-Content -Path 'C:\\Projects\\app.yml' -Tail 20"}
+{"os": "powershell", "prompt": "find large files greater than 50MB in D:\\Data", "cmd": "Get-ChildItem -Path 'D:\\Data' -File -Recurse | Where-Object { $_.Length -gt 50MB }"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\Backup\\Bin\\output.exe", "cmd": "Get-FileHash -Path 'C:\\Backup\\Bin\\output.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "how many times does 'FATAL' occur in /usr/local/bin/app.log", "cmd": "grep -c 'FATAL' /usr/local/bin/app.log"}
+{"os": "powershell", "prompt": "filter files modified in last 10 days in .\\logs", "cmd": "Get-ChildItem -Path '.\\logs' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-10) }"}
+{"os": "linux", "prompt": "systemctl enable --now for service w32time", "cmd": "sudo systemctl enable --now w32time"}
+{"os": "powershell", "prompt": "stop process with name postgres forcefully", "cmd": "Stop-Process -Name 'postgres' -Force"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Projects\\Data\\app.tar.gz", "cmd": "Get-Content -Path 'C:\\Projects\\Data\\app.tar.gz' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "create new file service_39.zip inside .\\data", "cmd": "New-Item -Path '.\\data\\service_39.zip' -ItemType File -Force"}
+{"os": "powershell", "prompt": "find large files greater than 20MB in C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -File -Recurse | Where-Object { $_.Length -gt 20MB }"}
+{"os": "powershell", "prompt": "view last 200 git commits on one line", "cmd": "git log --oneline -n 200"}
+{"os": "powershell", "prompt": "remove-item recursive on D:\\Data\\Tests\\build", "cmd": "Remove-Item -Path 'D:\\Data\\Tests\\build' -Recurse -Force"}
+{"os": "linux", "prompt": "stop every process with name node-daemon", "cmd": "pkill -9 -f node-daemon"}
+{"os": "linux", "prompt": "archive /data with gzip compression", "cmd": "tar -czvf archive.tar.gz /data"}
+{"os": "linux", "prompt": "du disk summary for ../src", "cmd": "du -sh ../src"}
+{"os": "powershell", "prompt": "filter processes by cpu over 250 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 250 } | Sort-Object CPU -Descending"}
+{"os": "linux", "prompt": "force kill pid 47059", "cmd": "kill -9 47059"}
+{"os": "linux", "prompt": "systemctl enable --now for service nginx", "cmd": "sudo systemctl enable --now nginx"}
+{"os": "powershell", "prompt": "copy item C:\\Backup\\Config\\source.tar.gz to C:\\Backup\\Config\\dest.tar.gz force", "cmd": "Copy-Item -Path 'C:\\Backup\\Config\\source.tar.gz' -Destination 'C:\\Backup\\Config\\dest.tar.gz' -Force"}
+{"os": "powershell", "prompt": "query url https://10.0.0.1 using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://10.0.0.1' -UseBasicParsing"}
+{"os": "powershell", "prompt": "display beginning 75 lines of C:\\inetpub\\wwwroot\\app.txt", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\app.txt' -TotalCount 75"}
+{"os": "powershell", "prompt": "filter files modified in last 7 days in C:\\Logs\\Bin", "cmd": "Get-ChildItem -Path 'C:\\Logs\\Bin' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-7) }"}
+{"os": "powershell", "prompt": "check windows service state for ssh", "cmd": "Get-Service -Name 'ssh'"}
+{"os": "powershell", "prompt": "query system event log for latest 3 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 3"}
+{"os": "linux", "prompt": "du disk summary for /var/www/html", "cmd": "du -sh /var/www/html"}
+{"os": "linux", "prompt": "get response headers for api.github.com", "cmd": "curl -I https://api.github.com"}
+{"os": "linux", "prompt": "find large files over 2048MB in /opt/logs", "cmd": "find /opt/logs -type f -size +2048M"}
+{"os": "powershell", "prompt": "find files matching pattern *.csv under .\\data\\Src", "cmd": "Get-ChildItem -Path '.\\data\\Src' -Filter '*.csv' -Recurse"}
+{"os": "linux", "prompt": "how many times does 'Unauthorized' occur in /tmp/backup/app.log", "cmd": "grep -c 'Unauthorized' /tmp/backup/app.log"}
+{"os": "powershell", "prompt": "view last 10 git commits on one line", "cmd": "git log --oneline -n 10"}
+{"os": "linux", "prompt": "verify connection to dns.google with 500 pings", "cmd": "ping -c 500 dns.google"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .md files in /tmp/app", "cmd": "find /tmp/app -type f -name '*.md' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into .\\logs\\App", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath '.\\logs\\App' -Force"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .md files in /opt", "cmd": "find /opt -type f -name '*.md' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "compute sha256 hash on .\\data\\server.exe", "cmd": "Get-FileHash -Path '.\\data\\server.exe' -Algorithm SHA256"}
+{"os": "powershell", "prompt": "kill process by pid 17815", "cmd": "Stop-Process -Id 17815 -Force"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Backup\\Backup", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Backup\\Backup' -Force"}
+{"os": "powershell", "prompt": "follow docker logs of firefox2", "cmd": "docker logs -f --tail 3 firefox2"}
+{"os": "powershell", "prompt": "docker run detached chrome on port 5000", "cmd": "docker run -d -p 5000:5000 --name chrome chrome:latest"}
+{"os": "linux", "prompt": "docker run detached sshd-server binding port 1433", "cmd": "docker run -d -p 1433:1433 --name sshd-server sshd-server:latest"}
+{"os": "powershell", "prompt": "find files matching pattern *.conf under C:\\ProgramData\\App\\Config", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\Config' -Filter '*.conf' -Recurse"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Backup\\app", "cmd": "Remove-Item -Path 'C:\\Backup\\app' -Recurse -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 8080 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 8080).OwningProcess -Force"}
+{"os": "linux", "prompt": "docker run detached code binding port 1433", "cmd": "docker run -d -p 1433:1433 --name code code:latest"}
+{"os": "powershell", "prompt": "test-path for C:\\Projects\\App\\config.json", "cmd": "Test-Path -Path 'C:\\Projects\\App\\config.json'"}
+{"os": "powershell", "prompt": "check reachability of port 40222 on dns.google", "cmd": "Test-NetConnection -ComputerName 'dns.google' -Port 40222"}
+{"os": "linux", "prompt": "verify connection to cloudflare.com with 20 pings", "cmd": "ping -c 20 cloudflare.com"}
+{"os": "linux", "prompt": "stop every process with name postgres-worker", "cmd": "pkill -9 -f postgres-worker"}
+{"os": "linux", "prompt": "du disk summary for /tmp/src", "cmd": "du -sh /tmp/src"}
+{"os": "linux", "prompt": "monitor docker logs for postgres-server", "cmd": "docker logs -f --tail 20 postgres-server"}
+{"os": "linux", "prompt": "monitor docker logs for teams-server", "cmd": "docker logs -f --tail 100 teams-server"}
+{"os": "powershell", "prompt": "resolve-dnsname for github.com", "cmd": "Resolve-DnsName -Name 'github.com'"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /opt/logs", "cmd": "find /opt/logs -type f -perm 0777"}
+{"os": "linux", "prompt": "print the first 15 lines of /var/log/bin/app.txt", "cmd": "head -n 15 /var/log/bin/app.txt"}
+{"os": "powershell", "prompt": "clean up .log files in C:\\Logs", "cmd": "Remove-Item -Path 'C:\\Logs\\*.log' -Force"}
+{"os": "linux", "prompt": "monitor the end of /var/log/app.zip with 10 lines", "cmd": "tail -n 10 -f /var/log/app.zip"}
+{"os": "powershell", "prompt": "inspect registry values for windows currentversion", "cmd": "Get-ItemProperty -Path 'HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion'"}
+{"os": "powershell", "prompt": "stop process with name sshd forcefully", "cmd": "Stop-Process -Name 'sshd' -Force"}
+{"os": "powershell", "prompt": "select lines containing 'Unauthorized' in C:\\ProgramData\\App\\Tests\\app.log", "cmd": "Select-String -Path 'C:\\ProgramData\\App\\Tests\\app.log' -Pattern 'Unauthorized' -CaseSensitive"}
+{"os": "linux", "prompt": "stop every process with name postgres", "cmd": "pkill -9 -f postgres"}
+{"os": "powershell", "prompt": "display beginning 15 lines of .\\data\\Data\\app.xml", "cmd": "Get-Content -Path '.\\data\\Data\\app.xml' -TotalCount 15"}
+{"os": "powershell", "prompt": "create new file server.csv inside .\\logs\\Src", "cmd": "New-Item -Path '.\\logs\\Src\\server.csv' -ItemType File -Force"}
+{"os": "linux", "prompt": "verify connection to api.github.com with 3 pings", "cmd": "ping -c 3 api.github.com"}
+{"os": "linux", "prompt": "make appuser and group docker owners of directory /usr/local/bin/app", "cmd": "chown -R appuser:docker /usr/local/bin/app"}
+{"os": "powershell", "prompt": "new directory .\\logs\\build in powershell", "cmd": "New-Item -Path '.\\logs\\build' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "find files matching pattern *.tar.gz under C:\\Backup\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Temp' -Filter '*.tar.gz' -Recurse"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 10", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 10"}
+{"os": "powershell", "prompt": "kill process by pid 16987", "cmd": "Stop-Process -Id 16987 -Force"}
+{"os": "linux", "prompt": "run interactive sh inside docker container", "cmd": "docker exec -it docker sh"}
+{"os": "linux", "prompt": "du disk summary for ../app", "cmd": "du -sh ../app"}
+{"os": "linux", "prompt": "show sorted frequency of 'NullPointer' in /usr/local/bin/tests/app.log", "cmd": "grep -o 'NullPointer' /usr/local/bin/tests/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "free port 443 and stop its process", "cmd": "kill -9 $(lsof -t -i:443)"}
+{"os": "powershell", "prompt": "copy item C:\\Logs\\source.xml to C:\\Logs\\dest.xml force", "cmd": "Copy-Item -Path 'C:\\Logs\\source.xml' -Destination 'C:\\Logs\\dest.xml' -Force"}
+{"os": "powershell", "prompt": "compute sha256 hash on D:\\Data\\output_21.exe", "cmd": "Get-FileHash -Path 'D:\\Data\\output_21.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "du disk summary for .", "cmd": "du -sh ."}
+{"os": "linux", "prompt": "set executable bit on /tmp/config/run.sh", "cmd": "chmod +x /tmp/config/run.sh"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Projects\\Logs", "cmd": "Compress-Archive -Path 'C:\\Projects\\Logs\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "clean up .conf files in .\\logs\\Logs", "cmd": "Remove-Item -Path '.\\logs\\Logs\\*.conf' -Force"}
+{"os": "powershell", "prompt": "check reachability of port 22 on 192.168.1.1", "cmd": "Test-NetConnection -ComputerName '192.168.1.1' -Port 22"}
+{"os": "linux", "prompt": "verify connection to smtp.office365.com with 3 pings", "cmd": "ping -c 3 smtp.office365.com"}
+{"os": "powershell", "prompt": "filter processes by cpu over 50 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 50 } | Sort-Object CPU -Descending"}
+{"os": "linux", "prompt": "print the first 25 lines of /opt/app.md", "cmd": "head -n 25 /opt/app.md"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\Projects\\app_1.exe", "cmd": "Get-FileHash -Path 'C:\\Projects\\app_1.exe' -Algorithm SHA256"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 75", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 75"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /usr/local/bin/cache", "cmd": "tar -xzvf archive.tar.gz -C /usr/local/bin/cache"}
+{"os": "powershell", "prompt": "select lines containing 'Exception' in C:\\Temp\\app.log", "cmd": "Select-String -Path 'C:\\Temp\\app.log' -Pattern 'Exception' -CaseSensitive"}
+{"os": "linux", "prompt": "find occurrences of 'OutOfMemory' in /var/log/logs", "cmd": "grep -rn 'OutOfMemory' /var/log/logs"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Temp", "cmd": "Compress-Archive -Path 'C:\\Temp\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "free port 43716 and stop its process", "cmd": "kill -9 $(lsof -t -i:43716)"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /tmp/backup", "cmd": "tar -xzvf archive.tar.gz -C /tmp/backup"}
+{"os": "linux", "prompt": "archive /etc/bin with gzip compression", "cmd": "tar -czvf archive.tar.gz /etc/bin"}
+{"os": "linux", "prompt": "monitor docker logs for docker", "cmd": "docker logs -f --tail 50 docker"}
+{"os": "powershell", "prompt": "resolve-dnsname for api.github.com", "cmd": "Resolve-DnsName -Name 'api.github.com'"}
+{"os": "linux", "prompt": "make admin and group www-data owners of directory /var/www/html/build", "cmd": "chown -R admin:www-data /var/www/html/build"}
+{"os": "powershell", "prompt": "test-path for .\\data\\Bin\\config.json", "cmd": "Test-Path -Path '.\\data\\Bin\\config.json'"}
+{"os": "powershell", "prompt": "query system event log for latest 15 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 15"}
+{"os": "linux", "prompt": "show sorted frequency of 'Timeout' in /etc/tests/app.log", "cmd": "grep -o 'Timeout' /etc/tests/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "rank processes by memory and take top 5", "cmd": "ps aux --sort=-%mem | head -n 5"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target ../config", "cmd": "tar -xzvf archive.tar.gz -C ../config"}
+{"os": "linux", "prompt": "make new branch release/v1.0 and switch to it", "cmd": "git checkout -b release/v1.0"}
+{"os": "linux", "prompt": "docker run detached nginx-daemon binding port 80", "cmd": "docker run -d -p 80:80 --name nginx-daemon nginx-daemon:latest"}
+{"os": "linux", "prompt": "verify connection to github.com with 30 pings", "cmd": "ping -c 30 github.com"}
+{"os": "powershell", "prompt": "filter files modified in last 180 days in .\\logs\\Src", "cmd": "Get-ChildItem -Path '.\\logs\\Src' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-180) }"}
+{"os": "linux", "prompt": "restart service MSSQLSERVER using systemctl", "cmd": "sudo systemctl restart MSSQLSERVER"}
+{"os": "linux", "prompt": "run interactive sh inside dotnet container", "cmd": "docker exec -it dotnet sh"}
+{"os": "linux", "prompt": "how many times does 'NullPointer' occur in /opt/app/app.log", "cmd": "grep -c 'NullPointer' /opt/app/app.log"}
+{"os": "linux", "prompt": "archive /data/logs with gzip compression", "cmd": "tar -czvf archive.tar.gz /data/logs"}
+{"os": "linux", "prompt": "docker run detached apache2 binding port 2254", "cmd": "docker run -d -p 2254:2254 --name apache2 apache2:latest"}
+{"os": "powershell", "prompt": "look for string 'Warning' in C:\\Logs\\*.py", "cmd": "Get-ChildItem -Path 'C:\\Logs\\*.py' | Select-String -Pattern 'Warning'"}
+{"os": "linux", "prompt": "make appuser and group users owners of directory /var/log/bin", "cmd": "chown -R appuser:users /var/log/bin"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .tar.gz files in /var/www/html", "cmd": "find /var/www/html -type f -name '*.tar.gz' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "look for string '404' in C:\\inetpub\\wwwroot\\Temp\\*.md", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\Temp\\*.md' | Select-String -Pattern '404'"}
+{"os": "powershell", "prompt": "create new file test_90.md inside .\\data", "cmd": "New-Item -Path '.\\data\\test_90.md' -ItemType File -Force"}
+{"os": "linux", "prompt": "docker run detached python-daemon binding port 34603", "cmd": "docker run -d -p 34603:34603 --name python-daemon python-daemon:latest"}
+{"os": "powershell", "prompt": "resolve-dnsname for 10.0.0.1", "cmd": "Resolve-DnsName -Name '10.0.0.1'"}
+{"os": "powershell", "prompt": "find large files greater than 25MB in C:\\inetpub\\wwwroot", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot' -File -Recurse | Where-Object { $_.Length -gt 25MB }"}
+{"os": "powershell", "prompt": "stop process with name python forcefully", "cmd": "Stop-Process -Name 'python' -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 6180 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 6180).OwningProcess -Force"}
+{"os": "powershell", "prompt": "remove-item recursive on .\\data\\Backup\\build", "cmd": "Remove-Item -Path '.\\data\\Backup\\build' -Recurse -Force"}
+{"os": "linux", "prompt": "find large files over 250MB in .", "cmd": "find . -type f -size +250M"}
+{"os": "powershell", "prompt": "kill process by pid 48023", "cmd": "Stop-Process -Id 48023 -Force"}
+{"os": "powershell", "prompt": "filter processes by cpu over 500 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 500 } | Sort-Object CPU -Descending"}
+{"os": "linux", "prompt": "stop every process with name docker", "cmd": "pkill -9 -f docker"}
+{"os": "linux", "prompt": "verify connection to google.com with 25 pings", "cmd": "ping -c 25 google.com"}
+{"os": "linux", "prompt": "invert match for 'Warning' in /var/log/var/app.log", "cmd": "grep -v 'Warning' /var/log/var/app.log"}
+{"os": "linux", "prompt": "print the first 10 lines of /tmp/app/app.tar.gz", "cmd": "head -n 10 /tmp/app/app.tar.gz"}
+{"os": "powershell", "prompt": "test-path for C:\\inetpub\\wwwroot\\Cache\\config.json", "cmd": "Test-Path -Path 'C:\\inetpub\\wwwroot\\Cache\\config.json'"}
+{"os": "linux", "prompt": "cleanup all files with extension .log in /opt/build", "cmd": "find /opt/build -type f -name '*.log' -delete"}
+{"os": "linux", "prompt": "free port 8443 and stop its process", "cmd": "kill -9 $(lsof -t -i:8443)"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Backup\\Backup", "cmd": "Compress-Archive -Path 'C:\\Backup\\Backup\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /opt/backup", "cmd": "tar -xzvf archive.tar.gz -C /opt/backup"}
+{"os": "linux", "prompt": "stop every process with name sshd", "cmd": "pkill -9 -f sshd"}
+{"os": "powershell", "prompt": "git branch checkout staging", "cmd": "git checkout -b staging"}
+{"os": "powershell", "prompt": "query url https://smtp.office365.com using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://smtp.office365.com' -UseBasicParsing"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\inetpub\\wwwroot\\Temp\\app_73.exe", "cmd": "Get-FileHash -Path 'C:\\inetpub\\wwwroot\\Temp\\app_73.exe' -Algorithm SHA256"}
+{"os": "powershell", "prompt": "test-path for D:\\Data\\config.json", "cmd": "Test-Path -Path 'D:\\Data\\config.json'"}
+{"os": "powershell", "prompt": "display bottom 200 lines from C:\\inetpub\\wwwroot\\App\\app.bak", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\App\\app.bak' -Tail 200"}
+{"os": "linux", "prompt": "inspect wuauserv daemon status", "cmd": "systemctl status wuauserv"}
+{"os": "linux", "prompt": "monitor the end of /home/user/app.conf with 100 lines", "cmd": "tail -n 100 -f /home/user/app.conf"}
+{"os": "linux", "prompt": "inspect ssh daemon status", "cmd": "systemctl status ssh"}
+{"os": "linux", "prompt": "inspect spooler daemon status", "cmd": "systemctl status spooler"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /var/www/html/src", "cmd": "tar -xzvf archive.tar.gz -C /var/www/html/src"}
+{"os": "powershell", "prompt": "filter files modified in last 30 days in .\\data\\Temp", "cmd": "Get-ChildItem -Path '.\\data\\Temp' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-30) }"}
+{"os": "linux", "prompt": "find network path and latency hops to smtp.office365.com", "cmd": "traceroute smtp.office365.com"}
+{"os": "linux", "prompt": "inspect cron daemon status", "cmd": "systemctl status cron"}
+{"os": "powershell", "prompt": "docker run detached nginx on port 21679", "cmd": "docker run -d -p 21679:21679 --name nginx nginx:latest"}
+{"os": "powershell", "prompt": "find files matching pattern *.bak under D:\\Data\\Logs", "cmd": "Get-ChildItem -Path 'D:\\Data\\Logs' -Filter '*.bak' -Recurse"}
+{"os": "linux", "prompt": "force kill pid 46742", "cmd": "kill -9 46742"}
+{"os": "powershell", "prompt": "display bottom 5 lines from C:\\inetpub\\wwwroot\\App\\app.zip", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\App\\app.zip' -Tail 5"}
+{"os": "linux", "prompt": "get response headers for microsoft.com", "cmd": "curl -I https://microsoft.com"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Projects\\app.xml", "cmd": "Get-Content -Path 'C:\\Projects\\app.xml' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "stop every process with name java", "cmd": "pkill -9 -f java"}
+{"os": "powershell", "prompt": "display bottom 20 lines from D:\\Data\\Logs\\app.csv", "cmd": "Get-Content -Path 'D:\\Data\\Logs\\app.csv' -Tail 20"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Projects", "cmd": "Compress-Archive -Path 'C:\\Projects\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "monitor docker logs for teams", "cmd": "docker logs -f --tail 75 teams"}
+{"os": "linux", "prompt": "force kill pid 54175", "cmd": "kill -9 54175"}
+{"os": "linux", "prompt": "find occurrences of 'Timeout' in ../var", "cmd": "grep -rn 'Timeout' ../var"}
+{"os": "linux", "prompt": "find recently modified files in last 1 days in ./config", "cmd": "find ./config -type f -mtime -1"}
+{"os": "powershell", "prompt": "check reachability of port 36228 on dns.google", "cmd": "Test-NetConnection -ComputerName 'dns.google' -Port 36228"}
+{"os": "linux", "prompt": "show last 15 commits in oneline format", "cmd": "git log --oneline -n 15"}
+{"os": "powershell", "prompt": "find large files greater than 2048MB in D:\\Data\\Src", "cmd": "Get-ChildItem -Path 'D:\\Data\\Src' -File -Recurse | Where-Object { $_.Length -gt 2048MB }"}
+{"os": "powershell", "prompt": "test-path for C:\\Backup\\Backup\\config.json", "cmd": "Test-Path -Path 'C:\\Backup\\Backup\\config.json'"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Projects\\Config", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Projects\\Config' -Force"}
+{"os": "linux", "prompt": "run interactive sh inside postgres container", "cmd": "docker exec -it postgres sh"}
+{"os": "linux", "prompt": "force kill pid 57020", "cmd": "kill -9 57020"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /var/log", "cmd": "tar -xzvf archive.tar.gz -C /var/log"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .md files in ./cache", "cmd": "find ./cache -type f -name '*.md' -exec chmod 644 {} +"}
+{"os": "linux", "prompt": "verify connection to google.com with 200 pings", "cmd": "ping -c 200 google.com"}
+{"os": "linux", "prompt": "find occurrences of 'Timeout' in ./logs", "cmd": "grep -rn 'Timeout' ./logs"}
+{"os": "powershell", "prompt": "check windows service state for cron", "cmd": "Get-Service -Name 'cron'"}
+{"os": "powershell", "prompt": "stop and start service MSSQLSERVER", "cmd": "Get-Service -Name 'MSSQLSERVER' | Restart-Service -Force"}
+{"os": "linux", "prompt": "verify connection to microsoft.com with 20 pings", "cmd": "ping -c 20 microsoft.com"}
+{"os": "powershell", "prompt": "git branch checkout master", "cmd": "git checkout -b master"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .md files in /home/user", "cmd": "find /home/user -type f -name '*.md' -exec chmod 644 {} +"}
+{"os": "linux", "prompt": "monitor the end of ../app.conf with 5 lines", "cmd": "tail -n 5 -f ../app.conf"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\ProgramData\\App\\Bin", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\ProgramData\\App\\Bin' -Force"}
+{"os": "linux", "prompt": "restart service cron using systemctl", "cmd": "sudo systemctl restart cron"}
+{"os": "linux", "prompt": "archive ./src with gzip compression", "cmd": "tar -czvf archive.tar.gz ./src"}
+{"os": "linux", "prompt": "run interactive sh inside code container", "cmd": "docker exec -it code sh"}
+{"os": "powershell", "prompt": "stop and start service bits", "cmd": "Get-Service -Name 'bits' | Restart-Service -Force"}
+{"os": "linux", "prompt": "run interactive sh inside chrome container", "cmd": "docker exec -it chrome sh"}
+{"os": "linux", "prompt": "find recently modified files in last 30 days in ..", "cmd": "find .. -type f -mtime -30"}
+{"os": "powershell", "prompt": "sort-object unique lines of .\\data\\Config\\app.sh", "cmd": "Get-Content -Path '.\\data\\Config\\app.sh' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "get response headers for dns.google", "cmd": "curl -I https://dns.google"}
+{"os": "linux", "prompt": "make admin and group admin owners of directory /etc/data", "cmd": "chown -R admin:admin /etc/data"}
+{"os": "powershell", "prompt": "check reachability of port 27017 on google.com", "cmd": "Test-NetConnection -ComputerName 'google.com' -Port 27017"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Backup\\Bin\\app.txt", "cmd": "Get-Content -Path 'C:\\Backup\\Bin\\app.txt' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "filter processes by cpu over 75 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 75 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "test-path for .\\logs\\Bin\\config.json", "cmd": "Test-Path -Path '.\\logs\\Bin\\config.json'"}
+{"os": "powershell", "prompt": "stop process with name postgres3 forcefully", "cmd": "Stop-Process -Name 'postgres3' -Force"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Projects\\dist", "cmd": "Remove-Item -Path 'C:\\Projects\\dist' -Recurse -Force"}
+{"os": "powershell", "prompt": "stop process with name python-server forcefully", "cmd": "Stop-Process -Name 'python-server' -Force"}
+{"os": "linux", "prompt": "run interactive sh inside firefox container", "cmd": "docker exec -it firefox sh"}
+{"os": "linux", "prompt": "du disk summary for /usr/local/bin", "cmd": "du -sh /usr/local/bin"}
+{"os": "linux", "prompt": "docker run detached java-daemon binding port 4328", "cmd": "docker run -d -p 4328:4328 --name java-daemon java-daemon:latest"}
+{"os": "linux", "prompt": "print the first 500 lines of /tmp/app.txt", "cmd": "head -n 500 /tmp/app.txt"}
+{"os": "powershell", "prompt": "git branch checkout release/v1.0", "cmd": "git checkout -b release/v1.0"}
+{"os": "linux", "prompt": "how many times does 'Unauthorized' occur in /data/app/app.log", "cmd": "grep -c 'Unauthorized' /data/app/app.log"}
+{"os": "powershell", "prompt": "display bottom 20 lines from D:\\Data\\Backup\\app.conf", "cmd": "Get-Content -Path 'D:\\Data\\Backup\\app.conf' -Tail 20"}
+{"os": "linux", "prompt": "run interactive sh inside teams-daemon container", "cmd": "docker exec -it teams-daemon sh"}
+{"os": "linux", "prompt": "verify connection to smtp.office365.com with 100 pings", "cmd": "ping -c 100 smtp.office365.com"}
+{"os": "linux", "prompt": "stop every process with name java-server", "cmd": "pkill -9 -f java-server"}
+{"os": "linux", "prompt": "free port 27017 and stop its process", "cmd": "kill -9 $(lsof -t -i:27017)"}
+{"os": "powershell", "prompt": "filter files modified in last 10 days in .\\data", "cmd": "Get-ChildItem -Path '.\\data' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-10) }"}
+{"os": "powershell", "prompt": "test-path for C:\\inetpub\\wwwroot\\Temp\\config.json", "cmd": "Test-Path -Path 'C:\\inetpub\\wwwroot\\Temp\\config.json'"}
+{"os": "powershell", "prompt": "clean up .md files in .\\logs", "cmd": "Remove-Item -Path '.\\logs\\*.md' -Force"}
+{"os": "powershell", "prompt": "test-path for C:\\inetpub\\wwwroot\\Bin\\config.json", "cmd": "Test-Path -Path 'C:\\inetpub\\wwwroot\\Bin\\config.json'"}
+{"os": "linux", "prompt": "du disk summary for /opt/bin", "cmd": "du -sh /opt/bin"}
+{"os": "linux", "prompt": "show sorted frequency of 'Exception' in /usr/local/bin/backup/app.log", "cmd": "grep -o 'Exception' /usr/local/bin/backup/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "compute sha256 hash on .\\data\\Tests\\service_82.exe", "cmd": "Get-FileHash -Path '.\\data\\Tests\\service_82.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "invert match for 'OutOfMemory' in /var/www/html/app.log", "cmd": "grep -v 'OutOfMemory' /var/www/html/app.log"}
+{"os": "powershell", "prompt": "display drive volumes with format-table autosize", "cmd": "Get-Volume | Format-Table -AutoSize"}
+{"os": "linux", "prompt": "find recently modified files in last 2 days in /etc", "cmd": "find /etc -type f -mtime -2"}
+{"os": "powershell", "prompt": "git branch checkout develop", "cmd": "git checkout -b develop"}
+{"os": "linux", "prompt": "show sorted frequency of 'FATAL' in /tmp/app.log", "cmd": "grep -o 'FATAL' /tmp/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "rank processes by memory and take top 25", "cmd": "ps aux --sort=-%mem | head -n 25"}
+{"os": "linux", "prompt": "stop every process with name firefox-server", "cmd": "pkill -9 -f firefox-server"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Temp\\Tests", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Temp\\Tests' -Force"}
+{"os": "linux", "prompt": "invert match for 'OutOfMemory' in /opt/app.log", "cmd": "grep -v 'OutOfMemory' /opt/app.log"}
+{"os": "linux", "prompt": "find occurrences of 'ConnectionReset' in /etc/src", "cmd": "grep -rn 'ConnectionReset' /etc/src"}
+{"os": "linux", "prompt": "find occurrences of 'FATAL' in /var/log/cache", "cmd": "grep -rn 'FATAL' /var/log/cache"}
+{"os": "powershell", "prompt": "query system event log for latest 75 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 75"}
+{"os": "powershell", "prompt": "display bottom 15 lines from D:\\Data\\app.xml", "cmd": "Get-Content -Path 'D:\\Data\\app.xml' -Tail 15"}
+{"os": "powershell", "prompt": "query system event log for latest 20 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 20"}
+{"os": "linux", "prompt": "invert match for 'ERROR' in /usr/local/bin/var/app.log", "cmd": "grep -v 'ERROR' /usr/local/bin/var/app.log"}
+{"os": "linux", "prompt": "show sorted frequency of 'OutOfMemory' in /data/app/app.log", "cmd": "grep -o 'OutOfMemory' /data/app/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "test-path for .\\data\\config.json", "cmd": "Test-Path -Path '.\\data\\config.json'"}
+{"os": "linux", "prompt": "docker run detached redis-server binding port 8780", "cmd": "docker run -d -p 8780:8780 --name redis-server redis-server:latest"}
+{"os": "linux", "prompt": "invert match for 'Timeout' in /home/user/app.log", "cmd": "grep -v 'Timeout' /home/user/app.log"}
+{"os": "powershell", "prompt": "display bottom 100 lines from C:\\Projects\\Temp\\app.conf", "cmd": "Get-Content -Path 'C:\\Projects\\Temp\\app.conf' -Tail 100"}
+{"os": "powershell", "prompt": "query url https://google.com using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://google.com' -UseBasicParsing"}
+{"os": "powershell", "prompt": "sort-object unique lines of .\\logs\\app.txt", "cmd": "Get-Content -Path '.\\logs\\app.txt' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "kill process by pid 63525", "cmd": "Stop-Process -Id 63525 -Force"}
+{"os": "linux", "prompt": "make new branch staging and switch to it", "cmd": "git checkout -b staging"}
+{"os": "powershell", "prompt": "docker run detached dotnet on port 39931", "cmd": "docker run -d -p 39931:39931 --name dotnet dotnet:latest"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /var/www/html/build", "cmd": "find /var/www/html/build -type f -perm 0777"}
+{"os": "linux", "prompt": "print the first 15 lines of /opt/app.bak", "cmd": "head -n 15 /opt/app.bak"}
+{"os": "linux", "prompt": "monitor docker logs for redis-worker", "cmd": "docker logs -f --tail 10 redis-worker"}
+{"os": "powershell", "prompt": "remove-item recursive on .\\logs\\App\\release", "cmd": "Remove-Item -Path '.\\logs\\App\\release' -Recurse -Force"}
+{"os": "powershell", "prompt": "git branch checkout feature/login", "cmd": "git checkout -b feature/login"}
+{"os": "powershell", "prompt": "stop process with name docker forcefully", "cmd": "Stop-Process -Name 'docker' -Force"}
+{"os": "powershell", "prompt": "find files matching pattern *.tar.gz under C:\\ProgramData\\App\\Cache", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\Cache' -Filter '*.tar.gz' -Recurse"}
+{"os": "linux", "prompt": "free port 63002 and stop its process", "cmd": "kill -9 $(lsof -t -i:63002)"}
+{"os": "linux", "prompt": "verify connection to cloudflare.com with 75 pings", "cmd": "ping -c 75 cloudflare.com"}
+{"os": "linux", "prompt": "cleanup all files with extension .json in /var/www/html/backup", "cmd": "find /var/www/html/backup -type f -name '*.json' -delete"}
+{"os": "powershell", "prompt": "compute sha256 hash on .\\data\\Bin\\server.exe", "cmd": "Get-FileHash -Path '.\\data\\Bin\\server.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "set executable bit on /home/user/tests/run.sh", "cmd": "chmod +x /home/user/tests/run.sh"}
+{"os": "linux", "prompt": "how many times does 'ConnectionReset' occur in /var/www/html/config/app.log", "cmd": "grep -c 'ConnectionReset' /var/www/html/config/app.log"}
+{"os": "powershell", "prompt": "copy item D:\\Data\\source.md to D:\\Data\\dest.md force", "cmd": "Copy-Item -Path 'D:\\Data\\source.md' -Destination 'D:\\Data\\dest.md' -Force"}
+{"os": "powershell", "prompt": "remove-item recursive on .\\logs\\temp", "cmd": "Remove-Item -Path '.\\logs\\temp' -Recurse -Force"}
+{"os": "powershell", "prompt": "filter files modified in last 7 days in C:\\inetpub\\wwwroot\\Backup", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\Backup' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-7) }"}
+{"os": "powershell", "prompt": "find large files greater than 5MB in .\\logs", "cmd": "Get-ChildItem -Path '.\\logs' -File -Recurse | Where-Object { $_.Length -gt 5MB }"}
+{"os": "powershell", "prompt": "docker run detached dotnet on port 8080", "cmd": "docker run -d -p 8080:8080 --name dotnet dotnet:latest"}
+{"os": "linux", "prompt": "du disk summary for /etc/var", "cmd": "du -sh /etc/var"}
+{"os": "powershell", "prompt": "resolve-dnsname for cloudflare.com", "cmd": "Resolve-DnsName -Name 'cloudflare.com'"}
+{"os": "powershell", "prompt": "display beginning 3 lines of C:\\Backup\\Tests\\app.csv", "cmd": "Get-Content -Path 'C:\\Backup\\Tests\\app.csv' -TotalCount 3"}
+{"os": "powershell", "prompt": "filter files modified in last 60 days in C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-60) }"}
+{"os": "powershell", "prompt": "display beginning 3 lines of C:\\Temp\\Tests\\app.txt", "cmd": "Get-Content -Path 'C:\\Temp\\Tests\\app.txt' -TotalCount 3"}
+{"os": "linux", "prompt": "make new branch main and switch to it", "cmd": "git checkout -b main"}
+{"os": "powershell", "prompt": "compress-archive for folder .\\data\\Cache", "cmd": "Compress-Archive -Path '.\\data\\Cache\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "compress-archive for folder D:\\Data", "cmd": "Compress-Archive -Path 'D:\\Data\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Projects\\App", "cmd": "Compress-Archive -Path 'C:\\Projects\\App\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Logs\\Tests", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Logs\\Tests' -Force"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /usr/local/bin/build", "cmd": "tar -xzvf archive.tar.gz -C /usr/local/bin/build"}
+{"os": "powershell", "prompt": "display bottom 20 lines from C:\\inetpub\\wwwroot\\Temp\\app.yml", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\Temp\\app.yml' -Tail 20"}
+{"os": "linux", "prompt": "invert match for 'FATAL' in /var/www/html/app.log", "cmd": "grep -v 'FATAL' /var/www/html/app.log"}
+{"os": "powershell", "prompt": "sort-object unique lines of .\\data\\app.yml", "cmd": "Get-Content -Path '.\\data\\app.yml' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /var/log/var", "cmd": "tar -xzvf archive.tar.gz -C /var/log/var"}
+{"os": "linux", "prompt": "find occurrences of 'Warning' in /var/log", "cmd": "grep -rn 'Warning' /var/log"}
+{"os": "powershell", "prompt": "kill process by pid 13591", "cmd": "Stop-Process -Id 13591 -Force"}
+{"os": "powershell", "prompt": "kill process by pid 36230", "cmd": "Stop-Process -Id 36230 -Force"}
+{"os": "linux", "prompt": "list all active network listening sockets", "cmd": "ss -tulpn"}
+{"os": "powershell", "prompt": "sort-object unique lines of .\\logs\\app.py", "cmd": "Get-Content -Path '.\\logs\\app.py' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "remove-item recursive on .\\logs\\cache", "cmd": "Remove-Item -Path '.\\logs\\cache' -Recurse -Force"}
+{"os": "linux", "prompt": "monitor docker logs for python", "cmd": "docker logs -f --tail 200 python"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .zip files in /var/www/html/data", "cmd": "find /var/www/html/data -type f -name '*.zip' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "list ipv4 network adapters with format-table", "cmd": "Get-NetIPAddress -AddressFamily IPv4 | Format-Table"}
+{"os": "linux", "prompt": "how many times does 'FATAL' occur in ./app.log", "cmd": "grep -c 'FATAL' ./app.log"}
+{"os": "powershell", "prompt": "display bottom 500 lines from C:\\Projects\\Src\\app.sh", "cmd": "Get-Content -Path 'C:\\Projects\\Src\\app.sh' -Tail 500"}
+{"os": "powershell", "prompt": "check windows service state for MSSQLSERVER", "cmd": "Get-Service -Name 'MSSQLSERVER'"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into .\\data\\Data", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath '.\\data\\Data' -Force"}
+{"os": "powershell", "prompt": "new directory .\\logs\\cache in powershell", "cmd": "New-Item -Path '.\\logs\\cache' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .log files in /home/user", "cmd": "find /home/user -type f -name '*.log' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "query system event log for latest 30 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 30"}
+{"os": "linux", "prompt": "monitor the end of ./data/app.yml with 20 lines", "cmd": "tail -n 20 -f ./data/app.yml"}
+{"os": "powershell", "prompt": "copy item .\\logs\\Backup\\source.tar.gz to .\\logs\\Backup\\dest.tar.gz force", "cmd": "Copy-Item -Path '.\\logs\\Backup\\source.tar.gz' -Destination '.\\logs\\Backup\\dest.tar.gz' -Force"}
+{"os": "linux", "prompt": "verify connection to microsoft.com with 500 pings", "cmd": "ping -c 500 microsoft.com"}
+{"os": "powershell", "prompt": "select lines containing 'ERROR' in C:\\Logs\\Cache\\app.log", "cmd": "Select-String -Path 'C:\\Logs\\Cache\\app.log' -Pattern 'ERROR' -CaseSensitive"}
+{"os": "powershell", "prompt": "stop and start service wuauserv", "cmd": "Get-Service -Name 'wuauserv' | Restart-Service -Force"}
+{"os": "powershell", "prompt": "create new file server_95.json inside C:\\ProgramData\\App", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\server_95.json' -ItemType File -Force"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Temp\\Cache", "cmd": "Compress-Archive -Path 'C:\\Temp\\Cache\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "print the first 3 lines of /var/www/html/app.yml", "cmd": "head -n 3 /var/www/html/app.yml"}
+{"os": "linux", "prompt": "archive /tmp with gzip compression", "cmd": "tar -czvf archive.tar.gz /tmp"}
+{"os": "powershell", "prompt": "stop and start service w32time", "cmd": "Get-Service -Name 'w32time' | Restart-Service -Force"}
+{"os": "powershell", "prompt": "stop and start service docker", "cmd": "Get-Service -Name 'docker' | Restart-Service -Force"}
+{"os": "linux", "prompt": "stop every process with name dotnet-daemon", "cmd": "pkill -9 -f dotnet-daemon"}
+{"os": "powershell", "prompt": "docker run detached firefox on port 25141", "cmd": "docker run -d -p 25141:25141 --name firefox firefox:latest"}
+{"os": "linux", "prompt": "inspect postgresql daemon status", "cmd": "systemctl status postgresql"}
+{"os": "linux", "prompt": "verify connection to 10.0.0.1 with 25 pings", "cmd": "ping -c 25 10.0.0.1"}
+{"os": "powershell", "prompt": "clean up .conf files in C:\\ProgramData\\App", "cmd": "Remove-Item -Path 'C:\\ProgramData\\App\\*.conf' -Force"}
+{"os": "linux", "prompt": "docker run detached python-server binding port 51715", "cmd": "docker run -d -p 51715:51715 --name python-server python-server:latest"}
+{"os": "linux", "prompt": "print the first 10 lines of /home/user/src/app.sh", "cmd": "head -n 10 /home/user/src/app.sh"}
+{"os": "linux", "prompt": "monitor the end of /etc/config/app.bak with 200 lines", "cmd": "tail -n 200 -f /etc/config/app.bak"}
+{"os": "linux", "prompt": "free port 43703 and stop its process", "cmd": "kill -9 $(lsof -t -i:43703)"}
+{"os": "linux", "prompt": "cleanup all files with extension .json in /home/user", "cmd": "find /home/user -type f -name '*.json' -delete"}
+{"os": "powershell", "prompt": "clean up .py files in D:\\Data\\Temp", "cmd": "Remove-Item -Path 'D:\\Data\\Temp\\*.py' -Force"}
+{"os": "powershell", "prompt": "find files matching pattern *.zip under C:\\ProgramData\\App\\Config", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\Config' -Filter '*.zip' -Recurse"}
+{"os": "linux", "prompt": "print the first 3 lines of /var/www/html/app.conf", "cmd": "head -n 3 /var/www/html/app.conf"}
+{"os": "linux", "prompt": "find recently modified files in last 90 days in ../logs", "cmd": "find ../logs -type f -mtime -90"}
+{"os": "powershell", "prompt": "remove-item recursive on .\\logs\\Config\\temp", "cmd": "Remove-Item -Path '.\\logs\\Config\\temp' -Recurse -Force"}
+{"os": "linux", "prompt": "free port 5432 and stop its process", "cmd": "kill -9 $(lsof -t -i:5432)"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Projects\\Backup\\backup", "cmd": "Remove-Item -Path 'C:\\Projects\\Backup\\backup' -Recurse -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 3389 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 3389).OwningProcess -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 5432 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 5432).OwningProcess -Force"}
+{"os": "linux", "prompt": "verify connection to google.com with 15 pings", "cmd": "ping -c 15 google.com"}
+{"os": "powershell", "prompt": "check reachability of port 6379 on api.github.com", "cmd": "Test-NetConnection -ComputerName 'api.github.com' -Port 6379"}
+{"os": "linux", "prompt": "rank processes by memory and take top 15", "cmd": "ps aux --sort=-%mem | head -n 15"}
+{"os": "linux", "prompt": "show sorted frequency of 'CRITICAL' in /home/user/bin/app.log", "cmd": "grep -o 'CRITICAL' /home/user/bin/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Projects\\Tests", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Projects\\Tests' -Force"}
+{"os": "powershell", "prompt": "copy item C:\\Logs\\Tests\\source.txt to C:\\Logs\\Tests\\dest.txt force", "cmd": "Copy-Item -Path 'C:\\Logs\\Tests\\source.txt' -Destination 'C:\\Logs\\Tests\\dest.txt' -Force"}
+{"os": "linux", "prompt": "find recently modified files in last 21 days in ./logs", "cmd": "find ./logs -type f -mtime -21"}
+{"os": "linux", "prompt": "how many times does 'ConnectionReset' occur in /tmp/app/app.log", "cmd": "grep -c 'ConnectionReset' /tmp/app/app.log"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 500", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 500"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\ProgramData\\App\\Config\\app.exe", "cmd": "Get-FileHash -Path 'C:\\ProgramData\\App\\Config\\app.exe' -Algorithm SHA256"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into D:\\Data\\Config", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'D:\\Data\\Config' -Force"}
+{"os": "powershell", "prompt": "query url https://dns.google using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://dns.google' -UseBasicParsing"}
+{"os": "powershell", "prompt": "stash unstaged modifications", "cmd": "git stash"}
+{"os": "linux", "prompt": "get response headers for 127.0.0.1", "cmd": "curl -I https://127.0.0.1"}
+{"os": "powershell", "prompt": "copy item C:\\Projects\\source.yml to C:\\Projects\\dest.yml force", "cmd": "Copy-Item -Path 'C:\\Projects\\source.yml' -Destination 'C:\\Projects\\dest.yml' -Force"}
+{"os": "linux", "prompt": "find recently modified files in last 10 days in /etc/logs", "cmd": "find /etc/logs -type f -mtime -10"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /var/log/backup", "cmd": "find /var/log/backup -type f -perm 0777"}
+{"os": "powershell", "prompt": "stop process with name redis forcefully", "cmd": "Stop-Process -Name 'redis' -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 17766 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 17766).OwningProcess -Force"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .log files in /tmp/tests", "cmd": "find /tmp/tests -type f -name '*.log' -exec chmod 644 {} +"}
+{"os": "linux", "prompt": "print the first 25 lines of /data/backup/app.md", "cmd": "head -n 25 /data/backup/app.md"}
+{"os": "powershell", "prompt": "git branch checkout main", "cmd": "git checkout -b main"}
+{"os": "powershell", "prompt": "new directory C:\\Temp\\build in powershell", "cmd": "New-Item -Path 'C:\\Temp\\build' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "display beginning 50 lines of C:\\Backup\\Config\\app.json", "cmd": "Get-Content -Path 'C:\\Backup\\Config\\app.json' -TotalCount 50"}
+{"os": "linux", "prompt": "monitor docker logs for teams", "cmd": "docker logs -f --tail 25 teams"}
+{"os": "powershell", "prompt": "filter processes by cpu over 5 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 5 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "select lines containing 'ConnectionReset' in C:\\ProgramData\\App\\app.log", "cmd": "Select-String -Path 'C:\\ProgramData\\App\\app.log' -Pattern 'ConnectionReset' -CaseSensitive"}
+{"os": "linux", "prompt": "diff working tree against HEAD~1", "cmd": "git diff HEAD~1"}
+{"os": "powershell", "prompt": "find large files greater than 50MB in C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -File -Recurse | Where-Object { $_.Length -gt 50MB }"}
+{"os": "powershell", "prompt": "view last 75 git commits on one line", "cmd": "git log --oneline -n 75"}
+{"os": "powershell", "prompt": "find files matching pattern *.log under C:\\ProgramData\\App", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App' -Filter '*.log' -Recurse"}
+{"os": "linux", "prompt": "du disk summary for /opt", "cmd": "du -sh /opt"}
+{"os": "powershell", "prompt": "sort-object unique lines of .\\data\\Config\\app.log", "cmd": "Get-Content -Path '.\\data\\Config\\app.log' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "view last 5 git commits on one line", "cmd": "git log --oneline -n 5"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Logs\\Temp\\backup", "cmd": "Remove-Item -Path 'C:\\Logs\\Temp\\backup' -Recurse -Force"}
+{"os": "linux", "prompt": "monitor the end of /tmp/backup/app.txt with 20 lines", "cmd": "tail -n 20 -f /tmp/backup/app.txt"}
+{"os": "linux", "prompt": "get response headers for 192.168.1.1", "cmd": "curl -I https://192.168.1.1"}
+{"os": "linux", "prompt": "cleanup all files with extension .md in ../logs", "cmd": "find ../logs -type f -name '*.md' -delete"}
+{"os": "powershell", "prompt": "clean up .txt files in C:\\ProgramData\\App\\App", "cmd": "Remove-Item -Path 'C:\\ProgramData\\App\\App\\*.txt' -Force"}
+{"os": "powershell", "prompt": "query system event log for latest 100 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 100"}
+{"os": "powershell", "prompt": "check windows service state for docker", "cmd": "Get-Service -Name 'docker'"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /etc", "cmd": "tar -xzvf archive.tar.gz -C /etc"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /tmp", "cmd": "find /tmp -type f -perm 0777"}
+{"os": "powershell", "prompt": "follow docker logs of apache23", "cmd": "docker logs -f --tail 10 apache23"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\Backup\\app.exe", "cmd": "Get-FileHash -Path 'C:\\Backup\\app.exe' -Algorithm SHA256"}
+{"os": "powershell", "prompt": "select lines containing '404' in C:\\Projects\\app.log", "cmd": "Select-String -Path 'C:\\Projects\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /usr/local/bin/tests", "cmd": "find /usr/local/bin/tests -type f -perm 0777"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\inetpub\\wwwroot\\Bin\\app_56.exe", "cmd": "Get-FileHash -Path 'C:\\inetpub\\wwwroot\\Bin\\app_56.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "show sorted frequency of 'CRITICAL' in /data/data/app.log", "cmd": "grep -o 'CRITICAL' /data/data/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "find recently modified files in last 2 days in /usr/local/bin/bin", "cmd": "find /usr/local/bin/bin -type f -mtime -2"}
+{"os": "linux", "prompt": "make deploy and group docker owners of directory /usr/local/bin", "cmd": "chown -R deploy:docker /usr/local/bin"}
+{"os": "linux", "prompt": "run interactive sh inside apache2-server container", "cmd": "docker exec -it apache2-server sh"}
+{"os": "powershell", "prompt": "clean up .log files in D:\\Data", "cmd": "Remove-Item -Path 'D:\\Data\\*.log' -Force"}
+{"os": "powershell", "prompt": "git branch checkout bugfix/timeout", "cmd": "git checkout -b bugfix/timeout"}
+{"os": "powershell", "prompt": "display bottom 10 lines from .\\data\\app.zip", "cmd": "Get-Content -Path '.\\data\\app.zip' -Tail 10"}
+{"os": "powershell", "prompt": "kill the process listening on port 2924 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 2924).OwningProcess -Force"}
+{"os": "powershell", "prompt": "kill process by pid 12982", "cmd": "Stop-Process -Id 12982 -Force"}
+{"os": "powershell", "prompt": "display beginning 20 lines of C:\\Logs\\Logs\\app.py", "cmd": "Get-Content -Path 'C:\\Logs\\Logs\\app.py' -TotalCount 20"}
+{"os": "powershell", "prompt": "clean up .py files in C:\\inetpub\\wwwroot", "cmd": "Remove-Item -Path 'C:\\inetpub\\wwwroot\\*.py' -Force"}
+{"os": "powershell", "prompt": "test-path for C:\\inetpub\\wwwroot\\config.json", "cmd": "Test-Path -Path 'C:\\inetpub\\wwwroot\\config.json'"}
+{"os": "powershell", "prompt": "kill process by pid 16627", "cmd": "Stop-Process -Id 16627 -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 40669 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 40669).OwningProcess -Force"}
+{"os": "linux", "prompt": "show sorted frequency of 'Warning' in /opt/var/app.log", "cmd": "grep -o 'Warning' /opt/var/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "force kill pid 20430", "cmd": "kill -9 20430"}
+{"os": "powershell", "prompt": "stop and start service spooler", "cmd": "Get-Service -Name 'spooler' | Restart-Service -Force"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into .\\data\\Temp", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath '.\\data\\Temp' -Force"}
+{"os": "linux", "prompt": "how many times does 'CRITICAL' occur in /tmp/config/app.log", "cmd": "grep -c 'CRITICAL' /tmp/config/app.log"}
+{"os": "powershell", "prompt": "filter files modified in last 2 days in C:\\Backup\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Backup' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-2) }"}
+{"os": "linux", "prompt": "set executable bit on ./data/run.sh", "cmd": "chmod +x ./data/run.sh"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .sh files in /opt/app", "cmd": "find /opt/app -type f -name '*.sh' -exec chmod 644 {} +"}
+{"os": "linux", "prompt": "docker run detached teams binding port 6539", "cmd": "docker run -d -p 6539:6539 --name teams teams:latest"}
+{"os": "powershell", "prompt": "create new file config_3.csv inside C:\\Backup", "cmd": "New-Item -Path 'C:\\Backup\\config_3.csv' -ItemType File -Force"}
+{"os": "linux", "prompt": "show last 25 commits in oneline format", "cmd": "git log --oneline -n 25"}
+{"os": "linux", "prompt": "monitor docker logs for docker", "cmd": "docker logs -f --tail 75 docker"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target ../src", "cmd": "tar -xzvf archive.tar.gz -C ../src"}
+{"os": "powershell", "prompt": "kill the process listening on port 27017 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 27017).OwningProcess -Force"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Logs\\App", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Logs\\App' -Force"}
+{"os": "linux", "prompt": "find world readable writable files 777 in .", "cmd": "find . -type f -perm 0777"}
+{"os": "linux", "prompt": "show sorted frequency of '404' in /home/user/logs/app.log", "cmd": "grep -o '404' /home/user/logs/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "query system event log for latest 25 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 25"}
+{"os": "powershell", "prompt": "display bottom 100 lines from C:\\Backup\\app.csv", "cmd": "Get-Content -Path 'C:\\Backup\\app.csv' -Tail 100"}
+{"os": "linux", "prompt": "inspect git working tree", "cmd": "git status"}
+{"os": "linux", "prompt": "print the first 75 lines of /etc/tests/app.yml", "cmd": "head -n 75 /etc/tests/app.yml"}
+{"os": "linux", "prompt": "make deploy and group admin owners of directory .", "cmd": "chown -R deploy:admin ."}
+{"os": "linux", "prompt": "du disk summary for ..", "cmd": "du -sh .."}
+{"os": "linux", "prompt": "cleanup all files with extension .zip in /var/log", "cmd": "find /var/log -type f -name '*.zip' -delete"}
+{"os": "linux", "prompt": "systemctl enable --now for service wuauserv", "cmd": "sudo systemctl enable --now wuauserv"}
+{"os": "linux", "prompt": "how many times does 'Exception' occur in /tmp/cache/app.log", "cmd": "grep -c 'Exception' /tmp/cache/app.log"}
+{"os": "powershell", "prompt": "filter files modified in last 30 days in .\\data", "cmd": "Get-ChildItem -Path '.\\data' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-30) }"}
+{"os": "linux", "prompt": "make deploy and group developers owners of directory /home/user/bin", "cmd": "chown -R deploy:developers /home/user/bin"}
+{"os": "powershell", "prompt": "copy item D:\\Data\\Config\\source.json to D:\\Data\\Config\\dest.json force", "cmd": "Copy-Item -Path 'D:\\Data\\Config\\source.json' -Destination 'D:\\Data\\Config\\dest.json' -Force"}
+{"os": "linux", "prompt": "du disk summary for /tmp/logs", "cmd": "du -sh /tmp/logs"}
+{"os": "powershell", "prompt": "docker run detached dotnet on port 80", "cmd": "docker run -d -p 80:80 --name dotnet dotnet:latest"}
+{"os": "powershell", "prompt": "look for string 'CRITICAL' in C:\\Backup\\Src\\*.tar.gz", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Src\\*.tar.gz' | Select-String -Pattern 'CRITICAL'"}
+{"os": "linux", "prompt": "monitor docker logs for dotnet-worker", "cmd": "docker logs -f --tail 200 dotnet-worker"}
+{"os": "linux", "prompt": "find recently modified files in last 90 days in ../app", "cmd": "find ../app -type f -mtime -90"}
+{"os": "powershell", "prompt": "find files matching pattern *.md under C:\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup' -Filter '*.md' -Recurse"}
+{"os": "linux", "prompt": "systemctl enable --now for service bits", "cmd": "sudo systemctl enable --now bits"}
+{"os": "linux", "prompt": "cleanup all files with extension .conf in /data/build", "cmd": "find /data/build -type f -name '*.conf' -delete"}
+{"os": "powershell", "prompt": "select lines containing '404' in C:\\Temp\\Bin\\app.log", "cmd": "Select-String -Path 'C:\\Temp\\Bin\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "powershell", "prompt": "find large files greater than 50MB in .\\logs", "cmd": "Get-ChildItem -Path '.\\logs' -File -Recurse | Where-Object { $_.Length -gt 50MB }"}
+{"os": "powershell", "prompt": "display bottom 25 lines from .\\data\\Backup\\app.bak", "cmd": "Get-Content -Path '.\\data\\Backup\\app.bak' -Tail 25"}
+{"os": "powershell", "prompt": "rank processes by workingset64 descending and take top 15", "cmd": "Get-Process | Sort-Object WorkingSet64 -Descending | Select-Object -First 15"}
+{"os": "linux", "prompt": "find occurrences of 'FATAL' in /usr/local/bin/tests", "cmd": "grep -rn 'FATAL' /usr/local/bin/tests"}
+{"os": "powershell", "prompt": "test-path for C:\\inetpub\\wwwroot\\Data\\config.json", "cmd": "Test-Path -Path 'C:\\inetpub\\wwwroot\\Data\\config.json'"}
+{"os": "linux", "prompt": "free port 2607 and stop its process", "cmd": "kill -9 $(lsof -t -i:2607)"}
+{"os": "linux", "prompt": "run interactive sh inside teams container", "cmd": "docker exec -it teams sh"}
+{"os": "linux", "prompt": "find recently modified files in last 10 days in ../src", "cmd": "find ../src -type f -mtime -10"}
+{"os": "linux", "prompt": "docker run detached teams3 binding port 60846", "cmd": "docker run -d -p 60846:60846 --name teams3 teams3:latest"}
+{"os": "powershell", "prompt": "clean up .conf files in C:\\Temp\\Bin", "cmd": "Remove-Item -Path 'C:\\Temp\\Bin\\*.conf' -Force"}
+{"os": "powershell", "prompt": "new directory C:\\Projects\\cache in powershell", "cmd": "New-Item -Path 'C:\\Projects\\cache' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "display beginning 50 lines of C:\\Logs\\app.tar.gz", "cmd": "Get-Content -Path 'C:\\Logs\\app.tar.gz' -TotalCount 50"}
+{"os": "linux", "prompt": "print the first 50 lines of /tmp/data/app.zip", "cmd": "head -n 50 /tmp/data/app.zip"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /var/log", "cmd": "find /var/log -type f -perm 0777"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\inetpub\\wwwroot\\Tests", "cmd": "Compress-Archive -Path 'C:\\inetpub\\wwwroot\\Tests\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "new directory .\\data\\Config\\build in powershell", "cmd": "New-Item -Path '.\\data\\Config\\build' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "show sorted frequency of 'Exception' in /home/user/app.log", "cmd": "grep -o 'Exception' /home/user/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "test-path for C:\\ProgramData\\App\\App\\config.json", "cmd": "Test-Path -Path 'C:\\ProgramData\\App\\App\\config.json'"}
+{"os": "powershell", "prompt": "kill process by pid 46927", "cmd": "Stop-Process -Id 46927 -Force"}
+{"os": "powershell", "prompt": "find files matching pattern *.conf under C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -Filter '*.conf' -Recurse"}
+{"os": "powershell", "prompt": "kill process by pid 31814", "cmd": "Stop-Process -Id 31814 -Force"}
+{"os": "linux", "prompt": "show last 75 commits in oneline format", "cmd": "git log --oneline -n 75"}
+{"os": "linux", "prompt": "monitor docker logs for apache2-server", "cmd": "docker logs -f --tail 5 apache2-server"}
+{"os": "powershell", "prompt": "docker run detached nginx2 on port 20822", "cmd": "docker run -d -p 20822:20822 --name nginx2 nginx2:latest"}
+{"os": "linux", "prompt": "get response headers for cloudflare.com", "cmd": "curl -I https://cloudflare.com"}
+{"os": "linux", "prompt": "show sorted frequency of '404' in /etc/app.log", "cmd": "grep -o '404' /etc/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "filter services where status is running", "cmd": "Get-Service | Where-Object { $_.Status -eq 'Running' }"}
+{"os": "powershell", "prompt": "follow docker logs of docker3", "cmd": "docker logs -f --tail 25 docker3"}
+{"os": "linux", "prompt": "show sorted frequency of 'Warning' in ./app/app.log", "cmd": "grep -o 'Warning' ./app/app.log | sort | uniq -c"}
+{"os": "powershell", "prompt": "filter processes by cpu over 200 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 200 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "create new file output.json inside D:\\Data", "cmd": "New-Item -Path 'D:\\Data\\output.json' -ItemType File -Force"}
+{"os": "powershell", "prompt": "copy item C:\\Temp\\App\\source.tar.gz to C:\\Temp\\App\\dest.tar.gz force", "cmd": "Copy-Item -Path 'C:\\Temp\\App\\source.tar.gz' -Destination 'C:\\Temp\\App\\dest.tar.gz' -Force"}
+{"os": "linux", "prompt": "force kill pid 3304", "cmd": "kill -9 3304"}
+{"os": "powershell", "prompt": "sort-object unique lines of D:\\Data\\Tests\\app.md", "cmd": "Get-Content -Path 'D:\\Data\\Tests\\app.md' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "create new file service.zip inside C:\\inetpub\\wwwroot", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\service.zip' -ItemType File -Force"}
+{"os": "linux", "prompt": "free port 33837 and stop its process", "cmd": "kill -9 $(lsof -t -i:33837)"}
+{"os": "linux", "prompt": "find large files over 150MB in /var/www/html", "cmd": "find /var/www/html -type f -size +150M"}
+{"os": "powershell", "prompt": "filter files modified in last 30 days in C:\\Logs", "cmd": "Get-ChildItem -Path 'C:\\Logs' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-30) }"}
+{"os": "powershell", "prompt": "display bottom 5 lines from C:\\Backup\\Config\\app.md", "cmd": "Get-Content -Path 'C:\\Backup\\Config\\app.md' -Tail 5"}
+{"os": "linux", "prompt": "find large files over 75MB in /var/www/html/src", "cmd": "find /var/www/html/src -type f -size +75M"}
+{"os": "linux", "prompt": "stop every process with name redis", "cmd": "pkill -9 -f redis"}
+{"os": "powershell", "prompt": "new directory C:\\Backup\\temp in powershell", "cmd": "New-Item -Path 'C:\\Backup\\temp' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "look for string 'ERROR' in C:\\Temp\\Temp\\*.csv", "cmd": "Get-ChildItem -Path 'C:\\Temp\\Temp\\*.csv' | Select-String -Pattern 'ERROR'"}
+{"os": "linux", "prompt": "systemctl enable --now for service ssh", "cmd": "sudo systemctl enable --now ssh"}
+{"os": "powershell", "prompt": "stop and start service apache2", "cmd": "Get-Service -Name 'apache2' | Restart-Service -Force"}
+{"os": "powershell", "prompt": "compress-archive for folder D:\\Data\\Config", "cmd": "Compress-Archive -Path 'D:\\Data\\Config\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "set executable bit on /home/user/backup/run.sh", "cmd": "chmod +x /home/user/backup/run.sh"}
+{"os": "powershell", "prompt": "find files matching pattern *.xml under C:\\Backup\\Src", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Src' -Filter '*.xml' -Recurse"}
+{"os": "linux", "prompt": "archive /var/log/bin with gzip compression", "cmd": "tar -czvf archive.tar.gz /var/log/bin"}
+{"os": "powershell", "prompt": "check windows service state for bits", "cmd": "Get-Service -Name 'bits'"}
+{"os": "powershell", "prompt": "query system event log for latest 5 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 5"}
+{"os": "powershell", "prompt": "test-path for C:\\ProgramData\\App\\Bin\\config.json", "cmd": "Test-Path -Path 'C:\\ProgramData\\App\\Bin\\config.json'"}
+{"os": "linux", "prompt": "restart service apache2 using systemctl", "cmd": "sudo systemctl restart apache2"}
+{"os": "powershell", "prompt": "display bottom 20 lines from .\\data\\app.tar.gz", "cmd": "Get-Content -Path '.\\data\\app.tar.gz' -Tail 20"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Backup", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Backup' -Force"}
+{"os": "linux", "prompt": "systemctl enable --now for service apache2", "cmd": "sudo systemctl enable --now apache2"}
+{"os": "powershell", "prompt": "look for string 'OutOfMemory' in .\\logs\\*.yml", "cmd": "Get-ChildItem -Path '.\\logs\\*.yml' | Select-String -Pattern 'OutOfMemory'"}
+{"os": "linux", "prompt": "show sorted frequency of '404' in /data/config/app.log", "cmd": "grep -o '404' /data/config/app.log | sort | uniq -c"}
+{"os": "linux", "prompt": "stop every process with name chrome", "cmd": "pkill -9 -f chrome"}
+{"os": "powershell", "prompt": "display beginning 50 lines of C:\\Backup\\Cache\\app.sh", "cmd": "Get-Content -Path 'C:\\Backup\\Cache\\app.sh' -TotalCount 50"}
+{"os": "linux", "prompt": "set executable bit on /opt/var/run.sh", "cmd": "chmod +x /opt/var/run.sh"}
+{"os": "linux", "prompt": "find network path and latency hops to github.com", "cmd": "traceroute github.com"}
+{"os": "linux", "prompt": "find large files over 75MB in /usr/local/bin", "cmd": "find /usr/local/bin -type f -size +75M"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Projects\\App", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Projects\\App' -Force"}
+{"os": "powershell", "prompt": "check windows service state for redis-server", "cmd": "Get-Service -Name 'redis-server'"}
+{"os": "powershell", "prompt": "new directory .\\logs\\logs in powershell", "cmd": "New-Item -Path '.\\logs\\logs' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "filter files modified in last 5 days in C:\\inetpub\\wwwroot\\Cache", "cmd": "Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\Cache' -Recurse | Where-Object { $_.LastWriteTime -gt (Get-Date).AddDays(-5) }"}
+{"os": "powershell", "prompt": "find large files greater than 750MB in C:\\ProgramData\\App\\Backup", "cmd": "Get-ChildItem -Path 'C:\\ProgramData\\App\\Backup' -File -Recurse | Where-Object { $_.Length -gt 750MB }"}
+{"os": "linux", "prompt": "print the first 5 lines of /data/app.tar.gz", "cmd": "head -n 5 /data/app.tar.gz"}
+{"os": "powershell", "prompt": "check reachability of port 32485 on google.com", "cmd": "Test-NetConnection -ComputerName 'google.com' -Port 32485"}
+{"os": "linux", "prompt": "find occurrences of 'ConnectionReset' in /data/data", "cmd": "grep -rn 'ConnectionReset' /data/data"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\inetpub\\wwwroot\\app.log", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\app.log' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Temp", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Temp' -Force"}
+{"os": "linux", "prompt": "invert match for 'CRITICAL' in /opt/app.log", "cmd": "grep -v 'CRITICAL' /opt/app.log"}
+{"os": "powershell", "prompt": "look for string 'ConnectionReset' in .\\logs\\Config\\*.xml", "cmd": "Get-ChildItem -Path '.\\logs\\Config\\*.xml' | Select-String -Pattern 'ConnectionReset'"}
+{"os": "powershell", "prompt": "copy item C:\\Temp\\source.log to C:\\Temp\\dest.log force", "cmd": "Copy-Item -Path 'C:\\Temp\\source.log' -Destination 'C:\\Temp\\dest.log' -Force"}
+{"os": "linux", "prompt": "systemctl enable --now for service redis-server", "cmd": "sudo systemctl enable --now redis-server"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\inetpub\\wwwroot\\Config\\release", "cmd": "Remove-Item -Path 'C:\\inetpub\\wwwroot\\Config\\release' -Recurse -Force"}
+{"os": "linux", "prompt": "find network path and latency hops to 127.0.0.1", "cmd": "traceroute 127.0.0.1"}
+{"os": "linux", "prompt": "force kill pid 60792", "cmd": "kill -9 60792"}
+{"os": "powershell", "prompt": "create new file output.csv inside C:\\Backup", "cmd": "New-Item -Path 'C:\\Backup\\output.csv' -ItemType File -Force"}
+{"os": "linux", "prompt": "archive /var/www/html with gzip compression", "cmd": "tar -czvf archive.tar.gz /var/www/html"}
+{"os": "powershell", "prompt": "display beginning 100 lines of C:\\Logs\\App\\app.md", "cmd": "Get-Content -Path 'C:\\Logs\\App\\app.md' -TotalCount 100"}
+{"os": "linux", "prompt": "make ubuntu and group admin owners of directory /usr/local/bin/app", "cmd": "chown -R ubuntu:admin /usr/local/bin/app"}
+{"os": "linux", "prompt": "show last 3 commits in oneline format", "cmd": "git log --oneline -n 3"}
+{"os": "linux", "prompt": "du disk summary for /data", "cmd": "du -sh /data"}
+{"os": "linux", "prompt": "set executable bit on /var/www/html/tests/run.sh", "cmd": "chmod +x /var/www/html/tests/run.sh"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\Backup\\Tests\\app_61.exe", "cmd": "Get-FileHash -Path 'C:\\Backup\\Tests\\app_61.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "set executable bit on /opt/bin/run.sh", "cmd": "chmod +x /opt/bin/run.sh"}
+{"os": "linux", "prompt": "print the first 75 lines of /var/www/html/app.log", "cmd": "head -n 75 /var/www/html/app.log"}
+{"os": "linux", "prompt": "stash unstaged changes", "cmd": "git stash"}
+{"os": "linux", "prompt": "monitor docker logs for python", "cmd": "docker logs -f --tail 3 python"}
+{"os": "powershell", "prompt": "create new file app.yml inside C:\\inetpub\\wwwroot\\Src", "cmd": "New-Item -Path 'C:\\inetpub\\wwwroot\\Src\\app.yml' -ItemType File -Force"}
+{"os": "linux", "prompt": "find occurrences of '404' in /var/www/html/backup", "cmd": "grep -rn '404' /var/www/html/backup"}
+{"os": "powershell", "prompt": "find large files greater than 150MB in C:\\Temp", "cmd": "Get-ChildItem -Path 'C:\\Temp' -File -Recurse | Where-Object { $_.Length -gt 150MB }"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Temp\\Src\\backup", "cmd": "Remove-Item -Path 'C:\\Temp\\Src\\backup' -Recurse -Force"}
+{"os": "powershell", "prompt": "query url https://github.com using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://github.com' -UseBasicParsing"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Temp\\Config\\app.sh", "cmd": "Get-Content -Path 'C:\\Temp\\Config\\app.sh' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "get response headers for github.com", "cmd": "curl -I https://github.com"}
+{"os": "linux", "prompt": "inspect redis-server daemon status", "cmd": "systemctl status redis-server"}
+{"os": "powershell", "prompt": "copy item C:\\Backup\\Logs\\source.json to C:\\Backup\\Logs\\dest.json force", "cmd": "Copy-Item -Path 'C:\\Backup\\Logs\\source.json' -Destination 'C:\\Backup\\Logs\\dest.json' -Force"}
+{"os": "linux", "prompt": "archive /home/user with gzip compression", "cmd": "tar -czvf archive.tar.gz /home/user"}
+{"os": "powershell", "prompt": "follow docker logs of python3", "cmd": "docker logs -f --tail 25 python3"}
+{"os": "linux", "prompt": "rank processes by memory and take top 10", "cmd": "ps aux --sort=-%mem | head -n 10"}
+{"os": "powershell", "prompt": "view windows operating system version details", "cmd": "Get-CimInstance -ClassName Win32_OperatingSystem | Select-Object Caption, Version"}
+{"os": "powershell", "prompt": "filter processes by cpu over 4096 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 4096 } | Sort-Object CPU -Descending"}
+{"os": "powershell", "prompt": "resolve-dnsname for smtp.office365.com", "cmd": "Resolve-DnsName -Name 'smtp.office365.com'"}
+{"os": "linux", "prompt": "restart service redis-server using systemctl", "cmd": "sudo systemctl restart redis-server"}
+{"os": "linux", "prompt": "print the first 25 lines of /home/user/cache/app.txt", "cmd": "head -n 25 /home/user/cache/app.txt"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target /data", "cmd": "tar -xzvf archive.tar.gz -C /data"}
+{"os": "linux", "prompt": "force kill pid 11580", "cmd": "kill -9 11580"}
+{"os": "powershell", "prompt": "check reachability of port 39766 on cloudflare.com", "cmd": "Test-NetConnection -ComputerName 'cloudflare.com' -Port 39766"}
+{"os": "linux", "prompt": "set executable bit on /home/user/run.sh", "cmd": "chmod +x /home/user/run.sh"}
+{"os": "powershell", "prompt": "copy item C:\\Logs\\App\\source.conf to C:\\Logs\\App\\dest.conf force", "cmd": "Copy-Item -Path 'C:\\Logs\\App\\source.conf' -Destination 'C:\\Logs\\App\\dest.conf' -Force"}
+{"os": "linux", "prompt": "invert match for 'ERROR' in /home/user/data/app.log", "cmd": "grep -v 'ERROR' /home/user/data/app.log"}
+{"os": "powershell", "prompt": "show all running windows processes", "cmd": "Get-Process"}
+{"os": "powershell", "prompt": "find files matching pattern *.py under C:\\Projects", "cmd": "Get-ChildItem -Path 'C:\\Projects' -Filter '*.py' -Recurse"}
+{"os": "linux", "prompt": "get response headers for smtp.office365.com", "cmd": "curl -I https://smtp.office365.com"}
+{"os": "powershell", "prompt": "display beginning 500 lines of C:\\Temp\\app.xml", "cmd": "Get-Content -Path 'C:\\Temp\\app.xml' -TotalCount 500"}
+{"os": "powershell", "prompt": "kill process by pid 12473", "cmd": "Stop-Process -Id 12473 -Force"}
+{"os": "linux", "prompt": "find recently modified files in last 60 days in /data/backup", "cmd": "find /data/backup -type f -mtime -60"}
+{"os": "linux", "prompt": "monitor docker logs for redis", "cmd": "docker logs -f --tail 30 redis"}
+{"os": "powershell", "prompt": "new directory C:\\ProgramData\\App\\build in powershell", "cmd": "New-Item -Path 'C:\\ProgramData\\App\\build' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\inetpub\\wwwroot", "cmd": "Compress-Archive -Path 'C:\\inetpub\\wwwroot\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "powershell", "prompt": "kill process by pid 55211", "cmd": "Stop-Process -Id 55211 -Force"}
+{"os": "linux", "prompt": "rank processes by memory and take top 75", "cmd": "ps aux --sort=-%mem | head -n 75"}
+{"os": "powershell", "prompt": "clean up .csv files in D:\\Data\\Backup", "cmd": "Remove-Item -Path 'D:\\Data\\Backup\\*.csv' -Force"}
+{"os": "linux", "prompt": "verify connection to api.github.com with 25 pings", "cmd": "ping -c 25 api.github.com"}
+{"os": "powershell", "prompt": "look for string 'ConnectionReset' in C:\\Projects\\*.xml", "cmd": "Get-ChildItem -Path 'C:\\Projects\\*.xml' | Select-String -Pattern 'ConnectionReset'"}
+{"os": "linux", "prompt": "cleanup all files with extension .zip in /home/user/cache", "cmd": "find /home/user/cache -type f -name '*.zip' -delete"}
+{"os": "powershell", "prompt": "select lines containing '404' in C:\\Projects\\Bin\\app.log", "cmd": "Select-String -Path 'C:\\Projects\\Bin\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "linux", "prompt": "make admin and group www-data owners of directory /tmp/backup", "cmd": "chown -R admin:www-data /tmp/backup"}
+{"os": "linux", "prompt": "find recently modified files in last 5 days in /tmp/bin", "cmd": "find /tmp/bin -type f -mtime -5"}
+{"os": "powershell", "prompt": "kill the process listening on port 56268 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 56268).OwningProcess -Force"}
+{"os": "linux", "prompt": "stop every process with name apache2", "cmd": "pkill -9 -f apache2"}
+{"os": "linux", "prompt": "cleanup all files with extension .json in /var/log/data", "cmd": "find /var/log/data -type f -name '*.json' -delete"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into D:\\Data", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'D:\\Data' -Force"}
+{"os": "powershell", "prompt": "resolve-dnsname for google.com", "cmd": "Resolve-DnsName -Name 'google.com'"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into D:\\Data\\Data", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'D:\\Data\\Data' -Force"}
+{"os": "powershell", "prompt": "display bottom 200 lines from C:\\inetpub\\wwwroot\\Src\\app.json", "cmd": "Get-Content -Path 'C:\\inetpub\\wwwroot\\Src\\app.json' -Tail 200"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target ./logs", "cmd": "tar -xzvf archive.tar.gz -C ./logs"}
+{"os": "linux", "prompt": "set executable bit on /usr/local/bin/run.sh", "cmd": "chmod +x /usr/local/bin/run.sh"}
+{"os": "linux", "prompt": "du disk summary for /var/www/html/bin", "cmd": "du -sh /var/www/html/bin"}
+{"os": "powershell", "prompt": "follow docker logs of apache2-worker", "cmd": "docker logs -f --tail 25 apache2-worker"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /var/log/app", "cmd": "find /var/log/app -type f -perm 0777"}
+{"os": "powershell", "prompt": "new directory .\\data\\Backup\\temp in powershell", "cmd": "New-Item -Path '.\\data\\Backup\\temp' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "follow docker logs of docker-worker", "cmd": "docker logs -f --tail 15 docker-worker"}
+{"os": "powershell", "prompt": "docker run detached chrome3 on port 80", "cmd": "docker run -d -p 80:80 --name chrome3 chrome3:latest"}
+{"os": "powershell", "prompt": "display beginning 30 lines of .\\data\\Bin\\app.md", "cmd": "Get-Content -Path '.\\data\\Bin\\app.md' -TotalCount 30"}
+{"os": "powershell", "prompt": "follow docker logs of sshd-worker", "cmd": "docker logs -f --tail 100 sshd-worker"}
+{"os": "linux", "prompt": "inspect w32time daemon status", "cmd": "systemctl status w32time"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\Backup\\app.txt", "cmd": "Get-Content -Path 'C:\\Backup\\app.txt' | Sort-Object -Unique"}
+{"os": "powershell", "prompt": "stop process with name node forcefully", "cmd": "Stop-Process -Name 'node' -Force"}
+{"os": "linux", "prompt": "show last 200 commits in oneline format", "cmd": "git log --oneline -n 200"}
+{"os": "powershell", "prompt": "kill process by pid 30187", "cmd": "Stop-Process -Id 30187 -Force"}
+{"os": "linux", "prompt": "run interactive sh inside apache2-worker container", "cmd": "docker exec -it apache2-worker sh"}
+{"os": "linux", "prompt": "find occurrences of 'ERROR' in .", "cmd": "grep -rn 'ERROR' ."}
+{"os": "powershell", "prompt": "select lines containing '404' in .\\data\\app.log", "cmd": "Select-String -Path '.\\data\\app.log' -Pattern '404' -CaseSensitive"}
+{"os": "powershell", "prompt": "query url https://cloudflare.com using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://cloudflare.com' -UseBasicParsing"}
+{"os": "linux", "prompt": "how much disk space is left", "cmd": "df -h"}
+{"os": "powershell", "prompt": "display bottom 75 lines from .\\data\\Bin\\app.json", "cmd": "Get-Content -Path '.\\data\\Bin\\app.json' -Tail 75"}
+{"os": "powershell", "prompt": "display beginning 15 lines of .\\data\\app.csv", "cmd": "Get-Content -Path '.\\data\\app.csv' -TotalCount 15"}
+{"os": "linux", "prompt": "untar archive.tar.gz into target ./data", "cmd": "tar -xzvf archive.tar.gz -C ./data"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /opt/app", "cmd": "find /opt/app -type f -perm 0777"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\Logs\\Backup", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\Logs\\Backup' -Force"}
+{"os": "powershell", "prompt": "new directory D:\\Data\\Data\\release in powershell", "cmd": "New-Item -Path 'D:\\Data\\Data\\release' -ItemType Directory -Force"}
+{"os": "linux", "prompt": "docker run detached teams binding port 36908", "cmd": "docker run -d -p 36908:36908 --name teams teams:latest"}
+{"os": "linux", "prompt": "find world readable writable files 777 in ./backup", "cmd": "find ./backup -type f -perm 0777"}
+{"os": "linux", "prompt": "find network path and latency hops to dns.google", "cmd": "traceroute dns.google"}
+{"os": "linux", "prompt": "free port 57046 and stop its process", "cmd": "kill -9 $(lsof -t -i:57046)"}
+{"os": "powershell", "prompt": "clean up .tar.gz files in C:\\Logs", "cmd": "Remove-Item -Path 'C:\\Logs\\*.tar.gz' -Force"}
+{"os": "powershell", "prompt": "display beginning 3 lines of D:\\Data\\Data\\app.txt", "cmd": "Get-Content -Path 'D:\\Data\\Data\\app.txt' -TotalCount 3"}
+{"os": "linux", "prompt": "docker run detached sshd2 binding port 9000", "cmd": "docker run -d -p 9000:9000 --name sshd2 sshd2:latest"}
+{"os": "powershell", "prompt": "find files matching pattern *.yml under C:\\Backup\\Backup", "cmd": "Get-ChildItem -Path 'C:\\Backup\\Backup' -Filter '*.yml' -Recurse"}
+{"os": "linux", "prompt": "make new branch feature/login and switch to it", "cmd": "git checkout -b feature/login"}
+{"os": "powershell", "prompt": "clean up .log files in D:\\Data\\Logs", "cmd": "Remove-Item -Path 'D:\\Data\\Logs\\*.log' -Force"}
+{"os": "linux", "prompt": "monitor docker logs for dotnet", "cmd": "docker logs -f --tail 10 dotnet"}
+{"os": "linux", "prompt": "find recently modified files in last 10 days in ./cache", "cmd": "find ./cache -type f -mtime -10"}
+{"os": "linux", "prompt": "cleanup all files with extension .bak in /var/log", "cmd": "find /var/log -type f -name '*.bak' -delete"}
+{"os": "powershell", "prompt": "docker run detached java on port 17925", "cmd": "docker run -d -p 17925:17925 --name java java:latest"}
+{"os": "linux", "prompt": "find occurrences of 'Exception' in /usr/local/bin", "cmd": "grep -rn 'Exception' /usr/local/bin"}
+{"os": "linux", "prompt": "find network path and latency hops to cloudflare.com", "cmd": "traceroute cloudflare.com"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .tar.gz files in /usr/local/bin", "cmd": "find /usr/local/bin -type f -name '*.tar.gz' -exec chmod 644 {} +"}
+{"os": "powershell", "prompt": "follow docker logs of firefox-daemon", "cmd": "docker logs -f --tail 20 firefox-daemon"}
+{"os": "linux", "prompt": "inspect apache2 daemon status", "cmd": "systemctl status apache2"}
+{"os": "linux", "prompt": "make ubuntu and group www-data owners of directory /opt/cache", "cmd": "chown -R ubuntu:www-data /opt/cache"}
+{"os": "linux", "prompt": "cleanup all files with extension .py in /home/user/config", "cmd": "find /home/user/config -type f -name '*.py' -delete"}
+{"os": "powershell", "prompt": "compress-archive for folder C:\\Temp\\Logs", "cmd": "Compress-Archive -Path 'C:\\Temp\\Logs\\*' -DestinationPath 'C:\\Backup\\archive.zip' -Force"}
+{"os": "linux", "prompt": "inspect MSSQLSERVER daemon status", "cmd": "systemctl status MSSQLSERVER"}
+{"os": "linux", "prompt": "how many times does 'Exception' occur in /var/www/html/app.log", "cmd": "grep -c 'Exception' /var/www/html/app.log"}
+{"os": "powershell", "prompt": "new directory C:\\Backup\\Config\\release in powershell", "cmd": "New-Item -Path 'C:\\Backup\\Config\\release' -ItemType Directory -Force"}
+{"os": "powershell", "prompt": "kill the process listening on port 1433 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 1433).OwningProcess -Force"}
+{"os": "linux", "prompt": "force kill pid 14123", "cmd": "kill -9 14123"}
+{"os": "linux", "prompt": "run interactive sh inside postgres-daemon container", "cmd": "docker exec -it postgres-daemon sh"}
+{"os": "linux", "prompt": "how many times does 'CRITICAL' occur in /home/user/app.log", "cmd": "grep -c 'CRITICAL' /home/user/app.log"}
+{"os": "linux", "prompt": "restart service postgresql using systemctl", "cmd": "sudo systemctl restart postgresql"}
+{"os": "powershell", "prompt": "query system event log for latest 10 errors", "cmd": "Get-EventLog -LogName System -EntryType Error -Newest 10"}
+{"os": "linux", "prompt": "restart service nginx using systemctl", "cmd": "sudo systemctl restart nginx"}
+{"os": "linux", "prompt": "invert match for 'ERROR' in /opt/src/app.log", "cmd": "grep -v 'ERROR' /opt/src/app.log"}
+{"os": "powershell", "prompt": "query url https://api.github.com using invoke-webrequest", "cmd": "Invoke-WebRequest -Uri 'https://api.github.com' -UseBasicParsing"}
+{"os": "powershell", "prompt": "view last 20 git commits on one line", "cmd": "git log --oneline -n 20"}
+{"os": "linux", "prompt": "docker run detached dotnet binding port 5000", "cmd": "docker run -d -p 5000:5000 --name dotnet dotnet:latest"}
+{"os": "powershell", "prompt": "view last 15 git commits on one line", "cmd": "git log --oneline -n 15"}
+{"os": "linux", "prompt": "how many times does 'FATAL' occur in /var/www/html/var/app.log", "cmd": "grep -c 'FATAL' /var/www/html/var/app.log"}
+{"os": "linux", "prompt": "run interactive sh inside apache2-daemon container", "cmd": "docker exec -it apache2-daemon sh"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /opt", "cmd": "find /opt -type f -perm 0777"}
+{"os": "powershell", "prompt": "find large files greater than 50MB in C:\\Logs", "cmd": "Get-ChildItem -Path 'C:\\Logs' -File -Recurse | Where-Object { $_.Length -gt 50MB }"}
+{"os": "linux", "prompt": "du disk summary for /home/user/config", "cmd": "du -sh /home/user/config"}
+{"os": "linux", "prompt": "monitor docker logs for docker", "cmd": "docker logs -f --tail 3 docker"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\inetpub\\wwwroot\\Backup\\dist", "cmd": "Remove-Item -Path 'C:\\inetpub\\wwwroot\\Backup\\dist' -Recurse -Force"}
+{"os": "linux", "prompt": "stop every process with name teams-server", "cmd": "pkill -9 -f teams-server"}
+{"os": "linux", "prompt": "monitor the end of /var/www/html/src/app.py with 50 lines", "cmd": "tail -n 50 -f /var/www/html/src/app.py"}
+{"os": "powershell", "prompt": "remove-item recursive on C:\\Projects\\Config\\dist", "cmd": "Remove-Item -Path 'C:\\Projects\\Config\\dist' -Recurse -Force"}
+{"os": "powershell", "prompt": "test-path for C:\\Temp\\Logs\\config.json", "cmd": "Test-Path -Path 'C:\\Temp\\Logs\\config.json'"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\Projects\\output_74.exe", "cmd": "Get-FileHash -Path 'C:\\Projects\\output_74.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "rank processes by memory and take top 500", "cmd": "ps aux --sort=-%mem | head -n 500"}
+{"os": "powershell", "prompt": "select lines containing 'ERROR' in .\\logs\\Config\\app.log", "cmd": "Select-String -Path '.\\logs\\Config\\app.log' -Pattern 'ERROR' -CaseSensitive"}
+{"os": "linux", "prompt": "list every container on docker", "cmd": "docker ps -a"}
+{"os": "linux", "prompt": "archive /etc/build with gzip compression", "cmd": "tar -czvf archive.tar.gz /etc/build"}
+{"os": "linux", "prompt": "find world readable writable files 777 in /usr/local/bin/src", "cmd": "find /usr/local/bin/src -type f -perm 0777"}
+{"os": "powershell", "prompt": "check reachability of port 3000 on api.github.com", "cmd": "Test-NetConnection -ComputerName 'api.github.com' -Port 3000"}
+{"os": "linux", "prompt": "find and change file mode to 644 for all .json files in /var/www/html/app", "cmd": "find /var/www/html/app -type f -name '*.json' -exec chmod 644 {} +"}
+{"os": "linux", "prompt": "set executable bit on /usr/local/bin/cache/run.sh", "cmd": "chmod +x /usr/local/bin/cache/run.sh"}
+{"os": "powershell", "prompt": "select lines containing 'CRITICAL' in .\\logs\\app.log", "cmd": "Select-String -Path '.\\logs\\app.log' -Pattern 'CRITICAL' -CaseSensitive"}
+{"os": "linux", "prompt": "find recently modified files in last 90 days in /data", "cmd": "find /data -type f -mtime -90"}
+{"os": "linux", "prompt": "run interactive sh inside java-server container", "cmd": "docker exec -it java-server sh"}
+{"os": "linux", "prompt": "print the first 200 lines of /home/user/logs/app.yml", "cmd": "head -n 200 /home/user/logs/app.yml"}
+{"os": "powershell", "prompt": "sort-object unique lines of C:\\ProgramData\\App\\Cache\\app.txt", "cmd": "Get-Content -Path 'C:\\ProgramData\\App\\Cache\\app.txt' | Sort-Object -Unique"}
+{"os": "linux", "prompt": "du disk summary for /opt/data", "cmd": "du -sh /opt/data"}
+{"os": "powershell", "prompt": "filter processes by cpu over 25 seconds descending", "cmd": "Get-Process | Where-Object { $_.CPU -gt 25 } | Sort-Object CPU -Descending"}
+{"os": "linux", "prompt": "stop every process with name dotnet3", "cmd": "pkill -9 -f dotnet3"}
+{"os": "powershell", "prompt": "compute sha256 hash on .\\data\\Config\\test_76.exe", "cmd": "Get-FileHash -Path '.\\data\\Config\\test_76.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "free port 6379 and stop its process", "cmd": "kill -9 $(lsof -t -i:6379)"}
+{"os": "linux", "prompt": "find large files over 250MB in /etc/tests", "cmd": "find /etc/tests -type f -size +250M"}
+{"os": "linux", "prompt": "find occurrences of 'Timeout' in /home/user/logs", "cmd": "grep -rn 'Timeout' /home/user/logs"}
+{"os": "linux", "prompt": "rank processes by memory and take top 50", "cmd": "ps aux --sort=-%mem | head -n 50"}
+{"os": "linux", "prompt": "set executable bit on /var/log/run.sh", "cmd": "chmod +x /var/log/run.sh"}
+{"os": "powershell", "prompt": "check reachability of port 31691 on 127.0.0.1", "cmd": "Test-NetConnection -ComputerName '127.0.0.1' -Port 31691"}
+{"os": "powershell", "prompt": "copy item C:\\Temp\\source.xml to C:\\Temp\\dest.xml force", "cmd": "Copy-Item -Path 'C:\\Temp\\source.xml' -Destination 'C:\\Temp\\dest.xml' -Force"}
+{"os": "linux", "prompt": "free port 80 and stop its process", "cmd": "kill -9 $(lsof -t -i:80)"}
+{"os": "linux", "prompt": "monitor the end of /var/www/html/logs/app.xml with 3 lines", "cmd": "tail -n 3 -f /var/www/html/logs/app.xml"}
+{"os": "powershell", "prompt": "compute sha256 hash on C:\\inetpub\\wwwroot\\Tests\\service.exe", "cmd": "Get-FileHash -Path 'C:\\inetpub\\wwwroot\\Tests\\service.exe' -Algorithm SHA256"}
+{"os": "linux", "prompt": "run interactive sh inside redis container", "cmd": "docker exec -it redis sh"}
+{"os": "linux", "prompt": "systemctl enable --now for service spooler", "cmd": "sudo systemctl enable --now spooler"}
+{"os": "powershell", "prompt": "decompress C:\\Backup\\archive.zip into C:\\inetpub\\wwwroot", "cmd": "Expand-Archive -Path 'C:\\Backup\\archive.zip' -DestinationPath 'C:\\inetpub\\wwwroot' -Force"}
+{"os": "powershell", "prompt": "select lines containing 'OutOfMemory' in C:\\Logs\\Backup\\app.log", "cmd": "Select-String -Path 'C:\\Logs\\Backup\\app.log' -Pattern 'OutOfMemory' -CaseSensitive"}
+{"os": "powershell", "prompt": "display beginning 25 lines of C:\\Projects\\Temp\\app.bak", "cmd": "Get-Content -Path 'C:\\Projects\\Temp\\app.bak' -TotalCount 25"}
+{"os": "powershell", "prompt": "kill the process listening on port 3000 in powershell", "cmd": "Stop-Process -Id (Get-NetTCPConnection -LocalPort 3000).OwningProcess -Force"}
+{"os": "linux", "prompt": "monitor the end of /var/log/app.bak with 100 lines", "cmd": "tail -n 100 -f /var/log/app.bak"}
+{"os": "linux", "prompt": "free port 3306 and stop its process", "cmd": "kill -9 $(lsof -t -i:3306)"}
+{"os": "linux", "prompt": "systemctl enable --now for service cron", "cmd": "sudo systemctl enable --now cron"}
+{"os": "powershell", "prompt": "stop process with name java-worker forcefully", "cmd": "Stop-Process -Name 'java-worker' -Force"}
+{"os": "linux", "prompt": "docker run detached python binding port 37343", "cmd": "docker run -d -p 37343:37343 --name python python:latest"}
+{"os": "linux", "prompt": "force kill pid 56720", "cmd": "kill -9 56720"}
+{"os": "linux", "prompt": "set executable bit on /data/tests/run.sh", "cmd": "chmod +x /data/tests/run.sh"}
+{"os": "powershell", "prompt": "kill process by pid 65510", "cmd": "Stop-Process -Id 65510 -Force"}
+{"os": "powershell", "prompt": "stop process with name chrome forcefully", "cmd": "Stop-Process -Name 'chrome' -Force"}

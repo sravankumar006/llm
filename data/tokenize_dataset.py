@@ -214,11 +214,12 @@ def run_sanity_check(
 def tokenize_and_export(
     train_file: str = "data/train.jsonl",
     val_file: str = "data/val.jsonl",
+    test_file: str = "data/test.jsonl",
     output_dir: str = "data/processed",
     max_seq_len: int = 256,
     num_sanity_samples: int = 3,
 ):
-    """Run tokenization on train/val sets, save binary numpy arrays, and verify."""
+    """Run tokenization on train/val/test sets, save binary numpy arrays, and verify."""
     out_path = Path(output_dir)
     out_path.mkdir(parents=True, exist_ok=True)
 
@@ -230,6 +231,11 @@ def tokenize_and_export(
     train_inputs, train_targets = process_dataset_file(train_file, tokenizer, max_seq_len=max_seq_len)
     # Process Val Set
     val_inputs, val_targets = process_dataset_file(val_file, tokenizer, max_seq_len=max_seq_len)
+
+    # Process Test Set if present
+    test_inputs, test_targets = None, None
+    if test_file and Path(test_file).is_file():
+        test_inputs, test_targets = process_dataset_file(test_file, tokenizer, max_seq_len=max_seq_len)
 
     # File paths
     train_in_path = out_path / "train_inputs.npy"
@@ -245,6 +251,12 @@ def tokenize_and_export(
     np.save(val_in_path, val_inputs)
     np.save(val_tgt_path, val_targets)
 
+    if test_inputs is not None:
+        test_in_path = out_path / "test_inputs.npy"
+        test_tgt_path = out_path / "test_targets.npy"
+        np.save(test_in_path, test_inputs)
+        np.save(test_tgt_path, test_targets)
+
     # Export metadata
     meta = {
         "vocab_size": vocab_size,
@@ -253,6 +265,7 @@ def tokenize_and_export(
         "special_tokens": SPECIAL_TOKENS,
         "train_samples": len(train_inputs),
         "val_samples": len(val_inputs),
+        "test_samples": len(test_inputs) if test_inputs is not None else 0,
     }
     with open(meta_path, "w", encoding="utf-8") as f:
         json.dump(meta, f, indent=2)
@@ -264,6 +277,9 @@ def tokenize_and_export(
     logger.info(f" Train Targets Shape : {train_targets.shape} -> {train_tgt_path}")
     logger.info(f" Val Inputs Shape    : {val_inputs.shape} -> {val_in_path}")
     logger.info(f" Val Targets Shape   : {val_targets.shape} -> {val_tgt_path}")
+    if test_inputs is not None:
+        logger.info(f" Test Inputs Shape   : {test_inputs.shape} -> {out_path / 'test_inputs.npy'}")
+        logger.info(f" Test Targets Shape  : {test_targets.shape} -> {out_path / 'test_targets.npy'}")
     logger.info(f" Tokenizer Metadata  : {meta_path}")
     logger.info("=" * 60)
 
@@ -292,6 +308,12 @@ def main():
         help="Path to input val.jsonl (default: 'data/val.jsonl').",
     )
     parser.add_argument(
+        "--test-file",
+        type=str,
+        default="data/test.jsonl",
+        help="Path to input test.jsonl (default: 'data/test.jsonl').",
+    )
+    parser.add_argument(
         "--output-dir",
         type=str,
         default="data/processed",
@@ -314,6 +336,7 @@ def main():
     tokenize_and_export(
         train_file=args.train_file,
         val_file=args.val_file,
+        test_file=args.test_file,
         output_dir=args.output_dir,
         max_seq_len=args.max_seq_len,
         num_sanity_samples=args.sanity_samples,

@@ -11,6 +11,15 @@ Features:
 """
 
 import math
+import os
+import sys
+from pathlib import Path
+
+# Ensure workspace root is in sys.path when run directly
+_WORKSPACE_ROOT = str(Path(__file__).resolve().parent.parent)
+if _WORKSPACE_ROOT not in sys.path:
+    sys.path.insert(0, _WORKSPACE_ROOT)
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -194,21 +203,26 @@ class CoreCommandLLM(nn.Module):
         temperature: float = 1.0,
         top_k: int | None = None,
         eos_token_id: int | None = None,
+        repetition_penalty: float = 1.0,
     ) -> torch.Tensor:
         """
-        Autoregressive causal generation loop.
+        Autoregressive causal generation loop with optional completion-scoped repetition penalty.
 
         Args:
             idx: Conditioning prompt tensor of token IDs with shape (B, T)
             max_new_tokens: Maximum number of tokens to generate
-            temperature: Sampling temperature (1.0 = standard, < 1.0 = more deterministic, > 1.0 = more creative)
+            temperature: Sampling temperature (1.0 = standard, < 1.0 = more deterministic, <= 0.0 = greedy argmax)
             top_k: If set, restricts sampling to the top-K highest probability tokens
             eos_token_id: If generated, early termination is triggered for completed sequences
+            repetition_penalty: Multiplicative penalty applied strictly to previously generated
+                                completion tokens (never penalizes prompt tokens). Default: 1.0 (disabled,
+                                recommended for code and terminal commands to preserve repeated numbers and syntax).
 
         Returns:
             Tensor of shape (B, T + generated_tokens) containing the full sequence.
         """
         self.eval()
+        prompt_len = idx.size(1)
 
         for _ in range(max_new_tokens):
             # If the context sequence exceeds block_size, crop to the most recent block_size tokens
@@ -220,6 +234,16 @@ class CoreCommandLLM(nn.Module):
             logits, _ = self(idx_cond)
             # Squeeze sequence dimension: (B, 1, vocab_size) -> (B, vocab_size)
             logits = logits[:, -1, :]
+
+            # Apply repetition penalty ONLY to completion tokens generated so far (never the prompt)
+            if repetition_penalty != 1.0 and idx.size(1) > prompt_len:
+                for b in range(idx.size(0)):
+                    generated_tokens = set(idx[b, prompt_len:].tolist())
+                    for token_id in generated_tokens:
+                        if logits[b, token_id] < 0:
+                            logits[b, token_id] *= repetition_penalty
+                        else:
+                            logits[b, token_id] /= repetition_penalty
 
             # Apply temperature scaling
             if temperature > 0.0:

@@ -78,8 +78,8 @@ class CommandDataset(Dataset):
         Returns:
             Tuple of (input_tensor, target_tensor) with torch.long dtype.
         """
-        # Load directly from memory-map and convert to torch.long (int64)
-        x = torch.from_numpy(self.inputs[idx]).long()
-        y = torch.from_numpy(self.targets[idx]).long()
+        # Safely convert memory-mapped array slice to int64 torch.Tensor without non-writable buffer warnings
+        x = torch.tensor(self.inputs[idx], dtype=torch.long)
+        y = torch.tensor(self.targets[idx], dtype=torch.long)
         return x, y
 
